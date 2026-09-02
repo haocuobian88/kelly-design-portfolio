@@ -50,7 +50,7 @@ export default function Home(){
     </header>
 
     <section className="intro" id="top">
-      <p className="hello">Hi, I’m Kelly Lei</p>
+      <p className="hello">KELLY LEI · VISUAL &amp; PRODUCT DESIGN</p>
       <h1><span>Visual</span><br/><i>Designer</i></h1>
       <div className="wireframe-bg" aria-hidden="true">
         <span className="wf-nav"/><span className="wf-title"/><span className="wf-copy"/><span className="wf-button"/>
@@ -67,6 +67,7 @@ export default function Home(){
         <div className="print-card print-three"><b>平面<br/>設計</b><small>VISUAL NOTES</small></div>
       </div>
       <p className="intro-note">Designing thoughtful digital experiences<br/>and visual stories from Taipei.</p>
+      <a className="hero-cta" href="#work">VIEW PROJECTS <span>→</span></a>
     </section>
 
     <section className="portfolio" id="work">
