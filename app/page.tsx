@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react';
 type Category = '全部' | 'UI 設計' | '一頁式活動頁' | '行銷製作物';
 const categories: Category[] = ['全部', 'UI 設計', '一頁式活動頁', '行銷製作物'];
 const projects = [
-  { id: 1, category: 'UI 設計' as Category, title: 'MORI 日常理財 App', subtitle: 'Product Design · 2026', description: '重新梳理記帳到財務洞察的流程，讓複雜數字變得直覺、安心。', color: '#d9ff57', type: 'mobile' },
-  { id: 2, category: '一頁式活動頁' as Category, title: 'Future Now 創意年會', subtitle: 'Web Design · 2025', description: '以大膽排版與動態節奏，打造一頁式活動報名體驗。', color: '#ff6b4a', type: 'web' },
-  { id: 3, category: '行銷製作物' as Category, title: '植物系生活提案', subtitle: 'Campaign · 2025', description: '從社群貼文到數位廣告，建立一致而有溫度的活動視覺。', color: '#b8c8ff', type: 'social' },
-  { id: 4, category: 'UI 設計' as Category, title: 'Nook 空間預約平台', subtitle: 'UX/UI Design · 2024', description: '簡化搜尋、比較與預約路徑，讓找到理想空間更有效率。', color: '#f5c6e8', type: 'dashboard' },
+  { id: 1, category: 'UI 設計' as Category, title: 'MORI 日常理財 App', subtitle: 'Product Design · 2026', description: '重新梳理記帳到財務洞察的流程，讓複雜數字變得直覺、安心。', color: '#77d8c7', type: 'mobile' },
+  { id: 2, category: '一頁式活動頁' as Category, title: 'Future Now 創意年會', subtitle: 'Web Design · 2025', description: '以大膽排版與動態節奏，打造一頁式活動報名體驗。', color: '#8f7cff', type: 'web' },
+  { id: 3, category: '行銷製作物' as Category, title: '植物系生活提案', subtitle: 'Campaign · 2025', description: '從社群貼文到數位廣告，建立一致而有溫度的活動視覺。', color: '#aab9ff', type: 'social' },
+  { id: 4, category: 'UI 設計' as Category, title: 'Nook 空間預約平台', subtitle: 'UX/UI Design · 2024', description: '簡化搜尋、比較與預約路徑，讓找到理想空間更有效率。', color: '#ffd1e2', type: 'dashboard' },
 ];
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) { return <span aria-hidden="true" className={diagonal ? 'arrow diagonal' : 'arrow'}>→</span>; }
