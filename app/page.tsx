@@ -1,36 +1,59 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 
 type Category = '全部' | 'UI 設計' | '一頁式活動頁' | '行銷製作物';
 const categories: Category[] = ['全部', 'UI 設計', '一頁式活動頁', '行銷製作物'];
 const projects = [
-  { id: 1, category: 'UI 設計' as Category, title: 'MORI 日常理財 App', subtitle: 'Product Design · 2026', description: '重新梳理記帳到財務洞察的流程，讓複雜數字變得直覺、安心。', color: '#d9ff57', type: 'mobile' },
-  { id: 2, category: '一頁式活動頁' as Category, title: 'Future Now 創意年會', subtitle: 'Web Design · 2025', description: '以大膽排版與動態節奏，打造一頁式活動報名體驗。', color: '#ff6b4a', type: 'web' },
-  { id: 3, category: '行銷製作物' as Category, title: '植物系生活提案', subtitle: 'Campaign · 2025', description: '從社群貼文到數位廣告，建立一致而有溫度的活動視覺。', color: '#b8c8ff', type: 'social' },
-  { id: 4, category: 'UI 設計' as Category, title: 'Nook 空間預約平台', subtitle: 'UX/UI Design · 2024', description: '簡化搜尋、比較與預約路徑，讓找到理想空間更有效率。', color: '#f5c6e8', type: 'dashboard' },
+  { id: 1, category:'UI 設計' as Category, title:'MORI 日常理財 App', en:'A calmer way to understand everyday money.', year:'2026', color:'#cbd7c2', type:'mobile', tall:true },
+  { id: 2, category:'一頁式活動頁' as Category, title:'Future Now 創意年會', en:'A digital stage for ideas in motion.', year:'2025', color:'#b9c6e8', type:'web', tall:false },
+  { id: 3, category:'行銷製作物' as Category, title:'植物系生活提案', en:'A gentle campaign made to grow.', year:'2025', color:'#d9b8a9', type:'social', tall:false },
+  { id: 4, category:'UI 設計' as Category, title:'Nook 空間預約平台', en:'Finding the right space, made effortless.', year:'2024', color:'#d8cfb4', type:'dashboard', tall:true },
 ];
 
-function Arrow({ diagonal = false }: { diagonal?: boolean }) { return <span aria-hidden="true" className={diagonal ? 'arrow diagonal' : 'arrow'}>→</span>; }
-function Mockup({ project }: { project: (typeof projects)[number] }) {
-  if (project.type === 'mobile') return <div className="mock-stage mobile-stage"><div className="phone phone-back"><span /><i /><i /><i /></div><div className="phone phone-front"><small>下午 9:41</small><b>今天過得如何？</b><em>NT$ 38,560</em><i /><i /><i /></div></div>;
-  if (project.type === 'web') return <div className="mock-stage web-stage"><div className="browser-frame"><span className="browser-dots">•••</span><strong>FUTURE<br/>NOW.</strong><small>CREATIVE CONFERENCE 2025</small><button>立即報名 ↗</button></div></div>;
-  if (project.type === 'social') return <div className="mock-stage social-stage"><div className="post p1">GROW<br/>WITH<br/>CARE</div><div className="post p2"><span>PLANT<br/>YOUR<br/>DAY</span></div><div className="post p3">綠意<br/>日常</div></div>;
-  return <div className="mock-stage dashboard-stage"><div className="laptop"><div className="dash-nav"/><div className="dash-hero"><b>Find your<br/>perfect space.</b><span /></div><div className="dash-cards"><i/><i/><i/></div></div></div>;
+function Mockup({project}:{project:(typeof projects)[number]}) {
+  if(project.type==='mobile') return <div className="mock mobile"><div className="phone back"/><div className="phone front"><small>9:41</small><b>Today</b><strong>$38,560</strong><i/><i/><i/></div></div>;
+  if(project.type==='web') return <div className="mock"><div className="browser"><small>FUTURE / NOW</small><b>Ideas<br/>in motion.</b><span>OCT 18—20</span></div></div>;
+  if(project.type==='social') return <div className="mock social"><div>GROW<br/><em>WITH</em><br/>CARE</div><div>PLANT<br/>YOUR<br/><em>DAY</em></div><div>綠意<br/>日常</div></div>;
+  return <div className="mock"><div className="screen"><small>NOOK</small><b>Find your<br/>perfect space.</b><span/><div><i/><i/><i/></div></div></div>;
 }
 
-export default function Home() {
-  const [active, setActive] = useState<Category>('全部');
-  const [selected, setSelected] = useState<(typeof projects)[number] | null>(null);
-  const [menuOpen, setMenuOpen] = useState(false);
-  useEffect(() => { document.body.style.overflow = selected ? 'hidden' : ''; return () => { document.body.style.overflow = ''; }; }, [selected]);
-  const filtered = active === '全部' ? projects : projects.filter((p) => p.category === active);
+export default function Home(){
+  const [active,setActive]=useState<Category>('全部');
+  const [selected,setSelected]=useState<(typeof projects)[number]|null>(null);
+  const [menu,setMenu]=useState(false);
+  useEffect(()=>{document.body.style.overflow=selected?'hidden':'';return()=>{document.body.style.overflow=''}},[selected]);
+  const filtered=active==='全部'?projects:projects.filter(p=>p.category===active);
   return <main>
-    <header className="site-header"><a className="brand" href="#top" aria-label="回到首頁">YH<span>®</span></a><nav className={menuOpen ? 'nav open' : 'nav'} aria-label="主要導覽"><a href="#works" onClick={() => setMenuOpen(false)}>作品</a><a href="#about" onClick={() => setMenuOpen(false)}>關於我</a><a href="mailto:hello@example.com">聯絡我 <Arrow diagonal /></a></nav><button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="開啟選單" aria-expanded={menuOpen}>{menuOpen ? '關閉' : '選單'}</button></header>
-    <section className="hero" id="top"><p className="eyebrow"><span /> AVAILABLE FOR SELECTED PROJECTS</p><h1>把想法，設計成<br/><span className="outline-word">有感的體驗。</span></h1><div className="hero-bottom"><p>嗨，我是 YU-HSUAN，一位專注於數位體驗與品牌視覺的設計師。喜歡把複雜的事情，變得簡單、好看又好用。</p><a className="round-link" href="#works" aria-label="瀏覽作品"><Arrow /></a></div><div className="orbit" aria-hidden="true"><span>IDEAS</span><i>×</i><span>DESIGN</span><i>×</i><span>IMPACT</span></div></section>
-    <section className="works" id="works"><div className="section-head"><div><p className="section-index">01 — SELECTED WORKS</p><h2>精選作品</h2></div><p>從策略、視覺到互動，<br/>每個專案都是一場完整的思考旅程。</p></div><div className="filters" role="group" aria-label="作品分類">{categories.map((category) => <button key={category} className={active === category ? 'active' : ''} onClick={() => setActive(category)}>{category}<span>{category === '全部' ? projects.length : projects.filter(p => p.category === category).length}</span></button>)}</div><div className="project-grid">{filtered.map((project) => <article className="project-card" key={project.id} onClick={() => setSelected(project)} tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setSelected(project)}><div className="project-visual" style={{ background: project.color }}><span className="view-label">VIEW PROJECT <Arrow diagonal /></span><Mockup project={project}/></div><div className="project-info"><div><p>{project.subtitle}</p><h3>{project.title}</h3></div><span className="card-arrow"><Arrow diagonal /></span></div></article>)}</div></section>
-    <section className="about" id="about"><p className="section-index">02 — ABOUT</p><div className="about-grid"><h2>好設計，始於<br/>真正的理解。</h2><div><p>我相信設計不只關乎畫面，更關乎溝通與感受。從釐清問題、建立脈絡，到發展出兼具美感與功能的解法，我享受每一個把模糊變清楚的過程。</p><a href="mailto:hello@example.com">一起聊聊你的專案 <Arrow diagonal /></a></div></div></section>
-    <footer><div><p>HAVE A PROJECT IN MIND?</p><a href="mailto:hello@example.com">Let’s make<br/>something great. <Arrow diagonal /></a></div><div className="footer-row"><span>© 2026 YU-HSUAN</span><span>TAIPEI, TAIWAN · 25.03° N</span><a href="#top">BACK TO TOP ↑</a></div></footer>
-    {selected && <div className="modal" role="dialog" aria-modal="true" aria-label={`${selected.title} 作品預覽`} onMouseDown={(e) => e.target === e.currentTarget && setSelected(null)}><div className="modal-panel"><button className="modal-close" onClick={() => setSelected(null)} aria-label="關閉預覽">×</button><div className="modal-copy"><p>{selected.category} · CASE STUDY</p><h2>{selected.title}</h2><span>{selected.description}</span></div><div className="figma-embed" style={{ background: selected.color }}><div className="figma-top"><span><i/> Figma prototype</span><small>你的設計可嵌入此處</small></div><Mockup project={selected}/><div className="figma-hint">替換為 Figma 分享網址後，即可直接操作完整原型</div></div></div></div>}
-  </main>;
+    <header className="topbar">
+      <a href="#top" className="monogram">Y.</a>
+      <nav className={menu?'open':''}><a href="#work">WORK</a><a href="#play">PLAY</a><a href="#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav>
+      <button onClick={()=>setMenu(!menu)} aria-label="切換選單">{menu?'CLOSE':'MENU'}</button>
+    </header>
+
+    <section className="intro" id="top">
+      <p className="hello">Hi, I’m Yu-Hsuan</p>
+      <h1><span>Visual</span><br/><i>Designer</i></h1>
+      <div className="petal petal-a"/><div className="petal petal-b"/><div className="petal petal-c"/>
+      <p className="intro-note">Designing thoughtful digital experiences<br/>and visual stories from Taipei.</p>
+    </section>
+
+    <section className="portfolio" id="work">
+      <div className="work-heading"><p>SELECTED WORK · 2024—2026</p><h2>Projects, experiments<br/>and things I care about.</h2></div>
+      <div className="filters" role="group" aria-label="作品分類">{categories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
+      <div className="masonry">
+        {filtered.map((project,index)=><article key={project.id} className={`project ${project.tall?'tall':''}`} tabIndex={0} onClick={()=>setSelected(project)} onKeyDown={e=>e.key==='Enter'&&setSelected(project)}>
+          <div className="visual" style={{background:project.color}}><span className="project-no">0{index+1}</span><Mockup project={project}/><span className="open-label">VIEW CASE ↗</span></div>
+          <div className="caption"><div><h3>{project.en}</h3><p>{project.title}</p></div><div><span>{project.category}</span><span>{project.year}</span></div></div>
+        </article>)}
+      </div>
+    </section>
+
+    <section className="play" id="play"><p>PLAYGROUND</p><div className="ticker">TYPE · COLOR · MOTION · IDEAS · TYPE · COLOR · MOTION · IDEAS ·</div></section>
+    <section className="about" id="about"><p className="label">ABOUT</p><h2>我喜歡把複雜的事情，<br/><i>整理成簡單而有感的體驗。</i></h2><div className="about-copy"><p>從介面、活動網站到行銷視覺，我在意的不只是畫面好不好看，而是每個選擇是否真正回應了問題。保持好奇、反覆推敲，然後留下剛剛好的設計。</p><a href="mailto:hello@example.com">LET’S WORK TOGETHER ↗</a></div></section>
+    <footer><div><span>YU-HSUAN</span><span>VISUAL & PRODUCT DESIGNER</span></div><a href="mailto:hello@example.com">hello@example.com</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
+
+    {selected&&<div className="modal" role="dialog" aria-modal="true" onMouseDown={e=>e.target===e.currentTarget&&setSelected(null)}>
+      <div className="modal-card"><button onClick={()=>setSelected(null)} aria-label="關閉">CLOSE ×</button><div className="case-head"><p>{selected.category} · {selected.year}</p><h2>{selected.title}</h2><span>{selected.en}</span></div><div className="figma" style={{background:selected.color}}><div className="figma-bar"><span>● FIGMA PROTOTYPE</span><span>EMBED PREVIEW</span></div><Mockup project={selected}/><p>替換為你的 Figma 分享網址後，可在此直接操作完整原型</p></div></div>
+    </div>}
+  </main>
 }
