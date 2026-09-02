@@ -58,10 +58,10 @@ export default function Home(){
       </div>
       <div className="work-scene" aria-label="MacBook、iPhone 與平面設計作品的動態展示">
         <div className="hero-macbook">
-          <div className="mac-screen"><span className="mac-dot"/><div className="mac-ui"><i/><b>Designing<br/>better flows.</b><div><em/><em/><em/></div></div></div>
+          <div className="mac-screen"><span className="mac-dot"/><div className="mac-ui"><i/><b>Hello World!</b><div><em/><em/><em/></div></div></div>
           <div className="mac-base"/>
         </div>
-        <div className="hero-iphone"><small>9:41</small><span className="phone-pill"/><b>Good morning,<br/>Kelly.</b><i/><i/><i/></div>
+        <div className="hero-iphone"><small>9:41</small><span className="phone-pill"/><b>Hello World!</b><i/><i/><i/></div>
         <div className="print-card print-one"><small>POSTER 01</small><b>FORM<br/><i>×</i><br/>FEELING</b></div>
         <div className="print-card print-two"><span>IDEAS</span><b>IN<br/>MOTION</b></div>
         <div className="print-card print-three"><b>平面<br/>設計</b><small>VISUAL NOTES</small></div>
