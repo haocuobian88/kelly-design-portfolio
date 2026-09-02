@@ -52,19 +52,8 @@ export default function Home(){
     <section className="intro" id="top">
       <p className="hello">KELLY LEI · VISUAL &amp; PRODUCT DESIGN</p>
       <h1><span>Visual</span><br/><i>Designer</i></h1>
-      <div className="wireframe-bg" aria-hidden="true">
-        <span className="wf-nav"/><span className="wf-title"/><span className="wf-copy"/><span className="wf-button"/>
-        <span className="wf-card one"/><span className="wf-card two"/><span className="wf-card three"/>
-      </div>
-      <div className="work-scene" aria-label="MacBook、iPhone 與平面設計作品的動態展示">
-        <div className="hero-macbook">
-          <div className="mac-screen"><span className="mac-dot"/><div className="mac-ui"><i/><b>Hello World!</b><div><em/><em/><em/></div></div></div>
-          <div className="mac-base"/>
-        </div>
-        <div className="hero-iphone"><small>9:41</small><span className="phone-pill"/><b>Hello World!</b><i/><i/><i/></div>
-        <div className="print-card print-one"><small>POSTER 01</small><b>FORM<br/><i>×</i><br/>FEELING</b></div>
-        <div className="print-card print-two"><span>IDEAS</span><b>IN<br/>MOTION</b></div>
-        <div className="print-card print-three"><b>平面<br/>設計</b><small>VISUAL NOTES</small></div>
+      <div className="work-scene" aria-label="設計工具、裝置與靈感物件的動態展示">
+        {Array.from({length:8},(_,index)=><img key={index} className={`floating-icon icon-${index+1}`} src={`/visual/icon-${index+1}.png`} alt="" aria-hidden="true"/>) }
       </div>
       <p className="intro-note">Designing thoughtful digital experiences<br/>and visual stories from Taipei.</p>
       <a className="hero-cta" href="#work">VIEW PROJECTS <span>→</span></a>
