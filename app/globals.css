@@ -29,14 +29,13 @@ button{font:inherit;color:inherit}
 .wf-card.one{left:8%}.wf-card.two{left:37.5%}.wf-card.three{right:8%}
 .work-scene{position:absolute;inset:0;z-index:3;pointer-events:none}
 .floating-icon{position:absolute;display:block;object-fit:contain;filter:drop-shadow(0 18px 18px #241d151f);will-change:transform}
-.icon-1{width:35%;right:-7%;top:-3%;animation:assetFloat1 8s ease-in-out infinite}
-.icon-2{width:13%;left:-2%;top:32%;animation:assetFloat2 6.8s ease-in-out infinite}
-.icon-3{width:15%;left:-4%;top:-5%;transform:rotate(-12deg);animation:assetFloat3 7.4s ease-in-out infinite}
-.icon-4{width:20%;left:5%;bottom:-8%;transform:rotate(5deg);animation:assetFloat4 8.4s ease-in-out infinite}
-.icon-5{width:27%;right:-9%;top:39%;animation:assetFloat5 7.8s ease-in-out infinite}
-.icon-6{width:12%;left:19%;bottom:-4%;animation:assetFloat6 6.4s ease-in-out infinite}
-.icon-7{width:27%;left:-11%;bottom:-13%;animation:assetFloat7 9s ease-in-out infinite}
-.icon-8{width:11%;right:18%;bottom:-3%;transform:rotate(7deg);animation:assetFloat8 6.9s ease-in-out infinite}
+.icon-1{width:27%;right:2%;top:4%;animation:assetFloat1 8s ease-in-out infinite}
+.icon-2{width:10%;left:10%;top:34%;animation:assetFloat2 6.8s ease-in-out infinite}
+.icon-3{width:11%;left:9%;top:10%;transform:rotate(-12deg);animation:assetFloat3 7.4s ease-in-out infinite}
+.icon-4{width:15%;left:16%;bottom:6%;transform:rotate(5deg);animation:assetFloat4 8.4s ease-in-out infinite}
+.icon-5{width:20%;right:4%;top:43%;animation:assetFloat5 7.8s ease-in-out infinite}
+.icon-6{width:8%;left:31%;bottom:7%;animation:assetFloat6 6.4s ease-in-out infinite}
+.icon-8{width:8%;right:24%;bottom:5%;transform:rotate(7deg);animation:assetFloat8 6.9s ease-in-out infinite}
 .hero-macbook{position:absolute;right:-2%;top:3%;width:34%;height:38%;transform:rotate(7deg);animation:macFloat 7s ease-in-out infinite;filter:drop-shadow(0 22px 22px #302a2230)}
 .mac-screen{height:88%;border:7px solid #252525;border-radius:12px 12px 5px 5px;background:#e9e5dc;padding:8px;overflow:hidden}
 .mac-dot{display:block;width:5px;height:5px;border-radius:50%;background:#777;margin:auto}
@@ -137,9 +136,9 @@ footer>div:last-child{text-align:right}
 .intro h1 span{padding-right:0}
 .work-scene{inset:0;opacity:.96}
 .hero-cta{top:72%;width:35%;height:8%}
-.icon-1{width:54%;right:-27%;top:-1%}.icon-2{width:25%;left:-7%;top:31%}.icon-3{width:28%;left:-12%;top:-4%}
-.icon-4{width:39%;left:2%;bottom:-3%}.icon-5{width:48%;right:-27%;top:43%}.icon-6{width:22%;left:36%;bottom:-2%}
-.icon-7{width:47%;left:-23%;bottom:-8%}.icon-8{width:20%;right:9%;bottom:-1%}
+.icon-1{width:38%;right:1%;top:5%}.icon-2{width:18%;left:4%;top:35%}.icon-3{width:19%;left:6%;top:12%}
+.icon-4{width:28%;left:12%;bottom:5%}.icon-5{width:34%;right:1%;top:47%}.icon-6{width:15%;left:39%;bottom:6%}
+.icon-8{width:14%;right:24%;bottom:5%}
 .work-heading{display:block}
 .work-heading p{margin-bottom:28px}
 .filters{overflow:auto}

@@ -53,7 +53,7 @@ export default function Home(){
       <p className="hello">KELLY LEI · VISUAL &amp; PRODUCT DESIGN</p>
       <h1><span>Visual</span><br/><i>Designer</i></h1>
       <div className="work-scene" aria-label="設計工具、裝置與靈感物件的動態展示">
-        {Array.from({length:8},(_,index)=><img key={index} className={`floating-icon icon-${index+1}`} src={`/visual/icon-${index+1}.png`} alt="" aria-hidden="true"/>) }
+        {[1,2,3,4,5,6,8].map(icon=><img key={icon} className={`floating-icon icon-${icon}`} src={`/visual/icon-${icon}.png`} alt="" aria-hidden="true"/>) }
       </div>
       <p className="intro-note">Designing thoughtful digital experiences<br/>and visual stories from Taipei.</p>
       <a className="hero-cta" href="#work">VIEW PROJECTS <span>→</span></a>
