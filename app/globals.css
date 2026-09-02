@@ -27,11 +27,9 @@ button{font:inherit;color:inherit}
 .wf-button{left:8%;top:46%;width:12%;height:5%}
 .wf-card{bottom:9%;width:25%;height:27%}
 .wf-card.one{left:8%}.wf-card.two{left:37.5%}.wf-card.three{right:8%}
-.work-scene{position:absolute;inset:0;z-index:3;pointer-events:none}
-.floating-icon{position:absolute;display:block;border:0;padding:0;background:transparent;filter:drop-shadow(0 18px 18px #241d151f);will-change:transform;cursor:zoom-in;pointer-events:auto}
-.floating-icon img{display:block;width:100%;height:auto;transition:transform .35s cubic-bezier(.2,.75,.25,1),filter .35s}
-.floating-icon:hover img,.floating-icon:focus-visible img{transform:scale(1.1);filter:brightness(1.04)}
-.floating-icon:focus-visible{outline:1px solid var(--ink);outline-offset:5px}
+.work-scene{position:absolute;inset:0;z-index:3;pointer-events:auto}
+.floating-icon{position:absolute;display:block;filter:drop-shadow(0 18px 18px #241d151f);will-change:transform;pointer-events:none}
+.floating-icon img{display:block;width:100%;height:auto;transform:translate(var(--escape-x,0),var(--escape-y,0));transition:transform .16s ease-out;will-change:transform}
 .icon-1{width:31%;right:0;top:2%;animation:assetFloat1 8s ease-in-out infinite}
 .icon-2{width:12%;left:8%;top:32%;animation:assetFloat2 6.8s ease-in-out infinite}
 .icon-3{width:13%;left:7%;top:8%;transform:rotate(-12deg);animation:assetFloat3 7.4s ease-in-out infinite}
@@ -39,10 +37,6 @@ button{font:inherit;color:inherit}
 .icon-5{width:24%;right:1%;top:40%;animation:assetFloat5 7.8s ease-in-out infinite}
 .icon-6{width:10%;left:29%;bottom:4%;animation:assetFloat6 6.4s ease-in-out infinite}
 .icon-8{width:10%;right:22%;bottom:3%;transform:rotate(7deg);animation:assetFloat8 6.9s ease-in-out infinite}
-.asset-modal{position:fixed;inset:0;background:#1c1a17d9;z-index:80;display:grid;place-items:center;padding:7vh 7vw;backdrop-filter:blur(9px);animation:modalIn .3s ease both}
-.asset-modal>img{display:block;max-width:min(82vw,940px);max-height:78vh;object-fit:contain;filter:drop-shadow(0 28px 42px #0006);animation:assetReveal .45s cubic-bezier(.2,.8,.25,1) both}
-.asset-modal>p{position:absolute;left:3vw;bottom:3vh;color:#f2eee6;font:9px Georgia,serif;letter-spacing:.15em}
-.asset-close{position:absolute;right:3vw;top:3vh;border:1px solid #f2eee699;background:#f3f0e914;color:#f2eee6;border-radius:999px;padding:12px 17px;font-size:9px;letter-spacing:.12em;cursor:pointer;z-index:2}
 .hero-macbook{position:absolute;right:-2%;top:3%;width:34%;height:38%;transform:rotate(7deg);animation:macFloat 7s ease-in-out infinite;filter:drop-shadow(0 22px 22px #302a2230)}
 .mac-screen{height:88%;border:7px solid #252525;border-radius:12px 12px 5px 5px;background:#e9e5dc;padding:8px;overflow:hidden}
 .mac-dot{display:block;width:5px;height:5px;border-radius:50%;background:#777;margin:auto}
@@ -146,7 +140,6 @@ footer>div:last-child{text-align:right}
 .icon-1{width:43%;right:-1%;top:3%}.icon-2{width:21%;left:2%;top:33%}.icon-3{width:22%;left:3%;top:9%}
 .icon-4{width:32%;left:8%;bottom:3%}.icon-5{width:39%;right:-1%;top:44%}.icon-6{width:18%;left:37%;bottom:4%}
 .icon-8{width:17%;right:21%;bottom:3%}
-.asset-modal{padding:8vh 5vw}.asset-modal>img{max-width:92vw;max-height:72vh}.asset-close{right:18px;top:18px}
 .work-heading{display:block}
 .work-heading p{margin-bottom:28px}
 .filters{overflow:auto}
@@ -226,8 +219,7 @@ footer>div:last-child{grid-column:2;grid-row:1}
 @keyframes assetFloat6{50%{transform:translate(5px,-14px) rotate(2deg)}}
 @keyframes assetFloat7{50%{transform:translate(10px,-10px) rotate(-1deg)}}
 @keyframes assetFloat8{50%{transform:translate(-6px,-15px) rotate(10deg)}}
-@keyframes modalIn{from{opacity:0}}
-@keyframes assetReveal{from{opacity:0;transform:scale(.84) translateY(20px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 *{transition:none!important;animation:none!important}
 }
+@media(pointer:coarse){.work-scene{pointer-events:none}}
