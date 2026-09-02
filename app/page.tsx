@@ -72,7 +72,7 @@ export default function Home(){
       <p className="hello">KELLY LEI · VISUAL &amp; PRODUCT DESIGN</p>
       <h1><span>Visual</span><br/><i>Designer</i></h1>
       <div className="work-scene" aria-label="設計工具、裝置與靈感物件的動態展示" onPointerMove={repelAssets} onPointerLeave={resetAssets}>
-        {[1,2,3,4,5,6,8].map(icon=><span key={icon} className={`floating-icon icon-${icon}`} aria-hidden="true"><img src={`/visual/icon-${icon}.png`} alt=""/></span>) }
+        {[1,2,3,4,5,6,7,8].map(icon=><span key={icon} className={`floating-icon icon-${icon}`} aria-hidden="true"><img src={`/visual/icon-${icon}.png`} alt=""/></span>) }
       </div>
       <p className="intro-note">Designing thoughtful digital experiences<br/>and visual stories from Taipei.</p>
       <a className="hero-cta" href="#work">VIEW PROJECTS <span>→</span></a>
