@@ -20,8 +20,14 @@ function Mockup({project}:{project:(typeof projects)[number]}) {
 export default function Home(){
   const [active,setActive]=useState<Category>('全部');
   const [selected,setSelected]=useState<(typeof projects)[number]|null>(null);
+  const [heroSelected,setHeroSelected]=useState<number|null>(null);
   const [menu,setMenu]=useState(false);
-  useEffect(()=>{document.body.style.overflow=selected?'hidden':'';return()=>{document.body.style.overflow=''}},[selected]);
+  useEffect(()=>{
+    document.body.style.overflow=selected||heroSelected?'hidden':'';
+    const close=(event:KeyboardEvent)=>event.key==='Escape'&&(setSelected(null),setHeroSelected(null));
+    window.addEventListener('keydown',close);
+    return()=>{document.body.style.overflow='';window.removeEventListener('keydown',close)};
+  },[selected,heroSelected]);
   const filtered=active==='全部'?projects:projects.filter(p=>p.category===active);
   return <main>
     <aside className="profile-sidebar" aria-label="個人資料">
@@ -53,7 +59,7 @@ export default function Home(){
       <p className="hello">KELLY LEI · VISUAL &amp; PRODUCT DESIGN</p>
       <h1><span>Visual</span><br/><i>Designer</i></h1>
       <div className="work-scene" aria-label="設計工具、裝置與靈感物件的動態展示">
-        {[1,2,3,4,5,6,8].map(icon=><img key={icon} className={`floating-icon icon-${icon}`} src={`/visual/icon-${icon}.png`} alt="" aria-hidden="true"/>) }
+        {[1,2,3,4,5,6,8].map(icon=><button key={icon} className={`floating-icon icon-${icon}`} onClick={()=>setHeroSelected(icon)} aria-label={`放大查看設計素材 ${icon}`}><img src={`/visual/icon-${icon}.png`} alt=""/></button>) }
       </div>
       <p className="intro-note">Designing thoughtful digital experiences<br/>and visual stories from Taipei.</p>
       <a className="hero-cta" href="#work">VIEW PROJECTS <span>→</span></a>
@@ -77,6 +83,11 @@ export default function Home(){
 
     {selected&&<div className="modal" role="dialog" aria-modal="true" onMouseDown={e=>e.target===e.currentTarget&&setSelected(null)}>
       <div className="modal-card"><button onClick={()=>setSelected(null)} aria-label="關閉">CLOSE ×</button><div className="case-head"><p>{selected.category} · {selected.year}</p><h2>{selected.title}</h2><span>{selected.en}</span></div><div className="figma" style={{background:selected.color}}><div className="figma-bar"><span>● FIGMA PROTOTYPE</span><span>EMBED PREVIEW</span></div><Mockup project={selected}/><p>替換為你的 Figma 分享網址後，可在此直接操作完整原型</p></div></div>
+    </div>}
+    {heroSelected&&<div className="asset-modal" role="dialog" aria-modal="true" aria-label={`設計素材 ${heroSelected} 放大預覽`} onMouseDown={e=>e.target===e.currentTarget&&setHeroSelected(null)}>
+      <button className="asset-close" onClick={()=>setHeroSelected(null)} aria-label="關閉放大預覽">CLOSE ×</button>
+      <img src={`/visual/icon-${heroSelected}.png`} alt={`設計素材 ${heroSelected}`}/>
+      <p>0{heroSelected} / VISUAL OBJECT</p>
     </div>}
   </main>
 }
