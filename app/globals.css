@@ -18,10 +18,32 @@ button{font:inherit;color:inherit}
 .intro h1 i{font-weight:400}
 .intro h1 span{padding-right:12vw}
 .intro-note{position:absolute;bottom:5vh;left:3.2vw;text-align:left;font-size:11px;line-height:1.7;letter-spacing:.04em}
-.petal{position:absolute;border-radius:55% 45% 58% 42%;filter:blur(.2px);opacity:.95}
-.petal-a{width:160px;height:105px;background:#486345;left:30%;top:44%;transform:rotate(-28deg);box-shadow:inset 14px 12px 35px #9aae8a;animation:petalA 6s ease-in-out infinite}
-.petal-b{width:145px;height:95px;background:#d5afa7;right:27%;top:38%;transform:rotate(22deg);box-shadow:inset -12px 8px 30px #f2d5ce;animation:petalB 7.5s ease-in-out infinite}
-.petal-c{width:75px;height:75px;background:#e3c6a1;right:35%;bottom:31%;transform:rotate(42deg);box-shadow:inset 7px -7px 18px #b98f72;animation:petalC 5.5s ease-in-out infinite}
+.wireframe-bg{position:absolute;inset:8% 5% 10% 8%;opacity:.26;z-index:0;border:1px solid #a9a49a;pointer-events:none}
+.wireframe-bg:before{content:'';position:absolute;inset:8% 5%;background:linear-gradient(90deg,transparent 24.7%,#a9a49a 25%,transparent 25.3%,transparent 74.7%,#a9a49a 75%,transparent 75.3%),linear-gradient(transparent 49.7%,#a9a49a 50%,transparent 50.3%)}
+.wireframe-bg span{position:absolute;border:1px solid #9e998f}
+.wf-nav{left:5%;right:5%;top:4%;height:7%}
+.wf-title{left:8%;top:20%;width:36%;height:12%}
+.wf-copy{left:8%;top:36%;width:25%;height:6%}
+.wf-button{left:8%;top:46%;width:12%;height:5%}
+.wf-card{bottom:9%;width:25%;height:27%}
+.wf-card.one{left:8%}.wf-card.two{left:37.5%}.wf-card.three{right:8%}
+.work-scene{position:absolute;right:2.5%;top:14%;width:55%;height:70%;z-index:3;pointer-events:none}
+.hero-macbook{position:absolute;right:2%;top:9%;width:68%;height:56%;animation:macFloat 7s ease-in-out infinite;filter:drop-shadow(0 22px 22px #302a221f)}
+.mac-screen{height:88%;border:7px solid #252525;border-radius:12px 12px 5px 5px;background:#e9e5dc;padding:8px;overflow:hidden}
+.mac-dot{display:block;width:5px;height:5px;border-radius:50%;background:#777;margin:auto}
+.mac-ui{height:calc(100% - 9px);background:#f7f4ed;padding:10% 9%;display:flex;flex-direction:column}
+.mac-ui>i{width:26%;height:3px;background:#4a4843}
+.mac-ui b{font:400 clamp(15px,2vw,30px)/.9 Georgia,serif;margin:auto 0}
+.mac-ui>div{display:flex;gap:5px}.mac-ui em{height:34px;flex:1;background:#cac5ba}
+.mac-base{height:10%;background:linear-gradient(#b9b9b7,#e2e2df);clip-path:polygon(8% 0,92% 0,100% 70%,96% 100%,4% 100%,0 70%);border-radius:0 0 14px 14px}
+.hero-iphone{position:absolute;left:4%;top:29%;width:24%;height:48%;border:6px solid #242424;border-radius:29px;background:#f8f5ef;padding:22px 12px 12px;display:flex;flex-direction:column;gap:9px;box-shadow:0 16px 25px #0002;animation:iphoneFloat 5.5s ease-in-out infinite}
+.hero-iphone small{font-size:5px}.phone-pill{position:absolute;top:7px;left:37%;width:27%;height:7px;border-radius:8px;background:#242424}
+.hero-iphone b{font:14px Georgia,serif;margin:9px 0 3px}.hero-iphone>i{display:block;height:15%;border-radius:5px;background:#d9d5cc}
+.print-card{position:absolute;width:21%;aspect-ratio:3/4;padding:11px;border:1px solid #35322d;box-shadow:0 11px 18px #0002;font-family:Georgia,serif}
+.print-card small{font-size:5px;letter-spacing:.12em}.print-card b{display:block;font-size:clamp(10px,1.5vw,21px);line-height:.86}.print-card i{font-weight:400}
+.print-one{right:20%;bottom:0;background:#c58e83;transform:rotate(7deg);animation:printOne 6.4s ease-in-out infinite}.print-one b{margin-top:40%}
+.print-two{right:1%;bottom:8%;background:#354e3c;color:#eeeae2;transform:rotate(-5deg);animation:printTwo 7.2s ease-in-out infinite}.print-two span{font-size:6px}.print-two b{margin-top:65%}
+.print-three{left:20%;bottom:-4%;background:#d8c5a1;transform:rotate(-9deg);animation:printThree 5.8s ease-in-out infinite}.print-three b{font-size:clamp(13px,1.8vw,25px);margin:15% 0 55%}
 
 .portfolio{padding:120px 3.2vw 150px}
 .work-heading{display:grid;grid-template-columns:1fr 2fr;margin-bottom:65px}
@@ -104,9 +126,9 @@ footer>div:last-child{text-align:right}
 .intro{height:calc(100vh - 60px);min-height:600px}
 .intro h1{font-size:23vw}
 .intro h1 span{padding-right:0}
-.petal-a{left:8%;top:47%;width:100px;height:70px}
-.petal-b{right:7%;top:38%;width:95px;height:65px}
-.petal-c{right:25%;bottom:27%;width:55px;height:55px}
+.work-scene{right:-8%;top:23%;width:75%;height:58%;opacity:.9}
+.wireframe-bg{inset:10% 3% 8%}
+.intro h1{transform:translate(-8%,-16%)}
 .work-heading{display:block}
 .work-heading p{margin-bottom:28px}
 .filters{overflow:auto}
@@ -170,9 +192,11 @@ footer>div:last-child{grid-column:2;grid-row:1}
 .message-button span{font-size:17px}
 .save-button{width:42px;height:42px}
 }
-@keyframes petalA{50%{transform:translate(-8px,-13px) rotate(-34deg)}}
-@keyframes petalB{50%{transform:translate(9px,-11px) rotate(28deg)}}
-@keyframes petalC{50%{transform:translate(-5px,10px) rotate(35deg)}}
+@keyframes macFloat{50%{transform:translate(-7px,-12px) rotate(-.5deg)}}
+@keyframes iphoneFloat{50%{transform:translate(5px,-15px) rotate(1.5deg)}}
+@keyframes printOne{50%{transform:translate(4px,-12px) rotate(10deg)}}
+@keyframes printTwo{50%{transform:translate(-5px,-9px) rotate(-8deg)}}
+@keyframes printThree{50%{transform:translate(3px,-13px) rotate(-5deg)}}
 @keyframes phoneBack{50%{transform:translate(-46px,3px) rotate(-10deg)}}
 @keyframes phoneFront{50%{transform:translate(41px,-14px) rotate(7deg)}}
 @keyframes softFloat{50%{transform:translateY(-10px) rotate(.6deg)}}
