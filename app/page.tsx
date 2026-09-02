@@ -25,13 +25,13 @@ export default function Home(){
   const filtered=active==='全部'?projects:projects.filter(p=>p.category===active);
   return <main>
     <aside className="profile-sidebar" aria-label="個人資料">
-      <div className="profile-avatar" role="img" aria-label="Yu-Hsuan 的頭像預留位置"><span>YH</span></div>
+      <div className="profile-avatar" role="img" aria-label="Kelly Lei 的頭像預留位置"><span>KL</span></div>
       <div className="availability"><i/> OPEN TO WORK</div>
-      <h2>Yu-Hsuan</h2>
+      <h2>Kelly Lei</h2>
       <p className="profile-role">Visual & Product Designer</p>
       <p className="profile-location">● Taipei, Taiwan</p>
-      <p className="profile-experience"><b>3+ Years</b><span>Experience Includes:</span></p>
-      <div className="experience-chips" aria-label="專業領域"><span>UI</span><span>WEB</span><span>KV</span></div>
+      <p className="profile-experience"><b>10+ Years</b><span>Experience Includes:</span></p>
+      <div className="experience-chips" aria-label="專業領域"><span>UI</span><span>WEB</span><span>GRAPHIC</span></div>
       <div className="profile-actions">
         <a className="message-button" href="mailto:hello@example.com"><span>✉</span> Message</a>
         <button className="save-button" aria-label="收藏作品集">♡</button>
@@ -44,13 +44,13 @@ export default function Home(){
     </aside>
     <div className="site-content">
     <header className="topbar">
-      <a href="#top" className="monogram">Y.</a>
+      <a href="#top" className="monogram">K.</a>
       <nav className={menu?'open':''}><a href="#work">WORK</a><a href="#play">PLAY</a><a href="#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav>
       <button onClick={()=>setMenu(!menu)} aria-label="切換選單">{menu?'CLOSE':'MENU'}</button>
     </header>
 
     <section className="intro" id="top">
-      <p className="hello">Hi, I’m Yu-Hsuan</p>
+      <p className="hello">Hi, I’m Kelly Lei</p>
       <h1><span>Visual</span><br/><i>Designer</i></h1>
       <div className="petal petal-a"/><div className="petal petal-b"/><div className="petal petal-c"/>
       <p className="intro-note">Designing thoughtful digital experiences<br/>and visual stories from Taipei.</p>
@@ -69,7 +69,7 @@ export default function Home(){
 
     <section className="play" id="play"><p>PLAYGROUND</p><div className="ticker">TYPE · COLOR · MOTION · IDEAS · TYPE · COLOR · MOTION · IDEAS ·</div></section>
     <section className="about" id="about"><p className="label">ABOUT</p><h2>我喜歡把複雜的事情，<br/><i>整理成簡單而有感的體驗。</i></h2><div className="about-copy"><p>從介面、活動網站到行銷視覺，我在意的不只是畫面好不好看，而是每個選擇是否真正回應了問題。保持好奇、反覆推敲，然後留下剛剛好的設計。</p><a href="mailto:hello@example.com">LET’S WORK TOGETHER ↗</a></div></section>
-    <footer><div><span>YU-HSUAN</span><span>VISUAL & PRODUCT DESIGNER</span></div><a href="mailto:hello@example.com">hello@example.com</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
+    <footer><div><span>KELLY LEI</span><span>VISUAL & PRODUCT DESIGNER</span></div><a href="mailto:hello@example.com">hello@example.com</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
     </div>
 
     {selected&&<div className="modal" role="dialog" aria-modal="true" onMouseDown={e=>e.target===e.currentTarget&&setSelected(null)}>

@@ -14,16 +14,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://yu-hsuan-design-portfolio.kellylei9.chatgpt.site'),
-  title: 'YU-HSUAN — Visual & Product Designer',
+  title: 'Kelly Lei — Visual & Product Designer',
   description: '專注於數位體驗與品牌視覺的設計作品集。',
   openGraph: {
-    title: 'YU-HSUAN — Visual & Product Designer',
+    title: 'Kelly Lei — Visual & Product Designer',
     description: '把想法，設計成有感的體驗。',
     images: ['https://yu-hsuan-design-portfolio.kellylei9.chatgpt.site/og.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'YU-HSUAN — Visual & Product Designer',
+    title: 'Kelly Lei — Visual & Product Designer',
     description: '把想法，設計成有感的體驗。',
     images: ['https://yu-hsuan-design-portfolio.kellylei9.chatgpt.site/og.png'],
   },
