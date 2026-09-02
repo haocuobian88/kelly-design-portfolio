@@ -24,6 +24,25 @@ export default function Home(){
   useEffect(()=>{document.body.style.overflow=selected?'hidden':'';return()=>{document.body.style.overflow=''}},[selected]);
   const filtered=active==='全部'?projects:projects.filter(p=>p.category===active);
   return <main>
+    <aside className="profile-sidebar" aria-label="個人資料">
+      <div className="profile-avatar" role="img" aria-label="Yu-Hsuan 的頭像預留位置"><span>YH</span></div>
+      <div className="availability"><i/> OPEN TO WORK</div>
+      <h2>Yu-Hsuan</h2>
+      <p className="profile-role">Visual & Product Designer</p>
+      <p className="profile-location">● Taipei, Taiwan</p>
+      <p className="profile-experience"><b>3+ Years</b><span>Experience Includes:</span></p>
+      <div className="experience-chips" aria-label="專業領域"><span>UI</span><span>WEB</span><span>KV</span></div>
+      <div className="profile-actions">
+        <a className="message-button" href="mailto:hello@example.com"><span>✉</span> Message</a>
+        <button className="save-button" aria-label="收藏作品集">♡</button>
+      </div>
+      <nav className="profile-nav">
+        <a href="#about"><span>◎</span> Profile</a>
+        <a className="active" href="#work"><span>▣</span> Portfolio</a>
+      </nav>
+      <p className="photo-hint">PHOTO PLACEHOLDER</p>
+    </aside>
+    <div className="site-content">
     <header className="topbar">
       <a href="#top" className="monogram">Y.</a>
       <nav className={menu?'open':''}><a href="#work">WORK</a><a href="#play">PLAY</a><a href="#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav>
@@ -51,6 +70,7 @@ export default function Home(){
     <section className="play" id="play"><p>PLAYGROUND</p><div className="ticker">TYPE · COLOR · MOTION · IDEAS · TYPE · COLOR · MOTION · IDEAS ·</div></section>
     <section className="about" id="about"><p className="label">ABOUT</p><h2>我喜歡把複雜的事情，<br/><i>整理成簡單而有感的體驗。</i></h2><div className="about-copy"><p>從介面、活動網站到行銷視覺，我在意的不只是畫面好不好看，而是每個選擇是否真正回應了問題。保持好奇、反覆推敲，然後留下剛剛好的設計。</p><a href="mailto:hello@example.com">LET’S WORK TOGETHER ↗</a></div></section>
     <footer><div><span>YU-HSUAN</span><span>VISUAL & PRODUCT DESIGNER</span></div><a href="mailto:hello@example.com">hello@example.com</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
+    </div>
 
     {selected&&<div className="modal" role="dialog" aria-modal="true" onMouseDown={e=>e.target===e.currentTarget&&setSelected(null)}>
       <div className="modal-card"><button onClick={()=>setSelected(null)} aria-label="關閉">CLOSE ×</button><div className="case-head"><p>{selected.category} · {selected.year}</p><h2>{selected.title}</h2><span>{selected.en}</span></div><div className="figma" style={{background:selected.color}}><div className="figma-bar"><span>● FIGMA PROTOTYPE</span><span>EMBED PREVIEW</span></div><Mockup project={selected}/><p>替換為你的 Figma 分享網址後，可在此直接操作完整原型</p></div></div>
