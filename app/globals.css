@@ -62,6 +62,15 @@ button{font:inherit;color:inherit}
 .filters{display:flex;gap:10px;border-top:1px solid var(--line);padding:16px 0 55px}
 .filters button{border:0;background:transparent;padding:0 18px 0 0;color:var(--muted);font-size:11px;cursor:pointer}
 .filters button.active{color:var(--ink);text-decoration:underline;text-underline-offset:5px}
+.embed-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:78px 18px}
+.embed-project{min-width:0}
+.embed-square{aspect-ratio:1;position:relative;overflow:hidden;background:#e7e2d8;border:1px solid var(--line)}
+.embed-square iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+.embed-toolbar{position:absolute;inset:0 0 auto;height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;background:#25231f;color:#f3f0e9;font:8px Georgia,serif;letter-spacing:.12em;z-index:2;pointer-events:none}
+.embed-caption{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding-top:15px;border-top:1px solid var(--line)}
+.embed-caption p{margin:0 0 8px;font-size:9px;letter-spacing:.1em;color:var(--muted)}
+.embed-caption h3{font:400 clamp(20px,2vw,30px)/1.16 Georgia,"Noto Serif TC",serif;margin:0;max-width:560px}
+.embed-caption a{font-size:8px;letter-spacing:.11em;border-bottom:1px solid;padding-bottom:5px;white-space:nowrap}
 .masonry{display:grid;grid-template-columns:1fr 1fr;gap:90px 16px;align-items:start}
 .project{cursor:pointer;outline:none}
 .project:nth-child(even){margin-top:150px}
@@ -146,6 +155,8 @@ footer>div:last-child{text-align:right}
 .filters{overflow:auto}
 .filters button{white-space:nowrap}
 .masonry{display:block}
+.embed-grid{grid-template-columns:1fr;gap:58px}
+.embed-caption{gap:15px}.embed-caption h3{font-size:23px}
 .project,.project:nth-child(even){margin:0 0 70px}
 .visual,.project:not(.tall) .visual{height:110vw}
 .caption h3{font-size:25px}

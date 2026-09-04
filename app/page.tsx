@@ -1,32 +1,23 @@
 'use client';
-import { useEffect, useState, type PointerEvent as ReactPointerEvent } from 'react';
+import { useState, type PointerEvent as ReactPointerEvent } from 'react';
 
-type Category = '全部' | 'UI 設計' | '一頁式活動頁' | '行銷製作物';
-const categories: Category[] = ['全部', 'UI 設計', '一頁式活動頁', '行銷製作物'];
+type Category = '全部' | '網站設計' | '平台系統' | 'APP UI';
+const categories: Category[] = ['全部', '網站設計', '平台系統', 'APP UI'];
 const projects = [
-  { id: 1, category:'UI 設計' as Category, title:'MORI 日常理財 App', en:'A calmer way to understand everyday money.', year:'2026', color:'#cbd7c2', type:'mobile', tall:true },
-  { id: 2, category:'一頁式活動頁' as Category, title:'Future Now 創意年會', en:'A digital stage for ideas in motion.', year:'2025', color:'#b9c6e8', type:'web', tall:false },
-  { id: 3, category:'行銷製作物' as Category, title:'植物系生活提案', en:'A gentle campaign made to grow.', year:'2025', color:'#d9b8a9', type:'social', tall:false },
-  { id: 4, category:'UI 設計' as Category, title:'Nook 空間預約平台', en:'Finding the right space, made effortless.', year:'2024', color:'#d8cfb4', type:'dashboard', tall:true },
+  {id:1,category:'網站設計' as Category,title:'品牌官網｜整體視覺設計、元件規劃',source:'https://www.figma.com/design/l1W4U9Ef6lxadEqfwlLfPW/LuckMesh--Copy-?node-id=305-3431&t=vV3JKGISWzZreDXA-1',external:'https://mei-ya.com.tw/',kind:'figma'},
+  {id:2,category:'網站設計' as Category,title:'品牌官網｜整體視覺設計、元件規劃',source:'https://www.figma.com/design/McFhXePpGqJ4OX27vk4wCf/%E6%98%9F%E5%9F%8EEN?node-id=0-1&p=f&t=Uvd6ud0BfwyAjsrY-0',kind:'figma'},
+  {id:3,category:'平台系統' as Category,title:'論壇平台｜整體畫面及用戶功能重構、元件規劃',source:'https://www.figma.com/design/NJ9sytsTnmPb5vvCAXkRGn/%E4%BA%82%E9%AC%A5%E5%89%8D%E5%8F%B0-%E6%A1%8C%E6%A9%9F%E7%89%88?node-id=376-139615&t=vV3JKGISWzZreDXA-1',external:'https://mei-ya.com.tw/',kind:'figma'},
+  {id:4,category:'平台系統' as Category,title:'後台｜管理員功能重構、廣告系統、元件規劃',source:'https://www.figma.com/design/IZstlpMcHwZrNR23u7W1qO/%E4%BA%82%E9%AC%A5%E5%BE%8C%E5%8F%B0?t=WKE1NNHbFawxEF6s-0',external:'https://mei-ya.com.tw/',kind:'figma'},
+  {id:5,category:'平台系統' as Category,title:'成人網站｜整體畫面及用戶功能重構、元件規劃',source:'https://www.figma.com/design/9Mpx9dHmKYeCprfpULwxrM/BANA-Web-UI?t=HWUBJb5IZLureJua-0',external:'https://mei-ya.com.tw/',kind:'figma'},
+  {id:6,category:'APP UI' as Category,title:'APP UI 前台',source:'https://kellylei9.wixsite.com/portfolio/app-landing-page',kind:'website'},
+  {id:7,category:'APP UI' as Category,title:'APP UI 後台',source:'https://kellylei9.wixsite.com/portfolio/app-landing-page-1',kind:'website'},
+  {id:8,category:'網站設計' as Category,title:'網站重構',source:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-4857&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A4857',kind:'figma'},
 ];
-
-function Mockup({project}:{project:(typeof projects)[number]}) {
-  if(project.type==='mobile') return <div className="mock mobile"><div className="phone back"/><div className="phone front"><small>9:41</small><b>Today</b><strong>$38,560</strong><i/><i/><i/></div></div>;
-  if(project.type==='web') return <div className="mock"><div className="browser"><small>FUTURE / NOW</small><b>Ideas<br/>in motion.</b><span>OCT 18—20</span></div></div>;
-  if(project.type==='social') return <div className="mock social"><div>GROW<br/><em>WITH</em><br/>CARE</div><div>PLANT<br/>YOUR<br/><em>DAY</em></div><div>綠意<br/>日常</div></div>;
-  return <div className="mock"><div className="screen"><small>NOOK</small><b>Find your<br/>perfect space.</b><span/><div><i/><i/><i/></div></div></div>;
-}
+const embedUrl=(project:(typeof projects)[number])=>project.kind==='figma'?`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.source)}`:project.source;
 
 export default function Home(){
   const [active,setActive]=useState<Category>('全部');
-  const [selected,setSelected]=useState<(typeof projects)[number]|null>(null);
   const [menu,setMenu]=useState(false);
-  useEffect(()=>{
-    document.body.style.overflow=selected?'hidden':'';
-    const close=(event:KeyboardEvent)=>event.key==='Escape'&&setSelected(null);
-    window.addEventListener('keydown',close);
-    return()=>{document.body.style.overflow='';window.removeEventListener('keydown',close)};
-  },[selected]);
   const repelAssets=(event:ReactPointerEvent<HTMLDivElement>)=>{
     event.currentTarget.querySelectorAll<HTMLElement>('.floating-icon').forEach(asset=>{
       const box=asset.getBoundingClientRect();
@@ -81,10 +72,13 @@ export default function Home(){
     <section className="portfolio" id="work">
       <div className="work-heading"><p>SELECTED WORK · 2024—2026</p><h2>Projects, experiments<br/>and things I care about.</h2></div>
       <div className="filters" role="group" aria-label="作品分類">{categories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
-      <div className="masonry">
-        {filtered.map((project,index)=><article key={project.id} className={`project ${project.tall?'tall':''}`} tabIndex={0} onClick={()=>setSelected(project)} onKeyDown={e=>e.key==='Enter'&&setSelected(project)}>
-          <div className="visual" style={{background:project.color}}><span className="project-no">0{index+1}</span><Mockup project={project}/><span className="open-label">VIEW CASE ↗</span></div>
-          <div className="caption"><div><h3>{project.en}</h3><p>{project.title}</p></div><div><span>{project.category}</span><span>{project.year}</span></div></div>
+      <div className="embed-grid">
+        {filtered.map(project=><article key={project.id} className="embed-project">
+          <div className="embed-square">
+            <div className="embed-toolbar"><span>0{project.id}</span><span>{project.kind==='figma'?'FIGMA EMBED':'FULL PAGE'}</span></div>
+            <iframe src={embedUrl(project)} title={project.title} loading="lazy" allowFullScreen allow="fullscreen"/>
+          </div>
+          <div className="embed-caption"><div><p>{project.category}</p><h3>{project.title}</h3></div><a href={project.external||project.source} target="_blank" rel="noreferrer">OPEN ORIGINAL ↗</a></div>
         </article>)}
       </div>
     </section>
@@ -94,8 +88,5 @@ export default function Home(){
     <footer><div><span>KELLY LEI</span><span>VISUAL & PRODUCT DESIGNER</span></div><a href="mailto:hello@example.com">hello@example.com</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
     </div>
 
-    {selected&&<div className="modal" role="dialog" aria-modal="true" onMouseDown={e=>e.target===e.currentTarget&&setSelected(null)}>
-      <div className="modal-card"><button onClick={()=>setSelected(null)} aria-label="關閉">CLOSE ×</button><div className="case-head"><p>{selected.category} · {selected.year}</p><h2>{selected.title}</h2><span>{selected.en}</span></div><div className="figma" style={{background:selected.color}}><div className="figma-bar"><span>● FIGMA PROTOTYPE</span><span>EMBED PREVIEW</span></div><Mockup project={selected}/><p>替換為你的 Figma 分享網址後，可在此直接操作完整原型</p></div></div>
-    </div>}
   </main>
 }
