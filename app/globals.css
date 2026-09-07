@@ -107,6 +107,9 @@ button{font:inherit;color:inherit}
 .booking-flow{padding:120px 7vw;background:#24231f;color:#f4f1eb;display:grid;grid-template-columns:1fr 1.3fr;gap:7vw}
 .flow-heading>p{font-size:10px;letter-spacing:.15em}.flow-heading h2{font:400 clamp(48px,6vw,92px)/.95 Georgia,"Noto Serif TC",serif;margin:45px 0 0}.flow-heading h2 i{font-weight:400;margin-left:8vw}
 .booking-flow ol{list-style:none;margin:0;padding:0;border-top:1px solid #ffffff38}.booking-flow li{display:flex;justify-content:space-between;align-items:center;padding:31px 0;border-bottom:1px solid #ffffff38}.booking-flow li span{font-size:11px;letter-spacing:.13em;color:#aaa69e}.booking-flow li b{font:400 clamp(26px,3vw,42px) "Noto Serif TC",serif}
+.backend-case .phone-carousel{background:#d8dfe2}
+.backend-flow-copy{border-top:1px solid #ffffff38;padding-top:28px;display:flex;flex-direction:column;align-items:flex-start}
+.backend-flow-copy p{font-size:16px;margin:0 0 22px;color:#b9b5ad}.backend-flow-copy strong{font:400 clamp(36px,4.5vw,68px)/1.08 "Noto Serif TC",Georgia,serif}.backend-flow-copy span{margin-top:auto;padding-top:60px;font-size:10px;letter-spacing:.14em;color:#918d85}
 .app-gallery{padding:110px 8vw 150px;display:grid;grid-template-columns:1fr 1fr;gap:70px 22px;background:#ece8e0}
 .app-gallery figure{margin:0;grid-column:1/-1;opacity:0;animation:galleryReveal .8s ease both;animation-timeline:view();animation-range:entry 5% cover 28%}
 .app-gallery figure.half{grid-column:auto}.app-gallery img{display:block;width:100%;height:auto;box-shadow:0 22px 60px #2b271f12}.app-gallery figcaption{font:10px Georgia,serif;letter-spacing:.12em;margin-top:12px;color:#777168}.app-gallery figure.wide img{box-shadow:none}
@@ -216,6 +219,7 @@ footer>div:last-child{grid-column:2;grid-row:1}
 .case-nav{height:60px;padding:0 20px}.case-nav nav{gap:15px}.case-nav nav a:nth-child(2){display:none}
 .app-case-hero{display:block;padding:38px 20px 70px}.case-kicker{margin-top:55px}.app-case-copy h1{font-size:25vw}.app-case-copy h1 i{margin-left:12vw}.app-case-copy h2{margin-top:48px}.case-description{font-size:15px}.phone-carousel{height:520px;margin:70px 10px 0}.phone-carousel>img{height:84%}
 .booking-flow{display:block;padding:85px 20px}.booking-flow ol{margin-top:65px}.flow-heading h2 i{margin-left:10vw}
+.backend-flow-copy{margin-top:60px}.backend-flow-copy span{padding-top:45px}
 .app-gallery{display:block;padding:75px 16px 100px}.app-gallery figure{margin-bottom:42px}
 }
 .site-content{margin-left:286px;border-left:1px solid var(--line)}
