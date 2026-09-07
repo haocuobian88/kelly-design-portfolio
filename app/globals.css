@@ -62,6 +62,12 @@ button{font:inherit;color:inherit}
 .filters{display:flex;gap:10px;border-top:1px solid var(--line);padding:16px 0 55px}
 .filters button{border:0;background:transparent;padding:0 18px 0 0;color:var(--muted);font-size:11px;cursor:pointer}
 .filters button.active{color:var(--ink);text-decoration:underline;text-underline-offset:5px}
+.projects-page{min-height:100vh;padding:48px 3.2vw 140px}
+.projects-back{display:inline-block;font-size:9px;letter-spacing:.13em;border-bottom:1px solid var(--ink);padding-bottom:5px}
+.projects-page-head{display:grid;grid-template-columns:1fr 2fr;margin:86px 0 72px;padding-top:32px;border-top:1px solid var(--line)}
+.projects-page-head p{font:10px Georgia,serif;letter-spacing:.14em;margin:0}
+.projects-page-head h1{font:400 clamp(42px,5vw,72px)/.98 Georgia,serif;letter-spacing:-.045em;margin:0}
+.projects-page-head h1 i{font-weight:400}
 .real-work-heading{display:grid;grid-template-columns:1fr 2fr;margin:150px 0 65px;padding-top:32px;border-top:1px solid var(--line)}
 .real-work-heading p{font:10px Georgia,serif;letter-spacing:.14em;margin:0}
 .real-work-heading h2{font:400 clamp(42px,5vw,72px)/.98 Georgia,serif;letter-spacing:-.045em;margin:0}
@@ -73,7 +79,7 @@ button{font:inherit;color:inherit}
 .embed-toolbar{position:absolute;inset:0 0 auto;height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;background:#25231f;color:#f3f0e9;font:8px Georgia,serif;letter-spacing:.12em;z-index:2;pointer-events:none}
 .embed-caption{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding-top:15px;border-top:1px solid var(--line)}
 .embed-caption p{margin:0 0 8px;font-size:9px;letter-spacing:.1em;color:var(--muted)}
-.embed-caption h3{font:400 clamp(20px,2vw,30px)/1.16 Georgia,"Noto Serif TC",serif;margin:0;max-width:560px}
+.embed-caption h3,.embed-caption h2{font:400 clamp(20px,2vw,30px)/1.16 Georgia,"Noto Serif TC",serif;margin:0;max-width:560px}
 .project-links{display:flex;align-items:flex-end;gap:14px;padding-top:2px}
 .embed-caption a{font-size:8px;letter-spacing:.11em;border-bottom:1px solid;padding-bottom:5px;white-space:nowrap}
 .masonry{display:grid;grid-template-columns:1fr 1fr;gap:90px 16px;align-items:start}
@@ -160,6 +166,7 @@ footer>div:last-child{text-align:right}
 .filters{overflow:auto}
 .filters button{white-space:nowrap}
 .masonry{display:block}
+.projects-page{padding:34px 3.2vw 100px}.projects-page-head{display:block;margin:60px 0 45px}.projects-page-head p{margin-bottom:24px}
 .real-work-heading{display:block;margin:100px 0 45px}.real-work-heading p{margin-bottom:24px}
 .embed-grid{grid-template-columns:1fr;gap:58px}
 .embed-caption{gap:15px}.embed-caption h3{font-size:23px}.project-links{flex-direction:column;gap:10px}
