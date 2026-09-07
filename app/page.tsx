@@ -12,6 +12,7 @@ const projects = [
   {id:6,category:'APP UI' as Category,title:'APP UI 前台',source:'https://kellylei9.wixsite.com/portfolio/app-landing-page',kind:'website'},
   {id:7,category:'APP UI' as Category,title:'APP UI 後台',source:'https://kellylei9.wixsite.com/portfolio/app-landing-page-1',kind:'website'},
   {id:8,category:'網站設計' as Category,title:'網站重構',source:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-4857&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A4857',kind:'figma'},
+  {id:9,category:'網站設計' as Category,title:'小尾巴寵物美容｜預約與領養資訊平台',source:'https://www.figma.com/design/JdyYXjTJFHv4GA74byJ4hj?node-id=190-2',external:'https://little-tail-booking.kellylei9.chatgpt.site/',kind:'figma'},
 ];
 const embedUrl=(project:(typeof projects)[number])=>project.kind==='figma'?`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.source)}`:project.source;
 
@@ -78,7 +79,7 @@ export default function Home(){
             <div className="embed-toolbar"><span>0{project.id}</span><span>{project.kind==='figma'?'FIGMA EMBED':'FULL PAGE'}</span></div>
             <iframe src={embedUrl(project)} title={project.title} loading="lazy" allowFullScreen allow="fullscreen"/>
           </div>
-          <div className="embed-caption"><div><p>{project.category}</p><h3>{project.title}</h3></div><a href={project.external||project.source} target="_blank" rel="noreferrer">OPEN ORIGINAL ↗</a></div>
+          <div className="embed-caption"><div><p>{project.category}</p><h3>{project.title}</h3></div><div className="project-links">{project.external&&<a href={project.external} target="_blank" rel="noreferrer">LIVE SITE ↗</a>}<a href={project.source} target="_blank" rel="noreferrer">{project.kind==='figma'?'FIGMA ↗':'OPEN ORIGINAL ↗'}</a></div></div>
         </article>)}
       </div>
     </section>

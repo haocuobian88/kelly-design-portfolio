@@ -70,6 +70,7 @@ button{font:inherit;color:inherit}
 .embed-caption{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding-top:15px;border-top:1px solid var(--line)}
 .embed-caption p{margin:0 0 8px;font-size:9px;letter-spacing:.1em;color:var(--muted)}
 .embed-caption h3{font:400 clamp(20px,2vw,30px)/1.16 Georgia,"Noto Serif TC",serif;margin:0;max-width:560px}
+.project-links{display:flex;align-items:flex-end;gap:14px;padding-top:2px}
 .embed-caption a{font-size:8px;letter-spacing:.11em;border-bottom:1px solid;padding-bottom:5px;white-space:nowrap}
 .masonry{display:grid;grid-template-columns:1fr 1fr;gap:90px 16px;align-items:start}
 .project{cursor:pointer;outline:none}
@@ -156,7 +157,7 @@ footer>div:last-child{text-align:right}
 .filters button{white-space:nowrap}
 .masonry{display:block}
 .embed-grid{grid-template-columns:1fr;gap:58px}
-.embed-caption{gap:15px}.embed-caption h3{font-size:23px}
+.embed-caption{gap:15px}.embed-caption h3{font-size:23px}.project-links{flex-direction:column;gap:10px}
 .project,.project:nth-child(even){margin:0 0 70px}
 .visual,.project:not(.tall) .visual{height:110vw}
 .caption h3{font-size:25px}
