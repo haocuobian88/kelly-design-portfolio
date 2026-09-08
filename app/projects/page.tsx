@@ -4,7 +4,7 @@ const projects = [
   {id:1,category:'網站設計' as ProjectCategory,title:'品牌官網｜整體視覺設計、元件規劃',source:'/projects/luckmesh',kind:'internal',cover:'/luckmesh/cover.png'},
   {id:2,category:'網站設計' as ProjectCategory,title:'品牌官網｜整體視覺設計、元件規劃',source:'/projects/xincheng-en',kind:'internal',cover:'/xincheng-en/cover.png'},
   {id:3,category:'平台系統' as ProjectCategory,title:'論壇平台｜整體畫面及用戶功能重構、元件規劃',source:'/projects/luandou-frontend',kind:'internal',cover:'/luandou-frontend/cover.png'},
-  {id:4,category:'平台系統' as ProjectCategory,title:'後台｜管理員功能重構、廣告系統、元件規劃',source:'https://www.figma.com/design/IZstlpMcHwZrNR23u7W1qO/%E4%BA%82%E9%AC%A5%E5%BE%8C%E5%8F%B0?t=WKE1NNHbFawxEF6s-0',external:'https://mei-ya.com.tw/',kind:'figma'},
+  {id:4,category:'平台系統' as ProjectCategory,title:'後台｜管理員功能重構、廣告系統、元件規劃',source:'/projects/luandou-backend',kind:'internal',cover:'/luandou-backend/cover.png'},
   {id:5,category:'平台系統' as ProjectCategory,title:'成人網站｜整體畫面及用戶功能重構、元件規劃',source:'https://www.figma.com/design/9Mpx9dHmKYeCprfpULwxrM/BANA-Web-UI?t=HWUBJb5IZLureJua-0',external:'https://mei-ya.com.tw/',kind:'figma'},
   {id:6,category:'APP UI' as ProjectCategory,title:'APP Design',source:'/projects/app-design',kind:'internal',cover:'/app-design/cover.avif'},
   {id:7,category:'APP UI' as ProjectCategory,title:'APP Design',source:'/projects/app-design-backend',kind:'internal',cover:'/app-design-backend/cover.avif'},
