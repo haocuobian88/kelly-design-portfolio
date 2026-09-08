@@ -12,7 +12,7 @@ const workProjects = [
   {id:6,category:'APP UI' as WorkCategory,title:'APP Design｜用戶端',source:'/projects/app-design',kind:'internal',cover:'/app-design/cover.avif'},
   {id:7,category:'APP UI' as WorkCategory,title:'APP Design｜商家端',source:'/projects/app-design-backend',kind:'internal',cover:'/app-design-backend/cover.avif'},
   {id:8,category:'網站設計' as WorkCategory,title:'網站重構',source:'/projects/website-redesign',preview:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-12&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A12&show-proto-sidebar=1',kind:'dual',cover:'/website-redesign/cover.avif'},
-  {id:9,category:'網站設計' as WorkCategory,title:'小尾巴寵物美容｜預約與領養資訊平台',source:'https://www.figma.com/design/JdyYXjTJFHv4GA74byJ4hj?node-id=190-2',kind:'figma'},
+  {id:9,category:'網站設計' as WorkCategory,title:'小尾巴寵物美容｜預約與領養資訊平台',source:'https://little-tail-booking.kellylei9.chatgpt.site/',preview:'https://www.figma.com/design/JdyYXjTJFHv4GA74byJ4hj?node-id=190-2',kind:'figma'},
 ];
 const workEmbed=(project:(typeof workProjects)[number])=>`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.preview||project.source)}`;
 export default function Home(){
