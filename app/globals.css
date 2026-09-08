@@ -84,7 +84,7 @@ button{font:inherit;color:inherit}
 .embed-toolbar{position:absolute;inset:0 0 auto;height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;background:#25231f;color:#f3f0e9;font:8px Georgia,serif;letter-spacing:.12em;z-index:2;pointer-events:none}
 .embed-caption{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding-top:15px;border-top:1px solid var(--line)}
 .embed-caption p{margin:0 0 8px;font-size:9px;letter-spacing:.1em;color:var(--muted)}
-.embed-caption h3,.embed-caption h2{font:400 clamp(19px,1.7vw,27px)/1.24 Georgia,"Noto Serif TC",serif;margin:0;max-width:560px}
+.embed-caption h3,.embed-caption h2{font:400 clamp(19px,1.7vw,27px)/1.24 Georgia,"Noto Serif TC",serif;margin:0;max-width:560px;text-align:left}
 .project-links{display:flex;align-items:flex-end;gap:14px;padding-top:2px}
 .embed-caption a{font-size:8px;letter-spacing:.11em;border-bottom:1px solid;padding-bottom:5px;white-space:nowrap}
 
@@ -142,7 +142,7 @@ button{font:inherit;color:inherit}
 .live-project-preview span,.live-project-preview small{font-size:10px;letter-spacing:.14em}.live-project-preview strong{font:400 clamp(60px,8vw,118px)/.85 Georgia,serif;margin:auto 0;text-align:center}.live-project-preview small{align-self:flex-end}
 .visual:after{content:'';position:absolute;inset:-50% -80%;background:linear-gradient(110deg,transparent 42%,#fff4 50%,transparent 58%);transform:translateX(-45%);transition:transform .9s ease;pointer-events:none}
 .project:hover .visual:after{transform:translateX(45%)}
-.caption{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;padding-top:13px;min-width:0}
+.caption{display:block;padding-top:13px;min-width:0;text-align:left}
 .caption>div:first-child{min-width:0}.caption h3{font:400 clamp(20px,1.8vw,29px)/1.2 Georgia,serif;max-width:100%;margin:0;overflow-wrap:anywhere}
 .caption p{font-size:11px;margin:10px 0 0;color:var(--muted)}
 .caption>div:last-child{display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:64px;font-size:9px;letter-spacing:.08em;color:var(--muted)}
