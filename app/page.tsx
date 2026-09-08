@@ -13,6 +13,7 @@ const workProjects = [
   {id:7,category:'APP UI' as WorkCategory,title:'APP Design｜商家端',source:'/projects/app-design-backend',kind:'internal',cover:'/app-design-backend/cover.avif'},
   {id:8,category:'網站設計' as WorkCategory,title:'網站重構',source:'/projects/website-redesign',preview:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-12&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A12&show-proto-sidebar=1',kind:'dual',cover:'/website-redesign/cover.avif'},
   {id:9,category:'網站設計' as WorkCategory,title:'小尾巴寵物美容｜預約與領養資訊平台',source:'https://little-tail-booking.kellylei9.chatgpt.site/',preview:'https://www.figma.com/design/JdyYXjTJFHv4GA74byJ4hj?node-id=190-2',kind:'figma'},
+  {id:10,category:'APP UI' as WorkCategory,title:'App Design｜運動在家 Easy Home Sport',source:'/projects/easy-home-sport',kind:'internal',cover:'/easy-home-sport/cover.png'},
 ];
 const workEmbed=(project:(typeof workProjects)[number])=>`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.preview||project.source)}`;
 export default function Home(){
@@ -68,7 +69,7 @@ export default function Home(){
     </section>
 
     <section className="portfolio" id="work">
-      <div className="work-heading"><p>FIGMA &amp; LIVE PROJECTS · 01—09</p></div>
+      <div className="work-heading"><p>FIGMA &amp; LIVE PROJECTS · 01—10</p></div>
       <div className="filters" role="group" aria-label="作品分類">{workCategories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
       <div className="masonry">
         {filteredProjects.map(project=><article key={project.id} className="project work-project-card">

@@ -1,0 +1,17 @@
+const figmaUrl='https://www.figma.com/design/JnjeGruGMCYKj3UcAbwZ9w/Easy-Home-Sport-%E2%80%94-%E5%B1%85%E5%AE%B6%E9%81%8B%E5%8B%95-APP?node-id=0-1&t=QR4essQP207TPWuk-1';
+const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(figmaUrl)}`;
+
+export default function EasyHomeSportPage(){
+  return <main className="luckmesh-page">
+    <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
+    <section className="luckmesh-intro">
+      <a className="projects-back" href="/projects">← BACK TO PROJECTS</a>
+      <div><p>APP DESIGN · UI SYSTEM</p><h1>Easy Home Sport</h1><p>App Design｜運動在家 Easy Home Sport</p></div>
+    </section>
+    <section className="luckmesh-preview">
+      <div className="device-label"><span>10</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
+      <iframe src={figmaEmbed} title="Easy Home Sport Figma design" allowFullScreen allow="fullscreen"/>
+    </section>
+    <footer><div><span>KELLY LEI</span><span>VISUAL &amp; PRODUCT DESIGNER</span></div><a href="/projects">ALL PROJECTS</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
+  </main>
+}
