@@ -142,8 +142,8 @@ button{font:inherit;color:inherit}
 .live-project-preview span,.live-project-preview small{font-size:10px;letter-spacing:.14em}.live-project-preview strong{font:400 clamp(60px,8vw,118px)/.85 Georgia,serif;margin:auto 0;text-align:center}.live-project-preview small{align-self:flex-end}
 .visual:after{content:'';position:absolute;inset:-50% -80%;background:linear-gradient(110deg,transparent 42%,#fff4 50%,transparent 58%);transform:translateX(-45%);transition:transform .9s ease;pointer-events:none}
 .project:hover .visual:after{transform:translateX(45%)}
-.caption{display:block;padding-top:13px;min-width:0;text-align:left}
-.caption>div{display:block;width:100%;min-width:0}.caption h3{display:block;width:100%;font:400 clamp(20px,1.8vw,29px)/1.2 Georgia,serif;max-width:100%;margin:0;text-align:left;overflow-wrap:anywhere}
+.caption{display:block;width:100%;max-width:100%;padding:13px 20px 0 0;min-width:0;overflow:hidden;text-align:left}
+.caption>div{display:block;width:100%;max-width:100%;min-width:0}.caption h3{display:block;width:100%;max-width:100%;font:400 clamp(19px,1.55vw,25px)/1.25 Georgia,"Noto Serif TC",serif;margin:0;text-align:left;white-space:normal;word-break:break-all;overflow-wrap:anywhere}
 .caption p{font-size:11px;margin:10px 0 0;color:var(--muted)}
 
 .mock{height:100%;display:flex;align-items:center;justify-content:center;position:relative}
@@ -221,7 +221,7 @@ footer>div:last-child{text-align:right}
 .project,.project:nth-child(even){margin:0 0 70px}
 .visual,.project:not(.tall) .visual{height:110vw}
 .work-project-visual{height:auto}
-.caption h3{font-size:22px}
+.caption h3{font-size:20px}
 .about h2 i{margin-left:0}
 .about-copy{display:block;margin-left:0}
 .about-copy a{display:block;margin-top:35px}
