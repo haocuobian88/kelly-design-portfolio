@@ -122,7 +122,7 @@ button{font:inherit;color:inherit}
 .app-gallery figure{margin:0;grid-column:1/-1;opacity:0;animation:galleryReveal .8s ease both;animation-timeline:view();animation-range:entry 5% cover 28%}
 .app-gallery figure.half{grid-column:auto}.app-gallery img{display:block;width:100%;height:auto;box-shadow:0 22px 60px #2b271f12}.app-gallery figcaption{font:10px Georgia,serif;letter-spacing:.12em;margin-top:12px;color:#777168}.app-gallery figure.wide img{box-shadow:none}
 @keyframes galleryReveal{from{opacity:0;transform:translateY(45px)}to{opacity:1;transform:none}}
-.masonry{display:grid;grid-template-columns:1fr 1fr;gap:90px 16px;align-items:start}
+.masonry{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:90px 16px;align-items:start}
 .project{cursor:pointer;outline:none}
 .project:nth-child(even){margin-top:150px}
 .visual{height:clamp(390px,48vw,690px);position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
@@ -131,7 +131,7 @@ button{font:inherit;color:inherit}
 .open-label{position:absolute;right:14px;bottom:14px;font-size:9px;background:var(--paper);padding:9px 11px;opacity:0;transform:translateY(5px);transition:.25s}
 .project:hover .open-label,.project:focus .open-label{opacity:1;transform:none}
 .project:hover .visual,.project:focus .visual{transform:translateY(-6px);box-shadow:0 18px 42px #2a251c1a}
-.work-project-card>a{display:block}
+.work-project-card{min-width:0}.work-project-card>a{display:block;min-width:0}
 .work-project-card:nth-child(even){margin-top:0}
 .work-project-visual{height:auto;aspect-ratio:1;background:#dedbd3;border:1px solid var(--line)}
 .work-project-media{position:absolute;inset:34px 0 0;overflow:hidden}
@@ -142,10 +142,10 @@ button{font:inherit;color:inherit}
 .live-project-preview span,.live-project-preview small{font-size:10px;letter-spacing:.14em}.live-project-preview strong{font:400 clamp(60px,8vw,118px)/.85 Georgia,serif;margin:auto 0;text-align:center}.live-project-preview small{align-self:flex-end}
 .visual:after{content:'';position:absolute;inset:-50% -80%;background:linear-gradient(110deg,transparent 42%,#fff4 50%,transparent 58%);transform:translateX(-45%);transition:transform .9s ease;pointer-events:none}
 .project:hover .visual:after{transform:translateX(45%)}
-.caption{display:grid;grid-template-columns:1fr auto;gap:20px;padding-top:13px}
-.caption h3{font:400 clamp(20px,1.8vw,29px)/1.2 Georgia,serif;max-width:560px;margin:0}
+.caption{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;padding-top:13px;min-width:0}
+.caption>div:first-child{min-width:0}.caption h3{font:400 clamp(20px,1.8vw,29px)/1.2 Georgia,serif;max-width:100%;margin:0;overflow-wrap:anywhere}
 .caption p{font-size:11px;margin:10px 0 0;color:var(--muted)}
-.caption>div:last-child{display:flex;flex-direction:column;align-items:flex-end;gap:6px;font-size:9px;letter-spacing:.08em;color:var(--muted)}
+.caption>div:last-child{display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:64px;font-size:9px;letter-spacing:.08em;color:var(--muted)}
 
 .mock{height:100%;display:flex;align-items:center;justify-content:center;position:relative}
 .phone{position:absolute;width:30%;height:70%;border:6px solid #25231f;border-radius:28px;background:#eeece5;box-shadow:0 18px 28px #0002}
