@@ -177,7 +177,7 @@ button{font:inherit;color:inherit}
 .about{padding:95px 3.2vw 120px;border-top:1px solid var(--line)}
 .about-copy{max-width:760px;margin:42px 0 0}
 .about-copy p{font-size:15px;line-height:1.9;margin:0}
-footer{background:#25231f;color:#eeeae2;padding:45px 3.2vw 30px;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;font-size:9px;letter-spacing:.1em}
+footer{background:#25231f;color:#eeeae2;padding:45px 3.2vw 30px;display:grid;grid-template-columns:1fr 1fr;align-items:end;font-size:9px;letter-spacing:.1em}
 footer>div{display:flex;flex-direction:column;gap:7px}
 footer>a{font:34px Georgia,serif;letter-spacing:-.03em}
 footer>div:last-child{text-align:right}

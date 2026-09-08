@@ -86,7 +86,7 @@ export default function Home(){
     </section>
 
     <section className="about" id="about"><p className="label">ABOUT</p><div className="about-copy"><p>我喜歡把複雜的事情，整理成簡單而有感的體驗。從介面、活動網站到行銷視覺，我在意的不只是畫面好不好看，而是每個選擇是否真正回應了問題。保持好奇、反覆推敲，然後留下剛剛好的設計。</p></div></section>
-    <footer><div><span>KELLY LEI</span><span>VISUAL & PRODUCT DESIGNER</span></div><a href="mailto:hello@example.com">hello@example.com</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
+    <footer><div><span>KELLY LEI</span><span>VISUAL & PRODUCT DESIGNER</span></div><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
     </div>
 
   </main>
