@@ -4,7 +4,7 @@ const embed=(url:string)=>`https://www.figma.com/embed?embed_host=share&url=${en
 
 export default function WebsiteRedesignPage(){
   return <main className="redesign-page">
-    <header className="case-nav"><a href="/" className="monogram">K.</a><nav><a href="/projects">ALL PROJECTS</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
+    <header className="case-nav"><a href="/" className="monogram">K.</a><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
     <section className="redesign-intro">
       <a className="projects-back" href="/projects">← BACK TO PROJECTS</a>
       <div><p>RESPONSIVE WEBSITE · UI / UX</p><h1>網站重構</h1><p className="redesign-summary">同一套網站體驗，分別針對桌機與手機的閱讀情境重新規劃。兩個互動原型並排呈現，方便直接比較資訊層級、導覽與響應式行為。</p></div>
