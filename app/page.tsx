@@ -75,7 +75,10 @@ export default function Home(){
       <div className="masonry">
         {filteredProjects.map(project=><article key={project.id} className="project work-project-card">
           <a href={project.source} target={project.kind==='internal'?undefined:'_blank'} rel={project.kind==='internal'?undefined:'noreferrer'}>
-            <div className="visual work-project-visual"><span className="project-no">{String(project.id).padStart(2,'0')}</span>{project.kind==='internal'?<img src={project.cover} alt={`${project.title} 作品封面`}/>:project.kind==='figma'?<iframe src={workEmbed(project)} title={project.title} loading="lazy" aria-hidden="true"/>:<div className="live-project-preview"><span>KELLY LEI · WEB DESIGN</span><strong>Little Tail</strong><small>LIVE WEBSITE</small></div>}<span className="open-label">VIEW PROJECT ↗</span></div>
+            <div className="visual work-project-visual">
+              <div className="embed-toolbar"><span>{String(project.id).padStart(2,'0')}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'?'CASE STUDY':'LIVE WEBSITE'}</span></div>
+              <div className="work-project-media">{project.kind==='internal'?<img src={project.cover} alt={`${project.title} 作品封面`}/>:project.kind==='figma'?<iframe src={workEmbed(project)} title={project.title} loading="lazy" aria-hidden="true"/>:<div className="live-project-preview"><span>KELLY LEI · WEB DESIGN</span><strong>Little Tail</strong><small>LIVE WEBSITE</small></div>}</div>
+            </div>
             <div className="caption"><div><h3>{project.title}</h3></div><div><span>{project.category}</span><span>0{project.id} / 09</span></div></div>
           </a>
         </article>)}
