@@ -1,25 +1,23 @@
 'use client';
-import { useEffect, useState, type PointerEvent as ReactPointerEvent } from 'react';
+import { useState, type PointerEvent as ReactPointerEvent } from 'react';
 
-type ConceptCategory = '全部' | 'UI 設計' | '一頁式活動頁' | '行銷製作物';
-const conceptCategories: ConceptCategory[] = ['全部','UI 設計','一頁式活動頁','行銷製作物'];
-const conceptProjects = [
-  {id:1,category:'UI 設計' as ConceptCategory,title:'MORI 日常理財 App',en:'A calmer way to understand everyday money.',year:'2026',color:'#cbd7c2',type:'mobile',tall:true},
-  {id:2,category:'一頁式活動頁' as ConceptCategory,title:'Future Now 創意年會',en:'A digital stage for ideas in motion.',year:'2025',color:'#b9c6e8',type:'web',tall:false},
-  {id:3,category:'行銷製作物' as ConceptCategory,title:'植物系生活提案',en:'A gentle campaign made to grow.',year:'2025',color:'#d9b8a9',type:'social',tall:false},
-  {id:4,category:'UI 設計' as ConceptCategory,title:'Nook 空間預約平台',en:'Finding the right space, made effortless.',year:'2024',color:'#d8cfb4',type:'dashboard',tall:true},
+type WorkCategory = '全部' | '網站設計' | '平台系統' | 'APP UI';
+const workCategories: WorkCategory[] = ['全部','網站設計','平台系統','APP UI'];
+const workProjects = [
+  {id:1,category:'網站設計' as WorkCategory,title:'品牌官網｜整體視覺設計、元件規劃',source:'https://www.figma.com/design/l1W4U9Ef6lxadEqfwlLfPW/LuckMesh--Copy-?node-id=305-3431&t=vV3JKGISWzZreDXA-1',kind:'figma'},
+  {id:2,category:'網站設計' as WorkCategory,title:'品牌官網｜整體視覺設計、元件規劃',source:'https://www.figma.com/design/McFhXePpGqJ4OX27vk4wCf/%E6%98%9F%E5%9F%8EEN?node-id=0-1&p=f&t=Uvd6ud0BfwyAjsrY-0',kind:'figma'},
+  {id:3,category:'平台系統' as WorkCategory,title:'論壇平台｜整體畫面及用戶功能重構、元件規劃',source:'https://www.figma.com/design/NJ9sytsTnmPb5vvCAXkRGn/%E4%BA%82%E9%AC%A5%E5%89%8D%E5%8F%B0-%E6%A1%8C%E6%A9%9F%E7%89%88?node-id=376-139615&t=vV3JKGISWzZreDXA-1',kind:'figma'},
+  {id:4,category:'平台系統' as WorkCategory,title:'後台｜管理員功能重構、廣告系統、元件規劃',source:'https://www.figma.com/design/IZstlpMcHwZrNR23u7W1qO/%E4%BA%82%E9%AC%A5%E5%BE%8C%E5%8F%B0?t=WKE1NNHbFawxEF6s-0',kind:'figma'},
+  {id:5,category:'平台系統' as WorkCategory,title:'成人網站｜整體畫面及用戶功能重構、元件規劃',source:'https://www.figma.com/design/9Mpx9dHmKYeCprfpULwxrM/BANA-Web-UI?t=HWUBJb5IZLureJua-0',kind:'figma'},
+  {id:6,category:'APP UI' as WorkCategory,title:'APP Design｜用戶端',source:'/projects/app-design',kind:'internal',cover:'/app-design/cover.avif'},
+  {id:7,category:'APP UI' as WorkCategory,title:'APP Design｜商家端',source:'/projects/app-design-backend',kind:'internal',cover:'/app-design-backend/cover.avif'},
+  {id:8,category:'網站設計' as WorkCategory,title:'網站重構',source:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-4857&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A4857',kind:'figma'},
+  {id:9,category:'網站設計' as WorkCategory,title:'小尾巴寵物美容｜預約與領養資訊平台',source:'https://little-tail-booking.kellylei9.chatgpt.site/',kind:'website'},
 ];
-function Mockup({project}:{project:(typeof conceptProjects)[number]}){
-  if(project.type==='mobile')return <div className="mock mobile"><div className="phone back"/><div className="phone front"><small>9:41</small><b>Today</b><strong>$38,560</strong><i/><i/><i/></div></div>;
-  if(project.type==='web')return <div className="mock"><div className="browser"><small>FUTURE / NOW</small><b>Ideas<br/>in motion.</b><span>OCT 18—20</span></div></div>;
-  if(project.type==='social')return <div className="mock social"><div>GROW<br/><em>WITH</em><br/>CARE</div><div>PLANT<br/>YOUR<br/><em>DAY</em></div><div>綠意<br/>日常</div></div>;
-  return <div className="mock"><div className="screen"><small>NOOK</small><b>Find your<br/>perfect space.</b><span/><div><i/><i/><i/></div></div></div>;
-}
+const workEmbed=(project:(typeof workProjects)[number])=>`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.source)}`;
 export default function Home(){
-  const [active,setActive]=useState<ConceptCategory>('全部');
-  const [selected,setSelected]=useState<(typeof conceptProjects)[number]|null>(null);
+  const [active,setActive]=useState<WorkCategory>('全部');
   const [menu,setMenu]=useState(false);
-  useEffect(()=>{document.body.style.overflow=selected?'hidden':'';return()=>{document.body.style.overflow=''}},[selected]);
   const repelAssets=(event:ReactPointerEvent<HTMLDivElement>)=>{
     event.currentTarget.querySelectorAll<HTMLElement>('.floating-icon').forEach(asset=>{
       const box=asset.getBoundingClientRect();
@@ -34,7 +32,7 @@ export default function Home(){
   const resetAssets=(event:ReactPointerEvent<HTMLDivElement>)=>event.currentTarget.querySelectorAll<HTMLElement>('.floating-icon').forEach(asset=>{
     asset.style.setProperty('--escape-x','0px');asset.style.setProperty('--escape-y','0px');
   });
-  const filteredConcepts=active==='全部'?conceptProjects:conceptProjects.filter(project=>project.category===active);
+  const filteredProjects=active==='全部'?workProjects:workProjects.filter(project=>project.category===active);
   return <main>
     <aside className="profile-sidebar" aria-label="個人資料">
       <div className="profile-avatar" role="img" aria-label="Kelly Lei 的頭像預留位置"><span>KL</span></div>
@@ -72,12 +70,14 @@ export default function Home(){
     </section>
 
     <section className="portfolio" id="work">
-      <div className="work-heading"><p>SELECTED WORK · 2024—2026</p><h2>Projects, experiments<br/>and things I care about.</h2></div>
-      <div className="filters" role="group" aria-label="作品分類">{conceptCategories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
+      <div className="work-heading"><p>FIGMA &amp; LIVE PROJECTS · 01—09</p><h2>Designed in Figma.<br/><i>Built for the real world.</i></h2></div>
+      <div className="filters" role="group" aria-label="作品分類">{workCategories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
       <div className="masonry">
-        {filteredConcepts.map((project,index)=><article key={project.id} className={`project ${project.tall?'tall':''}`} tabIndex={0} onClick={()=>setSelected(project)} onKeyDown={event=>event.key==='Enter'&&setSelected(project)}>
-          <div className="visual" style={{background:project.color}}><span className="project-no">0{index+1}</span><Mockup project={project}/><span className="open-label">VIEW CASE ↗</span></div>
-          <div className="caption"><div><h3>{project.en}</h3><p>{project.title}</p></div><div><span>{project.category}</span><span>{project.year}</span></div></div>
+        {filteredProjects.map(project=><article key={project.id} className="project work-project-card">
+          <a href={project.source} target={project.kind==='internal'?undefined:'_blank'} rel={project.kind==='internal'?undefined:'noreferrer'}>
+            <div className="visual work-project-visual"><span className="project-no">{String(project.id).padStart(2,'0')}</span>{project.kind==='internal'?<img src={project.cover} alt={`${project.title} 作品封面`}/>:project.kind==='figma'?<iframe src={workEmbed(project)} title={project.title} loading="lazy" aria-hidden="true"/>:<div className="live-project-preview"><span>KELLY LEI · WEB DESIGN</span><strong>Little Tail</strong><small>LIVE WEBSITE</small></div>}<span className="open-label">VIEW PROJECT ↗</span></div>
+            <div className="caption"><div><h3>{project.title}</h3></div><div><span>{project.category}</span><span>0{project.id} / 09</span></div></div>
+          </a>
         </article>)}
       </div>
     </section>
@@ -87,8 +87,5 @@ export default function Home(){
     <footer><div><span>KELLY LEI</span><span>VISUAL & PRODUCT DESIGNER</span></div><a href="mailto:hello@example.com">hello@example.com</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
     </div>
 
-    {selected&&<div className="modal" role="dialog" aria-modal="true" onMouseDown={event=>event.target===event.currentTarget&&setSelected(null)}>
-      <div className="modal-card"><button onClick={()=>setSelected(null)} aria-label="關閉">CLOSE ×</button><div className="case-head"><p>{selected.category} · {selected.year}</p><h2>{selected.title}</h2><span>{selected.en}</span></div><div className="figma" style={{background:selected.color}}><div className="figma-bar"><span>● CONCEPT PREVIEW</span><span>DESIGN STUDY</span></div><Mockup project={selected}/></div></div>
-    </div>}
   </main>
 }
