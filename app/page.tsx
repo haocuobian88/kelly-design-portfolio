@@ -4,7 +4,7 @@ import { useState, type PointerEvent as ReactPointerEvent } from 'react';
 type WorkCategory = '全部' | '網站設計' | '平台系統' | 'APP UI';
 const workCategories: WorkCategory[] = ['全部','網站設計','平台系統','APP UI'];
 const workProjects = [
-  {id:1,category:'網站設計' as WorkCategory,title:'品牌官網｜整體視覺設計、元件規劃',source:'https://www.figma.com/design/l1W4U9Ef6lxadEqfwlLfPW/LuckMesh--Copy-?node-id=305-3431&t=vV3JKGISWzZreDXA-1',kind:'figma'},
+  {id:1,category:'網站設計' as WorkCategory,title:'品牌官網｜整體視覺設計、元件規劃',source:'/projects/luckmesh',kind:'internal',cover:'/luckmesh/cover.png'},
   {id:2,category:'網站設計' as WorkCategory,title:'品牌官網｜整體視覺設計、元件規劃',source:'https://www.figma.com/design/McFhXePpGqJ4OX27vk4wCf/%E6%98%9F%E5%9F%8EEN?node-id=0-1&p=f&t=Uvd6ud0BfwyAjsrY-0',kind:'figma'},
   {id:3,category:'平台系統' as WorkCategory,title:'論壇平台｜整體畫面及用戶功能重構、元件規劃',source:'https://www.figma.com/design/NJ9sytsTnmPb5vvCAXkRGn/%E4%BA%82%E9%AC%A5%E5%89%8D%E5%8F%B0-%E6%A1%8C%E6%A9%9F%E7%89%88?node-id=376-139615&t=vV3JKGISWzZreDXA-1',kind:'figma'},
   {id:4,category:'平台系統' as WorkCategory,title:'後台｜管理員功能重構、廣告系統、元件規劃',source:'https://www.figma.com/design/IZstlpMcHwZrNR23u7W1qO/%E4%BA%82%E9%AC%A5%E5%BE%8C%E5%8F%B0?t=WKE1NNHbFawxEF6s-0',kind:'figma'},
