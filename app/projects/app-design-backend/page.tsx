@@ -9,7 +9,7 @@ export default function AppDesignBackendPage(){
   const [slide,setSlide]=useState(0);
   useEffect(()=>{const timer=window.setInterval(()=>setSlide(value=>(value+1)%slides.length),3200);return()=>window.clearInterval(timer)},[]);
   return <main className="case-page backend-case">
-    <header className="case-nav"><a href="/" className="monogram">K.</a><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
+    <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
     <section className="app-case-hero">
       <div className="app-case-copy">
         <a className="projects-back" href="/projects">← BACK TO PROJECTS</a>

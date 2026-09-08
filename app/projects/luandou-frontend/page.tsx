@@ -3,7 +3,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 
 export default function LuandouFrontendPage(){
   return <main className="luckmesh-page">
-    <header className="case-nav"><a href="/" className="monogram">K.</a><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
+    <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
     <section className="luckmesh-intro">
       <a className="projects-back" href="/projects">← BACK TO PROJECTS</a>
       <div><p>PLATFORM DESIGN · UI SYSTEM</p><h1>亂鬥前台</h1><p>論壇平台｜整體畫面及用戶功能重構、元件規劃</p></div>

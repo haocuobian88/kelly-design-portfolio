@@ -53,7 +53,6 @@ export default function Home(){
     </aside>
     <div className="site-content">
     <header className="topbar">
-      <a href="#top" className="monogram">K.</a>
       <nav className={menu?'open':''}><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav>
       <button onClick={()=>setMenu(!menu)} aria-label="切換選單">{menu?'CLOSE':'MENU'}</button>
     </header>
