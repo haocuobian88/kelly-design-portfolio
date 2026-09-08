@@ -58,6 +58,7 @@ button{font:inherit;color:inherit}
 .portfolio{padding:120px 3.2vw 150px}
 .portfolio>.work-heading,.portfolio>.filters,.portfolio>.masonry{width:100%;max-width:1200px;margin-left:auto;margin-right:auto}
 .work-heading{display:grid;grid-template-columns:1fr 2fr;margin-bottom:65px}
+.work-heading:has(p:only-child){display:block;margin-bottom:30px}
 .work-heading p,.label{font:10px Georgia,serif;letter-spacing:.14em}
 .work-heading h2{font:400 clamp(36px,4.4vw,62px)/1.02 Georgia,serif;letter-spacing:-.04em;margin:0}
 .filters{display:flex;gap:10px;border-top:1px solid var(--line);padding:16px 0 55px}

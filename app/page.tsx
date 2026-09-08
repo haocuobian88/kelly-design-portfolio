@@ -70,7 +70,7 @@ export default function Home(){
     </section>
 
     <section className="portfolio" id="work">
-      <div className="work-heading"><p>FIGMA &amp; LIVE PROJECTS · 01—09</p><h2>Designed in Figma.<br/><i>Built for the real world.</i></h2></div>
+      <div className="work-heading"><p>FIGMA &amp; LIVE PROJECTS · 01—09</p></div>
       <div className="filters" role="group" aria-label="作品分類">{workCategories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
       <div className="masonry">
         {filteredProjects.map(project=><article key={project.id} className="project work-project-card">
