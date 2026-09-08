@@ -18,14 +18,13 @@ export default function ProjectsPage(){
   return <main>
     <aside className="profile-sidebar" aria-label="個人資料">
       <div className="profile-avatar" role="img" aria-label="Kelly Lei 的頭像預留位置"><span>KL</span></div>
-      <div className="availability"><i/> OPEN TO WORK</div>
       <h2>Kelly Lei</h2>
       <p className="profile-role">Visual &amp; Product Designer</p>
       <p className="profile-location">● Taipei, Taiwan</p>
       <p className="profile-experience"><b>10+ Years</b><span>Experience Includes:</span></p>
       <div className="experience-chips"><span>UI</span><span>WEB</span><span>GRAPHIC</span></div>
       <div className="profile-actions"><a className="message-button" href="mailto:hello@example.com"><span>✉</span> Message</a><button className="save-button" aria-label="收藏作品集">♡</button></div>
-      <nav className="profile-nav"><a href="/resume"><span>◎</span> Resume</a><a className="active" href="/projects"><span>▣</span> Portfolio</a></nav>
+      <nav className="profile-nav"><a href="/resume"><span>○</span> Resume</a><a className="active" href="/projects"><span>○</span> Portfolio</a></nav>
       <p className="photo-hint">PHOTO PLACEHOLDER</p>
     </aside>
     <div className="site-content">

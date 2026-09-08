@@ -36,7 +36,6 @@ export default function Home(){
   return <main>
     <aside className="profile-sidebar" aria-label="個人資料">
       <div className="profile-avatar" role="img" aria-label="Kelly Lei 的頭像預留位置"><span>KL</span></div>
-      <div className="availability"><i/> OPEN TO WORK</div>
       <h2>Kelly Lei</h2>
       <p className="profile-role">Visual & Product Designer</p>
       <p className="profile-location">● Taipei, Taiwan</p>
@@ -47,8 +46,8 @@ export default function Home(){
         <button className="save-button" aria-label="收藏作品集">♡</button>
       </div>
       <nav className="profile-nav">
-        <a href="/resume"><span>◎</span> Resume</a>
-        <a className="active" href="/projects"><span>▣</span> Portfolio</a>
+        <a href="/resume"><span>○</span> Resume</a>
+        <a className="active" href="/projects"><span>○</span> Portfolio</a>
       </nav>
       <p className="photo-hint">PHOTO PLACEHOLDER</p>
     </aside>

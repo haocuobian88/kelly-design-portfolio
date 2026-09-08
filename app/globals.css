@@ -250,8 +250,8 @@ footer>div:last-child{grid-column:2;grid-row:1}
 .profile-experience b,.profile-experience span{display:block}
 .profile-experience b{font-weight:500}
 .experience-chips{display:flex;gap:6px}
-.experience-chips span{min-width:34px;height:34px;padding:0 8px;border:1px solid #ddd;border-radius:50%;display:grid;place-items:center;background:white;font-size:7px;font-weight:700}
-.experience-chips span:last-child{border-radius:18px}
+.experience-chips span{min-width:46px;height:46px;padding:0 12px;border:1px solid #ddd;border-radius:50%;display:grid;place-items:center;background:white;font-size:12px;font-weight:700}
+.experience-chips span:last-child{border-radius:24px}
 .profile-actions{width:100%;display:grid;grid-template-columns:1fr 42px;gap:9px;margin-top:30px}
 .message-button{height:42px;border-radius:99px;background:#202020;color:white;display:flex;align-items:center;justify-content:center;gap:9px;font-size:13px;font-weight:700}
 .message-button span{font-size:17px}
