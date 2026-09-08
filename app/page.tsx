@@ -11,10 +11,10 @@ const workProjects = [
   {id:5,category:'平台系統' as WorkCategory,title:'成人網站｜整體畫面及用戶功能重構、元件規劃',source:'https://www.figma.com/design/9Mpx9dHmKYeCprfpULwxrM/BANA-Web-UI?t=HWUBJb5IZLureJua-0',kind:'figma'},
   {id:6,category:'APP UI' as WorkCategory,title:'APP Design｜用戶端',source:'/projects/app-design',kind:'internal',cover:'/app-design/cover.avif'},
   {id:7,category:'APP UI' as WorkCategory,title:'APP Design｜商家端',source:'/projects/app-design-backend',kind:'internal',cover:'/app-design-backend/cover.avif'},
-  {id:8,category:'網站設計' as WorkCategory,title:'網站重構',source:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-4857&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A4857',kind:'figma'},
+  {id:8,category:'網站設計' as WorkCategory,title:'網站重構',source:'/projects/website-redesign',preview:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-12&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A12&show-proto-sidebar=1',kind:'dual'},
   {id:9,category:'網站設計' as WorkCategory,title:'小尾巴寵物美容｜預約與領養資訊平台',source:'https://little-tail-booking.kellylei9.chatgpt.site/',kind:'website'},
 ];
-const workEmbed=(project:(typeof workProjects)[number])=>`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.source)}`;
+const workEmbed=(project:(typeof workProjects)[number])=>`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.preview||project.source)}`;
 export default function Home(){
   const [active,setActive]=useState<WorkCategory>('全部');
   const [menu,setMenu]=useState(false);
@@ -74,10 +74,10 @@ export default function Home(){
       <div className="filters" role="group" aria-label="作品分類">{workCategories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
       <div className="masonry">
         {filteredProjects.map(project=><article key={project.id} className="project work-project-card">
-          <a href={project.source} target={project.kind==='internal'?undefined:'_blank'} rel={project.kind==='internal'?undefined:'noreferrer'}>
+          <a href={project.source} target={project.kind==='internal'||project.kind==='dual'?undefined:'_blank'} rel={project.kind==='internal'||project.kind==='dual'?undefined:'noreferrer'}>
             <div className="visual work-project-visual">
-              <div className="embed-toolbar"><span>{String(project.id).padStart(2,'0')}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'?'CASE STUDY':'LIVE WEBSITE'}</span></div>
-              <div className="work-project-media">{project.kind==='internal'?<img src={project.cover} alt={`${project.title} 作品封面`}/>:project.kind==='figma'?<iframe src={workEmbed(project)} title={project.title} loading="lazy" aria-hidden="true"/>:<div className="live-project-preview"><span>KELLY LEI · WEB DESIGN</span><strong>Little Tail</strong><small>LIVE WEBSITE</small></div>}</div>
+              <div className="embed-toolbar"><span>{String(project.id).padStart(2,'0')}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'||project.kind==='dual'?'CASE STUDY':'LIVE WEBSITE'}</span></div>
+              <div className="work-project-media">{project.kind==='internal'?<img src={project.cover} alt={`${project.title} 作品封面`}/>:project.kind==='figma'||project.kind==='dual'?<iframe src={workEmbed(project)} title={project.title} loading="lazy" aria-hidden="true"/>:<div className="live-project-preview"><span>KELLY LEI · WEB DESIGN</span><strong>Little Tail</strong><small>LIVE WEBSITE</small></div>}</div>
             </div>
             <div className="caption"><div><h3>{project.title}</h3></div><div><span>{project.category}</span><span>0{project.id} / 09</span></div></div>
           </a>

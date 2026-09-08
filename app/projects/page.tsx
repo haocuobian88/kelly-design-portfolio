@@ -8,11 +8,11 @@ const projects = [
   {id:5,category:'平台系統' as ProjectCategory,title:'成人網站｜整體畫面及用戶功能重構、元件規劃',source:'https://www.figma.com/design/9Mpx9dHmKYeCprfpULwxrM/BANA-Web-UI?t=HWUBJb5IZLureJua-0',external:'https://mei-ya.com.tw/',kind:'figma'},
   {id:6,category:'APP UI' as ProjectCategory,title:'APP Design',source:'/projects/app-design',kind:'internal',cover:'/app-design/cover.avif'},
   {id:7,category:'APP UI' as ProjectCategory,title:'APP Design',source:'/projects/app-design-backend',kind:'internal',cover:'/app-design-backend/cover.avif'},
-  {id:8,category:'網站設計' as ProjectCategory,title:'網站重構',source:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-4857&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A4857',kind:'figma'},
+  {id:8,category:'網站設計' as ProjectCategory,title:'網站重構',source:'/projects/website-redesign',preview:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-12&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A12&show-proto-sidebar=1',kind:'dual'},
   {id:9,category:'網站設計' as ProjectCategory,title:'小尾巴寵物美容｜預約與領養資訊平台',source:'https://www.figma.com/design/JdyYXjTJFHv4GA74byJ4hj?node-id=190-2',external:'https://little-tail-booking.kellylei9.chatgpt.site/',kind:'figma'},
 ];
 
-const embedUrl=(project:(typeof projects)[number])=>project.kind==='figma'?`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.source)}`:project.source;
+const embedUrl=(project:(typeof projects)[number])=>project.kind==='figma'||project.kind==='dual'?`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.preview||project.source)}`:project.source;
 
 export default function ProjectsPage(){
   return <main>
@@ -35,8 +35,8 @@ export default function ProjectsPage(){
         <div className="projects-page-head"><p>FIGMA &amp; LIVE PROJECTS · 01—09</p><h1>Designed in Figma.<br/><i>Built for the real world.</i></h1></div>
         <div className="embed-grid">
           {projects.map(project=><article key={project.id} className="embed-project">
-            <div className="embed-square"><div className="embed-toolbar"><span>0{project.id}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'?'CASE STUDY':'FULL PAGE'}</span></div>{project.kind==='internal'?<a className="project-cover" href={project.source}><img src={project.cover} alt="APP Design 作品封面"/><span>VIEW PROJECT →</span></a>:<iframe src={embedUrl(project)} title={project.title} loading="lazy" allowFullScreen allow="fullscreen"/>}</div>
-            <div className="embed-caption"><div><p>{project.category}</p><h2>{project.title}</h2></div><div className="project-links">{project.external&&<a href={project.external} target="_blank" rel="noreferrer">LIVE SITE ↗</a>}<a href={project.source} target={project.kind==='internal'?undefined:'_blank'} rel={project.kind==='internal'?undefined:'noreferrer'}>{project.kind==='figma'?'FIGMA ↗':project.kind==='internal'?'VIEW PROJECT →':'OPEN ORIGINAL ↗'}</a></div></div>
+            <div className="embed-square"><div className="embed-toolbar"><span>0{project.id}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'||project.kind==='dual'?'CASE STUDY':'FULL PAGE'}</span></div>{project.kind==='internal'?<a className="project-cover" href={project.source}><img src={project.cover} alt="APP Design 作品封面"/><span>VIEW PROJECT →</span></a>:<iframe src={embedUrl(project)} title={project.title} loading="lazy" allowFullScreen allow="fullscreen"/>}</div>
+            <div className="embed-caption"><div><p>{project.category}</p><h2>{project.title}</h2></div><div className="project-links">{project.external&&<a href={project.external} target="_blank" rel="noreferrer">LIVE SITE ↗</a>}<a href={project.source} target={project.kind==='internal'||project.kind==='dual'?undefined:'_blank'} rel={project.kind==='internal'||project.kind==='dual'?undefined:'noreferrer'}>{project.kind==='figma'?'FIGMA ↗':project.kind==='internal'||project.kind==='dual'?'VIEW PROJECT →':'OPEN ORIGINAL ↗'}</a></div></div>
           </article>)}
         </div>
       </section>
