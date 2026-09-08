@@ -55,7 +55,7 @@ export default function Home(){
     <div className="site-content">
     <header className="topbar">
       <a href="#top" className="monogram">K.</a>
-      <nav className={menu?'open':''}><a href="/projects">WORK</a><a href="#play">PLAY</a><a href="#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav>
+      <nav className={menu?'open':''}><a href="/projects">WORK</a><a href="#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav>
       <button onClick={()=>setMenu(!menu)} aria-label="切換選單">{menu?'CLOSE':'MENU'}</button>
     </header>
 
@@ -85,8 +85,7 @@ export default function Home(){
       </div>
     </section>
 
-    <section className="play" id="play"><p>PLAYGROUND</p><div className="ticker">TYPE · COLOR · MOTION · IDEAS · TYPE · COLOR · MOTION · IDEAS ·</div></section>
-    <section className="about" id="about"><p className="label">ABOUT</p><h2>我喜歡把複雜的事情，<br/><i>整理成簡單而有感的體驗。</i></h2><div className="about-copy"><p>從介面、活動網站到行銷視覺，我在意的不只是畫面好不好看，而是每個選擇是否真正回應了問題。保持好奇、反覆推敲，然後留下剛剛好的設計。</p><a href="mailto:hello@example.com">LET’S WORK TOGETHER ↗</a></div></section>
+    <section className="about" id="about"><p className="label">ABOUT</p><div className="about-copy"><p>我喜歡把複雜的事情，整理成簡單而有感的體驗。從介面、活動網站到行銷視覺，我在意的不只是畫面好不好看，而是每個選擇是否真正回應了問題。保持好奇、反覆推敲，然後留下剛剛好的設計。</p></div></section>
     <footer><div><span>KELLY LEI</span><span>VISUAL & PRODUCT DESIGNER</span></div><a href="mailto:hello@example.com">hello@example.com</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
     </div>
 

@@ -29,7 +29,7 @@ export default function ProjectsPage(){
       <p className="photo-hint">PHOTO PLACEHOLDER</p>
     </aside>
     <div className="site-content">
-      <header className="topbar"><a href="/" className="monogram">K.</a><nav><a href="/projects">WORK</a><a href="/#play">PLAY</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
+      <header className="topbar"><a href="/" className="monogram">K.</a><nav><a href="/projects">WORK</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
       <section className="projects-page">
         <a className="projects-back" href="/">← BACK HOME</a>
         <div className="projects-page-head"><p>FIGMA &amp; LIVE PROJECTS · 01—09</p><h1>Designed in Figma.<br/><i>Built for the real world.</i></h1></div>
