@@ -180,7 +180,7 @@ button{font:inherit;color:inherit}
 footer{background:#25231f;color:#eeeae2;padding:45px 3.2vw 30px;display:grid;grid-template-columns:1fr 1fr;align-items:end;font-size:9px;letter-spacing:.1em}
 footer>div{display:flex;flex-direction:column;gap:7px}
 footer>a{font:34px Georgia,serif;letter-spacing:-.03em}
-footer>div:last-child{text-align:right}
+footer>div:last-child{justify-self:end;align-items:flex-end;text-align:right}
 
 .modal{position:fixed;inset:0;background:#191815df;z-index:50;padding:3vh 3vw;display:grid;place-items:center;backdrop-filter:blur(7px)}
 .modal-card{width:min(1100px,100%);max-height:94vh;overflow:auto;background:var(--paper);padding:40px;position:relative}
