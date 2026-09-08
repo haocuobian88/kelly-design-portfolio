@@ -56,6 +56,7 @@ button{font:inherit;color:inherit}
 .print-three{right:23%;bottom:-4%;background:#d8c5a1;transform:rotate(-9deg);animation:printThree 5.8s ease-in-out infinite}.print-three b{font-size:clamp(13px,1.8vw,25px);margin:15% 0 55%}
 
 .portfolio{padding:120px 3.2vw 150px}
+.portfolio>.work-heading,.portfolio>.filters,.portfolio>.masonry{width:100%;max-width:1200px;margin-left:auto;margin-right:auto}
 .work-heading{display:grid;grid-template-columns:1fr 2fr;margin-bottom:65px}
 .work-heading p,.label{font:10px Georgia,serif;letter-spacing:.14em}
 .work-heading h2{font:400 clamp(36px,4.4vw,62px)/1.02 Georgia,serif;letter-spacing:-.04em;margin:0}
@@ -124,8 +125,8 @@ button{font:inherit;color:inherit}
 .app-gallery figure{margin:0;grid-column:1/-1;opacity:0;animation:galleryReveal .8s ease both;animation-timeline:view();animation-range:entry 5% cover 28%}
 .app-gallery figure.half{grid-column:auto}.app-gallery img{display:block;width:100%;height:auto;box-shadow:0 22px 60px #2b271f12}.app-gallery figcaption{font:10px Georgia,serif;letter-spacing:.12em;margin-top:12px;color:#777168}.app-gallery figure.wide img{box-shadow:none}
 @keyframes galleryReveal{from{opacity:0;transform:translateY(45px)}to{opacity:1;transform:none}}
-.masonry{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:90px 16px;align-items:start}
-.project{cursor:pointer;outline:none}
+.masonry{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:58px 24px;align-items:start}
+.project{width:100%;min-width:0;cursor:pointer;outline:none}
 .project:nth-child(even){margin-top:150px}
 .visual{height:clamp(390px,48vw,690px);position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
 .project:not(.tall) .visual{height:clamp(300px,38vw,540px)}
@@ -135,7 +136,7 @@ button{font:inherit;color:inherit}
 .project:hover .visual,.project:focus .visual{transform:translateY(-6px);box-shadow:0 18px 42px #2a251c1a}
 .work-project-card{min-width:0}.work-project-card>a{display:block;min-width:0}
 .work-project-card:nth-child(even){margin-top:0}
-.work-project-visual{height:auto;aspect-ratio:1;background:#dedbd3;border:1px solid var(--line)}
+.work-project-visual{width:100%;height:auto;aspect-ratio:1;background:#dedbd3;border:1px solid var(--line)}
 .work-project-media{position:absolute;inset:34px 0 0;overflow:hidden}
 .work-project-media>img,.work-project-media>iframe{width:100%;height:100%;display:block;border:0;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s}
 .work-project-media>iframe{pointer-events:none;background:#fff}
