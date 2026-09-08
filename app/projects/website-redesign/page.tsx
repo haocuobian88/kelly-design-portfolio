@@ -6,7 +6,7 @@ export default function WebsiteRedesignPage(){
   return <main className="redesign-page">
     <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
     <section className="redesign-intro">
-      <a className="projects-back" href="/projects">← BACK TO PROJECTS</a>
+      <BackButton/>
       <div><p>RESPONSIVE WEBSITE · UI / UX</p><h1>網站重構</h1><p className="redesign-summary">同一套網站體驗，分別針對桌機與手機的閱讀情境重新規劃。兩個互動原型並排呈現，方便直接比較資訊層級、導覽與響應式行為。</p></div>
     </section>
     <section className="device-previews">
@@ -17,3 +17,4 @@ export default function WebsiteRedesignPage(){
     <footer><div><span>KELLY LEI</span><span>VISUAL &amp; PRODUCT DESIGNER</span></div><a href="/projects">ALL PROJECTS</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
   </main>
 }
+import BackButton from '../../components/BackButton';

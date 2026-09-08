@@ -12,7 +12,7 @@ export default function AppDesignBackendPage(){
     <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
     <section className="app-case-hero">
       <div className="app-case-copy">
-        <a className="projects-back" href="/projects">← BACK TO PROJECTS</a>
+        <BackButton/>
         <p className="case-kicker">MERCHANT APP UI / UX · 2022</p>
         <h1>APP<br/><i>Design</i></h1>
         <h2>蒐集商家需求，<br/>規劃功能及畫面</h2>
@@ -36,3 +36,4 @@ export default function AppDesignBackendPage(){
     <footer><div><span>KELLY LEI</span><span>VISUAL &amp; PRODUCT DESIGNER</span></div><a href="/projects">ALL PROJECTS</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
   </main>
 }
+import BackButton from '../../components/BackButton';

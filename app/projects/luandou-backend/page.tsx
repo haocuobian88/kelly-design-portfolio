@@ -5,7 +5,7 @@ export default function LuandouBackendPage(){
   return <main className="luckmesh-page">
     <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
     <section className="luckmesh-intro">
-      <a className="projects-back" href="/projects">← BACK TO PROJECTS</a>
+      <BackButton/>
       <div><p>ADMIN PLATFORM · UI SYSTEM</p><h1>亂鬥後台</h1><p>後台｜管理員功能重構、廣告系統、元件規劃</p></div>
     </section>
     <section className="luckmesh-preview">
@@ -15,3 +15,4 @@ export default function LuandouBackendPage(){
     <footer><div><span>KELLY LEI</span><span>VISUAL &amp; PRODUCT DESIGNER</span></div><a href="/projects">ALL PROJECTS</a><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
   </main>
 }
+import BackButton from '../../components/BackButton';

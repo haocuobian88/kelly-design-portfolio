@@ -65,7 +65,7 @@ button{font:inherit;color:inherit}
 .filters button{border:0;background:transparent;padding:0 18px 0 0;color:var(--muted);font-size:11px;cursor:pointer}
 .filters button.active{color:var(--ink);text-decoration:underline;text-underline-offset:5px}
 .projects-page{min-height:100vh;padding:48px 3.2vw 140px}
-.projects-back{display:inline-block;font-size:9px;letter-spacing:.13em;border-bottom:1px solid var(--ink);padding-bottom:5px}
+.projects-back{display:inline-block;border:0;border-bottom:1px solid var(--ink);padding:0 0 5px;background:transparent;color:inherit;font:inherit;font-size:9px;letter-spacing:.13em;cursor:pointer}
 .projects-page-head{display:grid;grid-template-columns:1fr 2fr;margin:86px 0 72px;padding-top:32px;border-top:1px solid var(--line)}
 .projects-page-head p{font:10px Georgia,serif;letter-spacing:.14em;margin:0}
 .projects-page-head h1{font:400 clamp(36px,4.2vw,60px)/1.02 Georgia,serif;letter-spacing:-.04em;margin:0}
