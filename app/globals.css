@@ -143,9 +143,8 @@ button{font:inherit;color:inherit}
 .visual:after{content:'';position:absolute;inset:-50% -80%;background:linear-gradient(110deg,transparent 42%,#fff4 50%,transparent 58%);transform:translateX(-45%);transition:transform .9s ease;pointer-events:none}
 .project:hover .visual:after{transform:translateX(45%)}
 .caption{display:block;padding-top:13px;min-width:0;text-align:left}
-.caption>div:first-child{min-width:0}.caption h3{font:400 clamp(20px,1.8vw,29px)/1.2 Georgia,serif;max-width:100%;margin:0;overflow-wrap:anywhere}
+.caption>div{display:block;width:100%;min-width:0}.caption h3{display:block;width:100%;font:400 clamp(20px,1.8vw,29px)/1.2 Georgia,serif;max-width:100%;margin:0;text-align:left;overflow-wrap:anywhere}
 .caption p{font-size:11px;margin:10px 0 0;color:var(--muted)}
-.caption>div:last-child{display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:64px;font-size:9px;letter-spacing:.08em;color:var(--muted)}
 
 .mock{height:100%;display:flex;align-items:center;justify-content:center;position:relative}
 .phone{position:absolute;width:30%;height:70%;border:6px solid #25231f;border-radius:28px;background:#eeece5;box-shadow:0 18px 28px #0002}
