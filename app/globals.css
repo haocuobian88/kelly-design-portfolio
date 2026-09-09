@@ -61,6 +61,8 @@ button{font:inherit;color:inherit}
 .work-heading:has(p:only-child){display:block;margin-bottom:30px}
 .work-heading p,.label{font:10px Georgia,serif;letter-spacing:.14em}
 .work-heading h2{font:400 clamp(36px,4.4vw,62px)/1.02 Georgia,serif;letter-spacing:-.04em;margin:0}
+.motion-reveal{opacity:0;transform:translateY(24px);transition:opacity .72s cubic-bezier(.2,.7,.2,1),transform .72s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
+.motion-reveal.is-visible{opacity:1;transform:none}
 .filters{display:flex;gap:10px;border-top:1px solid var(--line);padding:16px 0 55px}
 .filters button{border:0;background:transparent;padding:0 18px 0 0;color:var(--muted);font-size:11px;cursor:pointer}
 .filters button.active{color:var(--ink);text-decoration:underline;text-underline-offset:5px}

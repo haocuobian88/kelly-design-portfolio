@@ -1,5 +1,5 @@
 'use client';
-import { useState, type PointerEvent as ReactPointerEvent } from 'react';
+import { useEffect, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from 'react';
 
 type WorkCategory = '全部' | '網站設計' | '平台系統' | 'APP UI';
 const workCategories: WorkCategory[] = ['全部','網站設計','平台系統','APP UI'];
@@ -34,6 +34,17 @@ export default function Home(){
     asset.style.setProperty('--escape-x','0px');asset.style.setProperty('--escape-y','0px');
   });
   const filteredProjects=active==='全部'?workProjects:workProjects.filter(project=>project.category===active);
+  useEffect(()=>{
+    const items=document.querySelectorAll<HTMLElement>('.motion-reveal');
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }),{threshold:.12,rootMargin:'0px 0px -5%'});
+    items.forEach(item=>observer.observe(item));
+    return ()=>observer.disconnect();
+  },[active]);
   return <main>
     <aside className="profile-sidebar" aria-label="個人資料">
       <div className="profile-avatar" role="img" aria-label="Kelly Lei 的頭像預留位置"><span>KL</span></div>
@@ -69,10 +80,10 @@ export default function Home(){
     </section>
 
     <section className="portfolio" id="work">
-      <div className="work-heading"><p>FIGMA &amp; LIVE PROJECTS · 01—10</p></div>
-      <div className="filters" role="group" aria-label="作品分類">{workCategories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
+      <div className="work-heading motion-reveal"><p>FIGMA &amp; LIVE PROJECTS · 01—10</p></div>
+      <div className="filters motion-reveal" role="group" aria-label="作品分類">{workCategories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
       <div className="masonry">
-        {filteredProjects.map(project=><article key={project.id} className="project work-project-card">
+        {filteredProjects.map((project,index)=><article key={project.id} className="project work-project-card motion-reveal" style={{'--reveal-delay':`${Math.min(index,5)*70}ms`} as CSSProperties}>
           <a href={project.source} target={project.source.startsWith('/')?undefined:'_blank'} rel={project.source.startsWith('/')?undefined:'noreferrer'}>
             <div className="visual work-project-visual">
               <div className="embed-toolbar"><span>{String(project.id).padStart(2,'0')}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'||project.kind==='dual'?'CASE STUDY':'LIVE WEBSITE'}</span></div>
@@ -84,7 +95,7 @@ export default function Home(){
       </div>
     </section>
 
-    <section className="about" id="about"><p className="label">ABOUT</p><div className="about-copy"><p>我喜歡把複雜的事情，整理成簡單而有感的體驗。從介面、活動網站到行銷視覺，我在意的不只是畫面好不好看，而是每個選擇是否真正回應了問題。保持好奇、反覆推敲，然後留下剛剛好的設計。</p></div></section>
+    <section className="about motion-reveal" id="about"><p className="label">ABOUT</p><div className="about-copy"><p>我喜歡把複雜的事情，整理成簡單而有感的體驗。從介面、活動網站到行銷視覺，我在意的不只是畫面好不好看，而是每個選擇是否真正回應了問題。保持好奇、反覆推敲，然後留下剛剛好的設計。</p></div></section>
     <footer><div><span>KELLY LEI</span><span>VISUAL & PRODUCT DESIGNER</span></div><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
     </div>
 
