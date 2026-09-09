@@ -13,7 +13,7 @@ export default function AppDesignPage(){
     <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:kellylei9@gmail.com">CONTACT</a></nav></header>
     <section className="app-case-hero">
       <div className="app-case-copy">
-        <h2>完善使用者流程體驗及<br/>UI 介面和新功能規劃</h2>
+        <h2>完善使用者流程體驗及 UI 介面和新功能規劃</h2>
         <p className="case-description">宅經濟蓬勃發展，為居家生活打造美業外送 APP。以數位推動傳統實體產業，實踐「外送美的各項服務」到家的概念，並以零售電商模式整合可到府服務項目與標準化流程。</p>
         <div className="store-links"><a href="https://apps.apple.com/tw/app/%E7%BE%8E%E8%80%B6/id1619954601" target="_blank" rel="noreferrer"><img src="/app-design/app-store.png" alt="Download on the App Store"/></a><a href="https://play.google.com/store/apps/details?id=com.xapp.n.meijia&hl=en_US&gl=US" target="_blank" rel="noreferrer"><img src="/app-design/google-play.png" alt="Get it on Google Play"/></a></div>
       </div>

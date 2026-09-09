@@ -13,7 +13,7 @@ export default function AppDesignBackendPage(){
     <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:kellylei9@gmail.com">CONTACT</a></nav></header>
     <section className="app-case-hero">
       <div className="app-case-copy">
-        <h2>蒐集商家需求，<br/>規劃功能及畫面</h2>
+        <h2>蒐集商家需求，規劃功能及畫面</h2>
         <p className="case-description">功能對應美耶用戶端 APP，以及技術服務人員接單所需的實際情境。從預約通知、訂單管理到服務狀態，重新整理商家端的操作流程與介面資訊。</p>
         <div className="store-links"><a href="https://apps.apple.com/tw/app/%E7%BE%8E%E8%80%B6%E5%95%86%E5%AE%B6%E7%AB%AF/id1622334158" target="_blank" rel="noreferrer"><img src="/app-design-backend/app-store.png" alt="Download on the App Store"/></a><a href="https://play.google.com/store/apps/details?id=com.xapp.n.meijiastore&hl=af&gl=US" target="_blank" rel="noreferrer"><img src="/app-design-backend/google-play.png" alt="Get it on Google Play"/></a></div>
       </div>
