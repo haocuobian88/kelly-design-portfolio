@@ -10,7 +10,7 @@ export default function AppDesignPage(){
   const [slide,setSlide]=useState(0);
   useEffect(()=>{const timer=window.setInterval(()=>setSlide(value=>(value+1)%slides.length),3200);return()=>window.clearInterval(timer)},[]);
   return <main><ProfileSidebar/><div className="site-content case-page">
-    <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
+    <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:kellylei9@gmail.com">CONTACT</a></nav></header>
     <section className="app-case-hero">
       <div className="app-case-copy">
         <h2>完善使用者流程體驗及<br/>UI 介面和新功能規劃</h2>

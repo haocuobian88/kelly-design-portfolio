@@ -43,7 +43,7 @@ export default function Home(){
       <p className="profile-experience"><b>10+ Years</b><span>Experience Includes:</span></p>
       <div className="experience-chips" aria-label="專業領域"><span>UI</span><span>WEB</span><span>GRAPHIC</span></div>
       <div className="profile-actions">
-        <a className="message-button" href="mailto:hello@example.com"><span>✉</span> Message</a>
+        <a className="message-button" href="mailto:kellylei9@gmail.com"><span>✉</span> Message</a>
         <button className="save-button" aria-label="收藏作品集">♡</button>
       </div>
       <nav className="profile-nav">
@@ -54,7 +54,7 @@ export default function Home(){
     </aside>
     <div className="site-content">
     <header className="topbar">
-      <nav className={menu?'open':''}><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav>
+      <nav className={menu?'open':''}><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="mailto:kellylei9@gmail.com">CONTACT</a></nav>
       <button onClick={()=>setMenu(!menu)} aria-label="切換選單">{menu?'CLOSE':'MENU'}</button>
     </header>
 

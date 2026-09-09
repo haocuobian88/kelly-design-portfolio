@@ -24,12 +24,12 @@ export default function ProjectsPage(){
       <p className="profile-location">● Taipei, Taiwan</p>
       <p className="profile-experience"><b>10+ Years</b><span>Experience Includes:</span></p>
       <div className="experience-chips"><span>UI</span><span>WEB</span><span>GRAPHIC</span></div>
-      <div className="profile-actions"><a className="message-button" href="mailto:hello@example.com"><span>✉</span> Message</a><button className="save-button" aria-label="收藏作品集">♡</button></div>
+      <div className="profile-actions"><a className="message-button" href="mailto:kellylei9@gmail.com"><span>✉</span> Message</a><button className="save-button" aria-label="收藏作品集">♡</button></div>
       <nav className="profile-nav"><a className="active" href="/#work"><span>○</span> PORTFOLIO</a><a href="/resume"><span>○</span> RESUME</a></nav>
       <p className="photo-hint">PHOTO PLACEHOLDER</p>
     </aside>
     <div className="site-content">
-      <header className="topbar"><nav><a href="/projects">WORK</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
+      <header className="topbar"><nav><a href="/projects">WORK</a><a href="/#about">ABOUT</a><a href="mailto:kellylei9@gmail.com">CONTACT</a></nav></header>
       <section className="projects-page">
         <a className="projects-back" href="/">← BACK HOME</a>
         <div className="projects-page-head"><p>FIGMA &amp; LIVE PROJECTS · 01—10</p><h1>Designed in Figma.<br/><i>Built for the real world.</i></h1></div>

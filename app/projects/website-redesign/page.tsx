@@ -4,7 +4,7 @@ const embed=(url:string)=>`https://www.figma.com/embed?embed_host=share&url=${en
 
 export default function WebsiteRedesignPage(){
   return <main><ProfileSidebar/><div className="site-content redesign-page">
-    <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:hello@example.com">CONTACT</a></nav></header>
+    <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:kellylei9@gmail.com">CONTACT</a></nav></header>
     <section className="case-summary"><p>網站重構｜桌機與手機響應式體驗規劃</p><span>同一套網站體驗，分別針對桌機與手機的閱讀情境重新規劃。兩個互動原型並排呈現，方便直接比較資訊層級、導覽與響應式行為。</span></section>
     <section className="device-previews">
       <article className="device-preview web-preview"><div className="device-label"><span>01</span><strong>WEB PREVIEW</strong><a href={webPrototype} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div><div className="browser-frame"><iframe src={embed(webPrototype)} title="網站重構 Web prototype" allowFullScreen allow="fullscreen"/></div></article>
