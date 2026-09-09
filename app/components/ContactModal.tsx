@@ -32,6 +32,7 @@ export default function ContactModal(){
         </div>
         {status==='success'?<div className="contact-success" role="status"><p>訊息已成功送出，謝謝你的聯繫。</p><button type="button" onClick={close}>關閉</button></div>:<form onSubmit={submit}>
           <label><span>聯絡人</span><input name="聯絡人" required autoComplete="name" placeholder="請輸入您的稱呼"/></label>
+          <label><span>Email</span><input type="email" name="email" required autoComplete="email" inputMode="email" placeholder="請輸入可回覆的 Email"/></label>
           <label><span>聯絡標題</span><input name="聯絡標題" required placeholder="請簡單說明聯絡主題"/></label>
           <label><span>聯絡內容</span><textarea name="聯絡內容" required rows={7} placeholder="請輸入想與我討論的內容"/></label>
           <input type="hidden" name="_subject" value="作品集網站的新聯絡訊息"/>
