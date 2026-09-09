@@ -47,7 +47,7 @@ export default function Home(){
         <button className="save-button" aria-label="收藏作品集">♡</button>
       </div>
       <nav className="profile-nav">
-        <a className="active" href="/projects"><span>○</span> PORTFOLIO</a>
+        <a className="active" href="/#work"><span>○</span> PORTFOLIO</a>
         <a href="/resume"><span>○</span> RESUME</a>
       </nav>
       <p className="photo-hint">PHOTO PLACEHOLDER</p>

@@ -25,7 +25,7 @@ export default function ProjectsPage(){
       <p className="profile-experience"><b>10+ Years</b><span>Experience Includes:</span></p>
       <div className="experience-chips"><span>UI</span><span>WEB</span><span>GRAPHIC</span></div>
       <div className="profile-actions"><a className="message-button" href="mailto:hello@example.com"><span>✉</span> Message</a><button className="save-button" aria-label="收藏作品集">♡</button></div>
-      <nav className="profile-nav"><a className="active" href="/projects"><span>○</span> PORTFOLIO</a><a href="/resume"><span>○</span> RESUME</a></nav>
+      <nav className="profile-nav"><a className="active" href="/#work"><span>○</span> PORTFOLIO</a><a href="/resume"><span>○</span> RESUME</a></nav>
       <p className="photo-hint">PHOTO PLACEHOLDER</p>
     </aside>
     <div className="site-content">
