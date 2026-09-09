@@ -6,7 +6,7 @@ export default function ProfileSidebar(){
     <p className="profile-location">● Taipei, Taiwan</p>
     <p className="profile-experience"><b>10+ Years</b><span>Experience Includes:</span></p>
     <div className="experience-chips" aria-label="專業領域"><span>UI</span><span>WEB</span><span>GRAPHIC</span></div>
-    <nav className="profile-nav"><a href="/resume"><span>○</span> Resume</a><a className="active" href="/projects"><span>○</span> Portfolio</a></nav>
+    <nav className="profile-nav"><a className="active" href="/projects"><span>○</span> PORTFOLIO</a><a href="/resume"><span>○</span> RESUME</a></nav>
     <p className="photo-hint">PHOTO PLACEHOLDER</p>
   </aside>;
 }

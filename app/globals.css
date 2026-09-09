@@ -258,7 +258,7 @@ footer>div:last-child{grid-column:2;grid-row:1}
 .save-button{border:1px solid #e0e0e0;background:white;border-radius:50%;font-size:20px;cursor:pointer;box-shadow:0 2px 7px #0001}
 .profile-nav{width:100%;border-top:1px solid #ddd;margin-top:30px;padding-top:12px;display:flex;flex-direction:column;gap:4px}
 .profile-actions{display:none!important}
-.profile-nav a{padding:11px 13px;display:flex;align-items:center;gap:15px;color:#777681;font-size:13px;font-weight:600}
+.profile-nav a{padding:11px 13px;display:flex;align-items:center;gap:15px;color:#777681;font-size:15px;font-weight:600}
 .profile-nav a span{font-size:19px;width:22px;text-align:center}
 .profile-nav a.active{color:#252525}
 .photo-hint{margin-top:auto;font-size:7px;letter-spacing:.18em;color:#bbb}
