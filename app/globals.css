@@ -8,9 +8,10 @@ button{font:inherit;color:inherit}
 .topbar{height:72px;padding:0 3.2vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:20}
 .monogram{font:700 18px Georgia,serif}
 .topbar nav{display:flex;gap:38px;margin-left:auto;font:12px Georgia,serif;letter-spacing:.08em}
-.topbar nav a{transition:opacity .2s}
-.topbar nav a:hover{opacity:.45}
-.topbar button{display:none;border:0;background:none;font-size:11px}
+.topbar nav a,.contact-trigger{transition:opacity .2s}
+.topbar nav a:hover,.contact-trigger:hover{opacity:.45}
+.topbar>.menu-toggle{display:none;border:0;background:none;font-size:11px}
+.contact-trigger{display:block;border:0;background:none;padding:0;font:12px Georgia,serif;letter-spacing:.08em;cursor:pointer}
 
 .intro{height:calc(100vh - 72px);min-height:680px;display:grid;place-content:center;text-align:center;position:relative;overflow:hidden;isolation:isolate;background:url('/visual/BG.png') center/cover no-repeat}
 .hello,.intro h1,.intro-note{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -179,6 +180,17 @@ button{font:inherit;color:inherit}
 .about{padding:95px 3.2vw 120px;border-top:1px solid var(--line)}
 .about-copy{max-width:760px;margin:42px 0 0}
 .about-copy p{font-size:15px;line-height:1.9;margin:0}
+.contact-dialog{position:fixed;inset:0;margin:auto;width:min(720px,calc(100% - 40px));max-width:none;max-height:calc(100vh - 40px);padding:0;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.contact-dialog::backdrop{background:#171612b8;backdrop-filter:blur(5px)}
+.contact-panel{padding:38px 42px 42px}
+.contact-head{display:flex;justify-content:space-between;align-items:start;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.contact-head p{margin:0 0 12px;font:10px Georgia,serif;letter-spacing:.14em}.contact-head h2{margin:0;font:400 38px/1.1 Georgia,"Noto Serif TC",serif}
+.contact-head button{border:0;background:none;padding:2px 0;font-size:9px;letter-spacing:.12em;cursor:pointer}
+.contact-dialog form{display:grid;gap:24px;padding-top:30px}.contact-dialog label{display:grid;gap:9px}.contact-dialog label span{font-size:11px;letter-spacing:.08em}
+.contact-dialog input,.contact-dialog textarea{width:100%;border:0;border-bottom:1px solid #aaa49a;background:transparent;padding:10px 0 12px;border-radius:0;color:var(--ink);font:15px/1.6 Arial,"Noto Sans TC",sans-serif;outline:none;resize:vertical}
+.contact-dialog input:focus,.contact-dialog textarea:focus{border-color:var(--ink)}.contact-dialog input::placeholder,.contact-dialog textarea::placeholder{color:#99958d}
+.contact-submit,.contact-success button{justify-self:end;border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:14px 22px;font-size:10px;letter-spacing:.1em;cursor:pointer}.contact-submit:disabled{opacity:.45;cursor:wait}
+.contact-error{margin:0;color:#9b3128;font-size:13px}.contact-success{min-height:270px;display:grid;place-content:center;justify-items:center;gap:25px;text-align:center}.contact-success p{font:24px/1.5 Georgia,"Noto Serif TC",serif;margin:0}
 footer{background:#25231f;color:#eeeae2;padding:45px 3.2vw 30px;display:grid;grid-template-columns:1fr 1fr;align-items:end;font-size:9px;letter-spacing:.1em}
 footer>div{display:flex;flex-direction:column;gap:7px}
 footer>a{font:34px Georgia,serif;letter-spacing:-.03em}
@@ -197,7 +209,7 @@ footer>div:last-child{justify-self:end;align-items:flex-end;text-align:right}
 .figma>p{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);margin:0;background:var(--paper);padding:8px 12px;font-size:9px;white-space:nowrap}
 
 @media(max-width:760px){.topbar{height:60px}
-.topbar button{display:block}
+.topbar>.menu-toggle{display:block}
 .topbar nav{display:none;position:absolute;top:60px;left:0;right:0;background:var(--paper);padding:25px 3.2vw;border-bottom:1px solid var(--line);flex-direction:column}
 .topbar nav.open{display:flex}
 .intro{height:calc(100vh - 60px);min-height:700px}
@@ -230,6 +242,7 @@ footer{grid-template-columns:1fr auto;gap:30px}
 footer>a{font-size:22px;grid-row:2;grid-column:1/3}
 footer>div:last-child{grid-column:2;grid-row:1}
 .phone{width:40%}
+.contact-panel{padding:28px 24px 30px}.contact-head h2{font-size:31px}.contact-dialog form{gap:20px}.contact-submit{width:100%}
 .case-nav{height:60px;padding:0 20px}.case-nav nav{gap:15px}.case-nav nav a:nth-child(2){display:none}
 .app-case-hero{display:block;padding:55px 20px 70px}.app-case-copy h2{margin-top:0}.case-description{font-size:15px}.phone-carousel{height:520px;margin:70px 10px 0}.phone-carousel>img{height:84%}
 .booking-flow{display:block;padding:85px 20px}.booking-flow ol{margin-top:65px}.flow-heading h2 i{margin-left:10vw}

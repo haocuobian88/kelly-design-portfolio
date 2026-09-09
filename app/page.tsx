@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from 'react';
+import ContactModal from './components/ContactModal';
 
 type WorkCategory = '全部' | '網站設計' | '平台系統' | 'APP UI';
 const workCategories: WorkCategory[] = ['全部','網站設計','平台系統','APP UI'];
@@ -65,8 +66,8 @@ export default function Home(){
     </aside>
     <div className="site-content">
     <header className="topbar">
-      <nav className={menu?'open':''}><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="mailto:kellylei9@gmail.com">CONTACT</a></nav>
-      <button onClick={()=>setMenu(!menu)} aria-label="切換選單">{menu?'CLOSE':'MENU'}</button>
+      <nav className={menu?'open':''}><a href="#work">WORK</a><a href="#about">ABOUT</a><ContactModal/></nav>
+      <button className="menu-toggle" onClick={()=>setMenu(!menu)} aria-label="切換選單">{menu?'CLOSE':'MENU'}</button>
     </header>
 
     <section className="intro" id="top">
