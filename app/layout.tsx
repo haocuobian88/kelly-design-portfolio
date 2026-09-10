@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import {sitePath} from './site-path';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -16,6 +17,12 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://haocuobian88.github.io/kelly-design-portfolio/'),
   title: 'Kelly Lei — Visual & Product Designer',
   description: '專注於數位體驗與品牌視覺的設計作品集。',
+  icons: {
+    icon: [
+      {url: sitePath('/favicon.ico'), sizes: 'any'},
+      {url: sitePath('/favicon.svg'), type: 'image/svg+xml'},
+    ],
+  },
   openGraph: {
     title: 'Kelly Lei — Visual & Product Designer',
     description: '把想法，設計成有感的體驗。',
