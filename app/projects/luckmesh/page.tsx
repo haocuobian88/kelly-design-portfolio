@@ -3,7 +3,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 
 export default function LuckMeshPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
-    <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:kellylei9@gmail.com">CONTACT</a></nav></header>
+    <CaseNav/>
     <section className="case-summary"><p>品牌官網｜整體視覺設計、元件規劃</p></section>
     <section className="luckmesh-preview">
       <div className="device-label"><span>01</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
@@ -13,3 +13,4 @@ export default function LuckMeshPage(){
   </div></main>
 }
 import ProfileSidebar from '../../components/ProfileSidebar';
+import CaseNav from '../../components/CaseNav';

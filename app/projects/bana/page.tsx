@@ -3,7 +3,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 
 export default function BanaPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
-    <header className="case-nav"><nav><a href="/">返回首頁</a><a href="/#about">ABOUT</a><a href="mailto:kellylei9@gmail.com">CONTACT</a></nav></header>
+    <CaseNav/>
     <section className="case-summary"><p>成人網站｜整體畫面及用戶功能重構、元件規劃</p></section>
     <section className="luckmesh-preview">
       <div className="device-label"><span>05</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
@@ -14,3 +14,4 @@ export default function BanaPage(){
   </div></main>
 }
 import ProfileSidebar from '../../components/ProfileSidebar';
+import CaseNav from '../../components/CaseNav';

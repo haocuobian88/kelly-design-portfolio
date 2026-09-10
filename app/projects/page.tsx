@@ -1,3 +1,5 @@
+import {sitePath} from '../site-path';
+
 type ProjectCategory = '網站設計' | '平台系統' | 'APP UI';
 
 const projects = [
@@ -25,18 +27,18 @@ export default function ProjectsPage(){
       <p className="profile-experience"><b>10+ Years</b><span>Experience Includes:</span></p>
       <div className="experience-chips"><span>UI</span><span>WEB</span><span>GRAPHIC</span></div>
       <div className="profile-actions"><a className="message-button" href="mailto:kellylei9@gmail.com"><span>✉</span> Message</a><button className="save-button" aria-label="收藏作品集">♡</button></div>
-      <nav className="profile-nav"><a className="active" href="/#work"><span>○</span> PORTFOLIO</a><a href="/resume"><span>○</span> RESUME</a></nav>
+      <nav className="profile-nav"><a className="active" href={sitePath('/#work')}><span>○</span> PORTFOLIO</a><a href={sitePath('/resume/')}><span>○</span> RESUME</a></nav>
       <p className="photo-hint">PHOTO PLACEHOLDER</p>
     </aside>
     <div className="site-content">
-      <header className="topbar"><nav><a href="/projects">WORK</a><a href="/#about">ABOUT</a><a href="mailto:kellylei9@gmail.com">CONTACT</a></nav></header>
+      <header className="topbar"><nav><a href={sitePath('/projects/')}>WORK</a><a href={sitePath('/#about')}>ABOUT</a><a href="mailto:kellylei9@gmail.com">CONTACT</a></nav></header>
       <section className="projects-page">
-        <a className="projects-back" href="/">← BACK HOME</a>
+        <a className="projects-back" href={sitePath('/')}>← BACK HOME</a>
         <div className="projects-page-head"><p>FIGMA &amp; LIVE PROJECTS · 01—10</p><h1>Designed in Figma.<br/><i>Built for the real world.</i></h1></div>
         <div className="embed-grid">
           {projects.map(project=><article key={project.id} className="embed-project">
-            <div className="embed-square"><div className="embed-toolbar"><span>{String(project.id).padStart(2,'0')}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'||project.kind==='dual'?'CASE STUDY':'FULL PAGE'}</span></div>{project.kind==='internal'||project.kind==='dual'?<a className="project-cover" href={project.source}><img src={project.cover} alt={`${project.title} 作品封面`}/><span>VIEW PROJECT →</span></a>:<iframe src={embedUrl(project)} title={project.title} loading="lazy" allowFullScreen allow="fullscreen"/>}</div>
-            <div className="embed-caption"><div><p>{project.category}</p><h2><a href={project.source} target={project.source.startsWith('/')?undefined:'_blank'} rel={project.source.startsWith('/')?undefined:'noreferrer'}>{project.title}</a></h2></div><div className="project-links">{project.external&&<a href={project.external} target="_blank" rel="noreferrer">LIVE SITE ↗</a>}<a href={project.source} target={project.source.startsWith('/')?undefined:'_blank'} rel={project.source.startsWith('/')?undefined:'noreferrer'}>{project.source.startsWith('/')?'VIEW PROJECT →':project.kind==='figma'?'FIGMA ↗':'OPEN ORIGINAL ↗'}</a></div></div>
+            <div className="embed-square"><div className="embed-toolbar"><span>{String(project.id).padStart(2,'0')}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'||project.kind==='dual'?'CASE STUDY':'FULL PAGE'}</span></div>{project.kind==='internal'||project.kind==='dual'?<a className="project-cover" href={sitePath(`${project.source}/`)}><img src={sitePath(project.cover!)} alt={`${project.title} 作品封面`}/><span>VIEW PROJECT →</span></a>:<iframe src={embedUrl(project)} title={project.title} loading="lazy" allowFullScreen allow="fullscreen"/>}</div>
+            <div className="embed-caption"><div><p>{project.category}</p><h2><a href={project.source.startsWith('/')?sitePath(`${project.source}/`):project.source} target={project.source.startsWith('/')?undefined:'_blank'} rel={project.source.startsWith('/')?undefined:'noreferrer'}>{project.title}</a></h2></div><div className="project-links">{project.external&&<a href={project.external} target="_blank" rel="noreferrer">LIVE SITE ↗</a>}<a href={project.source.startsWith('/')?sitePath(`${project.source}/`):project.source} target={project.source.startsWith('/')?undefined:'_blank'} rel={project.source.startsWith('/')?undefined:'noreferrer'}>{project.source.startsWith('/')?'VIEW PROJECT →':project.kind==='figma'?'FIGMA ↗':'OPEN ORIGINAL ↗'}</a></div></div>
           </article>)}
         </div>
       </section>

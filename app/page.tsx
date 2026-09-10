@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from 'react';
 import ContactModal from './components/ContactModal';
+import {sitePath} from './site-path';
 
 type WorkCategory = '全部' | '網站設計' | '平台系統' | 'APP UI';
 const workCategories: WorkCategory[] = ['全部','網站設計','平台系統','APP UI'];
@@ -59,8 +60,8 @@ export default function Home(){
         <button className="save-button" aria-label="收藏作品集">♡</button>
       </div>
       <nav className="profile-nav">
-        <a className="active" href="/#work"><span>○</span> PORTFOLIO</a>
-        <a href="/resume"><span>○</span> RESUME</a>
+        <a className="active" href={sitePath('/#work')}><span>○</span> PORTFOLIO</a>
+        <a href={sitePath('/resume/')}><span>○</span> RESUME</a>
       </nav>
       <p className="photo-hint">PHOTO PLACEHOLDER</p>
     </aside>
@@ -70,14 +71,14 @@ export default function Home(){
       <button className="menu-toggle" onClick={()=>setMenu(!menu)} aria-label="切換選單">{menu?'CLOSE':'MENU'}</button>
     </header>
 
-    <section className="intro" id="top">
+    <section className="intro" id="top" style={{backgroundImage:`url(${sitePath('/visual/BG.png')})`}}>
       <p className="hello">KELLY LEI · VISUAL &amp; PRODUCT DESIGN</p>
       <h1><span>Visual</span><br/><i>Designer</i></h1>
       <div className="work-scene" aria-label="設計工具、裝置與靈感物件的動態展示" onPointerMove={repelAssets} onPointerLeave={resetAssets}>
-        {[1,2,3,4,5,6,7,8].map(icon=><span key={icon} className={`floating-icon icon-${icon}`} aria-hidden="true"><img src={`/visual/icon-${icon}.png`} alt=""/></span>) }
+        {[1,2,3,4,5,6,7,8].map(icon=><span key={icon} className={`floating-icon icon-${icon}`} aria-hidden="true"><img src={sitePath(`/visual/icon-${icon}.png`)} alt=""/></span>) }
       </div>
       <p className="intro-note">Designing thoughtful digital experiences<br/>and visual stories from Taipei.</p>
-      <a className="hero-cta" href="/projects">VIEW PROJECTS <span>→</span></a>
+      <a className="hero-cta" href={sitePath('/projects/')}>VIEW PROJECTS <span>→</span></a>
     </section>
 
     <section className="portfolio" id="work">
@@ -85,10 +86,10 @@ export default function Home(){
       <div className="filters motion-reveal" role="group" aria-label="作品分類">{workCategories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
       <div className="masonry">
         {filteredProjects.map((project,index)=><article key={project.id} className="project work-project-card motion-reveal" style={{'--reveal-delay':`${Math.min(index,5)*70}ms`} as CSSProperties}>
-          <a href={project.source} target={project.source.startsWith('/')?undefined:'_blank'} rel={project.source.startsWith('/')?undefined:'noreferrer'}>
+          <a href={project.source.startsWith('/')?sitePath(`${project.source}/`):project.source} target={project.source.startsWith('/')?undefined:'_blank'} rel={project.source.startsWith('/')?undefined:'noreferrer'}>
             <div className="visual work-project-visual">
               <div className="embed-toolbar"><span>{String(project.id).padStart(2,'0')}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'||project.kind==='dual'?'CASE STUDY':'LIVE WEBSITE'}</span></div>
-              <div className="work-project-media">{project.kind==='internal'||project.kind==='dual'?<img src={project.cover} alt={`${project.title} 作品封面`}/>:project.kind==='figma'?<iframe src={workEmbed(project)} title={project.title} loading="lazy" aria-hidden="true"/>:<div className="live-project-preview"><span>KELLY LEI · WEB DESIGN</span><strong>Little Tail</strong><small>LIVE WEBSITE</small></div>}</div>
+              <div className="work-project-media">{project.kind==='internal'||project.kind==='dual'?<img src={sitePath(project.cover!)} alt={`${project.title} 作品封面`}/>:project.kind==='figma'?<iframe src={workEmbed(project)} title={project.title} loading="lazy" aria-hidden="true"/>:<div className="live-project-preview"><span>KELLY LEI · WEB DESIGN</span><strong>Little Tail</strong><small>LIVE WEBSITE</small></div>}</div>
             </div>
             <div className="caption"><div><h3>{project.title}</h3></div></div>
           </a>
