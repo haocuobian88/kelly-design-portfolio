@@ -11,9 +11,11 @@ export default function WebsiteRedesignPage(){
       <article className="device-preview mobile-preview"><div className="device-label"><span>02</span><strong>MOBILE PREVIEW</strong><a href={mobilePrototype} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div><div className="phone-frame"><iframe src={embed(mobilePrototype)} title="網站重構 Mobile prototype" allowFullScreen allow="fullscreen"/></div></article>
     </section>
     <section className="redesign-links"><p>MORE CONTEXT</p><div><a href="https://babyhome.com.tw/" target="_blank" rel="noreferrer">ORIGINAL WEBSITE ↗</a><a href="https://kellylei9.wixsite.com/portfolio/bbh-vision2" target="_blank" rel="noreferrer">PREVIOUS CASE PAGE ↗</a></div></section>
+    <ProjectPager current="website-redesign"/>
     <footer><div><span>KELLY LEI</span><span>VISUAL &amp; PRODUCT DESIGNER</span></div><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
   </div></main>
 }
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
 import CaseStudyIntro from '../../components/CaseStudyIntro';
+import ProjectPager from '../../components/ProjectPager';

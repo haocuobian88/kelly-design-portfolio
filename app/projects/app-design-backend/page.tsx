@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react';
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
 import CaseStudyIntro from '../../components/CaseStudyIntro';
+import ProjectPager from '../../components/ProjectPager';
 import {sitePath} from '../../site-path';
 
 const slides=['/app-design-backend/slide-1.png','/app-design-backend/slide-2.png','/app-design-backend/slide-3.png'].map(sitePath);
@@ -35,6 +36,7 @@ export default function AppDesignBackendPage(){
     <section className="app-gallery" aria-label="商家端 APP Design 完整設計流程">
       {gallery.map((name,index)=><figure key={name}><img src={sitePath(`/app-design-backend/${name}.jpg`)} alt={`商家端 APP Design 流程畫面 ${index+1}`} loading="lazy"/><figcaption>{String(index+1).padStart(2,'0')} / 06</figcaption></figure>)}
     </section>
+    <ProjectPager current="app-design-backend"/>
     <footer><div><span>KELLY LEI</span><span>VISUAL &amp; PRODUCT DESIGNER</span></div><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
   </div></main>
 }

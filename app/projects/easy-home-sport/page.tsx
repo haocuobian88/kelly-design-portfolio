@@ -9,9 +9,11 @@ export default function EasyHomeSportPage(){
       <div className="device-label"><span>10</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
       <iframe src={figmaEmbed} title="Easy Home Sport Figma design" allowFullScreen allow="fullscreen"/>
     </section>
+    <ProjectPager current="easy-home-sport"/>
     <footer><div><span>KELLY LEI</span><span>VISUAL &amp; PRODUCT DESIGNER</span></div><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
   </div></main>
 }
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
 import CaseStudyIntro from '../../components/CaseStudyIntro';
+import ProjectPager from '../../components/ProjectPager';
