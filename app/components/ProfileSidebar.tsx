@@ -3,7 +3,7 @@ import {profile} from '../site-data';
 
 export default function ProfileSidebar({active='portfolio'}:{active?:'portfolio'|'resume'}){
   return <aside className="profile-sidebar" aria-label="個人資料">
-    <div className="profile-avatar" aria-hidden="true"><span>KL</span></div>
+    <div className="profile-avatar"><img src={sitePath('/avatar.webp')} alt={`${profile.name} 的照片`} width={240} height={240}/></div>
     <h2>{profile.name}</h2>
     <p className="profile-role">{profile.title}</p>
     <p className="profile-location">● {profile.location}</p>

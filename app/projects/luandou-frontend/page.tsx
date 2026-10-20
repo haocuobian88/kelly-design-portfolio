@@ -1,3 +1,5 @@
+import KeyScreens from '../../components/KeyScreens';
+import {projectNumber} from '../../site-data';
 import SiteFooter from '../../components/SiteFooter';
 const figmaUrl='https://www.figma.com/design/NJ9sytsTnmPb5vvCAXkRGn/%E4%BA%82%E9%AC%A5%E5%89%8D%E5%8F%B0-%E6%A1%8C%E6%A9%9F%E7%89%88?node-id=376-139615&t=PcqMVCxu2lCifXTG-0';
 const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(figmaUrl)}`;
@@ -8,7 +10,7 @@ export default function LuandouFrontendPage(){
     <CaseStudyIntro slug="luandou-frontend" category="PLATFORM SYSTEM" title="遊戲大亂鬥｜內容論壇體驗重構" summary="面對大量文章、會員互動與活動入口，重新梳理資訊層級與操作路徑，讓內容探索與核心功能更容易被理解。" role="UI / Product Designer" scope="資訊架構、用戶功能、元件系統" platform="Responsive Web"/>
     <CaseToc/>
     <section className="case-cover" aria-label="遊戲大亂鬥專案封面">
-      <img src={sitePath('/luandou-frontend/cover.png')} alt="遊戲大亂鬥桌機與行動版介面展示"/>
+      <img src={sitePath('/luandou-frontend/cover.webp')} alt="遊戲大亂鬥桌機與行動版介面展示"/>
     </section>
     <section className="case-story">
       <article className="case-story-overview" id="overview">
@@ -45,8 +47,9 @@ export default function LuandouFrontendPage(){
       </section>
     </section>
     <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>完整介面與畫面流程</h2></div>
+    <KeyScreens slug="luandou-frontend"/>
     <section className="luckmesh-preview">
-      <div className="device-label"><span>03</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
+      <div className="device-label"><span>{projectNumber('luandou-frontend')}</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
       <iframe src={figmaEmbed} title="亂鬥前台 Figma design" allowFullScreen allow="fullscreen"/>
       <p className="figma-detail-note">想查看更多設計細節與完整畫面流程，歡迎<a href={figmaUrl} target="_blank" rel="noreferrer">進入 Figma 深入瀏覽 ↗</a></p>
     </section>

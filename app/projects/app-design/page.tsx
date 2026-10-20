@@ -8,7 +8,7 @@ import CaseStudyIntro from '../../components/CaseStudyIntro';
 import ProjectPager from '../../components/ProjectPager';
 import {sitePath} from '../../site-path';
 
-const slides=['/app-design/slide-1.png','/app-design/slide-2.png','/app-design/slide-3.png'].map(sitePath);
+const slides=['/app-design/slide-1.webp','/app-design/slide-2.webp','/app-design/slide-3.webp'].map(sitePath);
 const gallery=['01','02','04-banner','03','04','05','06','07','08','09','14','10','11','12','16','15'];
 
 export default function AppDesignPage(){

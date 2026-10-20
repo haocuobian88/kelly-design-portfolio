@@ -63,7 +63,7 @@ export default function Home(){
 
     <section className="intro" id="top" style={{backgroundImage:`url(${sitePath('/visual/hero-bg.jpg')})`}}>
       <div className="work-scene" aria-hidden="true" onPointerMove={repelAssets} onPointerLeave={resetAssets}>
-        {[1,2,3,4,5,6,7,8].map(icon=><span key={icon} className={`floating-icon icon-${icon}`}><img src={sitePath(`/visual/icon-${icon}.png`)} alt=""/></span>) }
+        {[1,2,3,4,5,6,7,8].map(icon=><span key={icon} className={`floating-icon icon-${icon}`}><img src={sitePath(`/visual/icon-${icon}.webp`)} alt=""/></span>) }
       </div>
       <div className="intro-copy">
         <p className="hello">{profile.name.toUpperCase()} · {profile.title.toUpperCase()}</p>
