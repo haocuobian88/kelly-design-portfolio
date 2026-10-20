@@ -1,3 +1,5 @@
+import KeyScreens from '../../components/KeyScreens';
+import {projectNumber} from '../../site-data';
 import SiteFooter from '../../components/SiteFooter';
 const figmaUrl='https://www.figma.com/design/IZstlpMcHwZrNR23u7W1qO/%E4%BA%82%E9%AC%A5%E5%BE%8C%E5%8F%B0?t=UEm0NWFAAjYfTr1I-0';
 const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(figmaUrl)}`;
@@ -8,7 +10,7 @@ export default function LuandouBackendPage(){
     <CaseStudyIntro slug="luandou-backend" category="ADMIN SYSTEM" title="亂鬥後台｜管理與廣告系統設計" summary="將管理員、內容與廣告操作拆解成一致的任務流程，改善複雜資訊的閱讀順序與日常管理效率。" role="UI / Product Designer" scope="功能重構、廣告系統、後台元件" platform="Desktop Web"/>
     <CaseToc/>
     <section className="case-cover" aria-label="亂鬥後台專案封面">
-      <img src={sitePath('/luandou-backend/cover.png')} alt="亂鬥後台管理系統介面展示"/>
+      <img src={sitePath('/luandou-backend/cover.webp')} alt="亂鬥後台管理系統介面展示"/>
     </section>
     <section className="case-story">
       <article className="case-story-overview" id="overview">
@@ -45,8 +47,9 @@ export default function LuandouBackendPage(){
       </section>
     </section>
     <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>完整後台介面與功能模組</h2></div>
+    <KeyScreens slug="luandou-backend"/>
     <section className="luckmesh-preview">
-      <div className="device-label"><span>04</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
+      <div className="device-label"><span>{projectNumber('luandou-backend')}</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
       <iframe src={figmaEmbed} title="亂鬥後台 Figma design" allowFullScreen allow="fullscreen"/>
     </section>
     <ProjectPager current="luandou-backend"/>

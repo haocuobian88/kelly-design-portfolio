@@ -34,13 +34,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${profile.name} — ${profile.title}`,
     description: '把想法，設計成有感的體驗。',
-    images: ['https://haocuobian88.github.io/kelly-design-portfolio/og.png'],
+    images: ['https://haocuobian88.github.io/kelly-design-portfolio/og.png?v=2'],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${profile.name} — ${profile.title}`,
     description: '把想法，設計成有感的體驗。',
-    images: ['https://haocuobian88.github.io/kelly-design-portfolio/og.png'],
+    images: ['https://haocuobian88.github.io/kelly-design-portfolio/og.png?v=2'],
   },
 };
 

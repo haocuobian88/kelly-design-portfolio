@@ -1,3 +1,5 @@
+import KeyScreens from '../../components/KeyScreens';
+import {projectNumber} from '../../site-data';
 import SiteFooter from '../../components/SiteFooter';
 const figmaUrl='https://www.figma.com/design/l1W4U9Ef6lxadEqfwlLfPW/LuckMesh?node-id=0-1&p=f&t=k8uWoRISjUFxf8WS-0';
 const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(figmaUrl)}`;
@@ -8,7 +10,7 @@ export default function LuckMeshPage(){
     <CaseStudyIntro slug="luckmesh" category="WEBSITE DESIGN" title="LuckMesh｜跨裝置遊戲品牌體驗" summary="以品牌識別一致性與跨裝置閱讀為核心，重新整理官網的視覺層級、內容區塊與可重複使用元件。" role="UI / Visual Designer" scope="品牌視覺、Web UI、元件規劃" platform="Desktop / Mobile"/>
     <CaseToc/>
     <section className="case-cover" aria-label="LuckMesh 專案封面">
-      <img src={sitePath('/luckmesh/cover.png')} alt="LuckMesh 跨裝置遊戲品牌網站展示"/>
+      <img src={sitePath('/luckmesh/cover.webp')} alt="LuckMesh 跨裝置遊戲品牌網站展示"/>
     </section>
     <section className="case-story">
       <article className="case-story-overview" id="overview">
@@ -38,8 +40,9 @@ export default function LuckMeshPage(){
       </section>
     </section>
     <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>完整品牌介面與跨裝置畫面</h2></div>
+    <KeyScreens slug="luckmesh"/>
     <section className="luckmesh-preview">
-      <div className="device-label"><span>01</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
+      <div className="device-label"><span>{projectNumber('luckmesh')}</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
       <iframe src={figmaEmbed} title="LuckMesh Figma design" allowFullScreen allow="fullscreen"/>
     </section>
     <ProjectPager current="luckmesh"/>
