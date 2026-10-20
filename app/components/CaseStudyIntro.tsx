@@ -1,5 +1,7 @@
+import {projectNumber} from '../site-data';
+
 type CaseStudyIntroProps = {
-  index: string;
+  slug: string;
   category: string;
   title: string;
   summary: string;
@@ -9,7 +11,7 @@ type CaseStudyIntroProps = {
 };
 
 export default function CaseStudyIntro({
-  index,
+  slug,
   category,
   title,
   summary,
@@ -19,7 +21,7 @@ export default function CaseStudyIntro({
 }: CaseStudyIntroProps) {
   return <section className="case-study-intro">
     <div className="case-study-heading">
-      <p>{index} · {category}</p>
+      <p>{projectNumber(slug)} · {category}</p>
       <h1>{title}</h1>
       <p className="case-study-summary">{summary}</p>
     </div>

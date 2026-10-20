@@ -1,4 +1,5 @@
 'use client';
+import SiteFooter from '../../components/SiteFooter';
 
 import {useEffect, useState} from 'react';
 import ProfileSidebar from '../../components/ProfileSidebar';
@@ -15,7 +16,7 @@ export default function AppDesignBackendPage(){
   useEffect(()=>{const timer=window.setInterval(()=>setSlide(value=>(value+1)%slides.length),3200);return()=>window.clearInterval(timer)},[]);
   return <main><ProfileSidebar/><div className="site-content case-page backend-case">
     <CaseNav/>
-    <CaseStudyIntro index="07" category="APP DESIGN" title="美耶商家端｜服務管理 App" summary="從商家與技術服務人員的日常工作出發，整理接單、訂單管理、預約通知與服務狀態的操作流程。" role="UI / Product Designer" scope="商家需求、功能流程、Mobile UI" platform="iOS / Android"/>
+    <CaseStudyIntro slug="app-design-backend" category="APP DESIGN" title="美耶商家端｜服務管理 App" summary="從商家與技術服務人員的日常工作出發，整理接單、訂單管理、預約通知與服務狀態的操作流程。" role="UI / Product Designer" scope="商家需求、功能流程、Mobile UI" platform="iOS / Android"/>
     <section className="app-case-hero">
       <div className="app-case-copy">
         <h2>蒐集商家需求，規劃功能及畫面</h2>
@@ -37,6 +38,6 @@ export default function AppDesignBackendPage(){
       {gallery.map((name,index)=><figure key={name}><img src={sitePath(`/app-design-backend/${name}.jpg`)} alt={`商家端 APP Design 流程畫面 ${index+1}`} loading="lazy"/><figcaption>{String(index+1).padStart(2,'0')} / 06</figcaption></figure>)}
     </section>
     <ProjectPager current="app-design-backend"/>
-    <footer><div><span>KELLY LEI</span><span>VISUAL &amp; PRODUCT DESIGNER</span></div><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
+    <SiteFooter/>
   </div></main>
 }
