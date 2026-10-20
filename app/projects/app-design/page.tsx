@@ -1,4 +1,5 @@
 'use client';
+import SiteFooter from '../../components/SiteFooter';
 
 import {useEffect, useState} from 'react';
 import ProfileSidebar from '../../components/ProfileSidebar';
@@ -15,7 +16,7 @@ export default function AppDesignPage(){
   useEffect(()=>{const timer=window.setInterval(()=>setSlide(value=>(value+1)%slides.length),3200);return()=>window.clearInterval(timer)},[]);
   return <main><ProfileSidebar/><div className="site-content case-page">
     <CaseNav/>
-    <CaseStudyIntro index="06" category="APP DESIGN" title="美耶｜到府美業服務 App" summary="將傳統實體美業服務轉化為可探索、可預約的行動流程，整合到府服務項目、預約操作與新功能規劃。" role="UI / Product Designer" scope="使用者流程、Mobile UI、新功能規劃" platform="iOS / Android"/>
+    <CaseStudyIntro slug="app-design" category="APP DESIGN" title="美耶｜到府美業服務 App" summary="將傳統實體美業服務轉化為可探索、可預約的行動流程，整合到府服務項目、預約操作與新功能規劃。" role="UI / Product Designer" scope="使用者流程、Mobile UI、新功能規劃" platform="iOS / Android"/>
     <section className="app-case-hero">
       <div className="app-case-copy">
         <h2>完善使用者流程體驗及 UI 介面和新功能規劃</h2>
@@ -37,6 +38,6 @@ export default function AppDesignPage(){
       {gallery.map((name,index)=><figure key={`${name}-${index}`} className={name==='04-banner'?'wide':index===3||index===4?'half':''}><img src={sitePath(`/app-design/${name}.jpg`)} alt={`APP Design 流程畫面 ${index+1}`} loading="lazy"/><figcaption>{String(index+1).padStart(2,'0')} / {String(gallery.length).padStart(2,'0')}</figcaption></figure>)}
     </section>
     <ProjectPager current="app-design"/>
-    <footer><div><span>KELLY LEI</span><span>VISUAL &amp; PRODUCT DESIGNER</span></div><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
+    <SiteFooter/>
   </div></main>
 }

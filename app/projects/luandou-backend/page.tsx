@@ -1,10 +1,11 @@
+import SiteFooter from '../../components/SiteFooter';
 const figmaUrl='https://www.figma.com/design/IZstlpMcHwZrNR23u7W1qO/%E4%BA%82%E9%AC%A5%E5%BE%8C%E5%8F%B0?t=UEm0NWFAAjYfTr1I-0';
 const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(figmaUrl)}`;
 
 export default function LuandouBackendPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <CaseStudyIntro index="04" category="ADMIN SYSTEM" title="亂鬥後台｜管理與廣告系統設計" summary="將管理員、內容與廣告操作拆解成一致的任務流程，改善複雜資訊的閱讀順序與日常管理效率。" role="UI / Product Designer" scope="功能重構、廣告系統、後台元件" platform="Desktop Web"/>
+    <CaseStudyIntro slug="luandou-backend" category="ADMIN SYSTEM" title="亂鬥後台｜管理與廣告系統設計" summary="將管理員、內容與廣告操作拆解成一致的任務流程，改善複雜資訊的閱讀順序與日常管理效率。" role="UI / Product Designer" scope="功能重構、廣告系統、後台元件" platform="Desktop Web"/>
     <CaseToc/>
     <section className="case-cover" aria-label="亂鬥後台專案封面">
       <img src={sitePath('/luandou-backend/cover.png')} alt="亂鬥後台管理系統介面展示"/>
@@ -49,7 +50,7 @@ export default function LuandouBackendPage(){
       <iframe src={figmaEmbed} title="亂鬥後台 Figma design" allowFullScreen allow="fullscreen"/>
     </section>
     <ProjectPager current="luandou-backend"/>
-    <footer><div><span>KELLY LEI</span><span>VISUAL &amp; PRODUCT DESIGNER</span></div><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
+    <SiteFooter/>
   </div></main>
 }
 import ProfileSidebar from '../../components/ProfileSidebar';

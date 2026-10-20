@@ -1,3 +1,4 @@
+import SiteFooter from '../../components/SiteFooter';
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
 import CaseStudyIntro from '../../components/CaseStudyIntro';
@@ -9,13 +10,13 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 export default function LittleTailPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <CaseStudyIntro index="09" category="WEBSITE DESIGN" title="小尾巴｜寵物美容預約平台" summary="整合美容服務預約與領養資訊，讓使用者能在不同裝置上快速理解服務內容並完成下一步。" role="UI / UX Designer" scope="預約體驗、資訊架構、RWD" platform="Desktop / Mobile"/>
+    <CaseStudyIntro slug="little-tail" category="WEBSITE DESIGN" title="小尾巴｜寵物美容預約平台" summary="整合美容服務預約與領養資訊，讓使用者能在不同裝置上快速理解服務內容並完成下一步。" role="UI / UX Designer" scope="預約體驗、資訊架構、RWD" platform="Desktop / Mobile"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>09</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
       <iframe src={figmaEmbed} title="小尾巴寵物美容 Figma design" allowFullScreen allow="fullscreen"/>
       <p className="figma-detail-note">想查看更多設計細節與完整畫面流程，歡迎<a href={figmaUrl} target="_blank" rel="noreferrer">進入 Figma 深入瀏覽 ↗</a></p>
     </section>
     <ProjectPager current="little-tail"/>
-    <footer><div><span>KELLY LEI</span><span>VISUAL &amp; PRODUCT DESIGNER</span></div><div><span>TAIPEI, TAIWAN</span><span>© 2026</span></div></footer>
+    <SiteFooter/>
   </div></main>
 }

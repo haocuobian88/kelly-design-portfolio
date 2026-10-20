@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Noto_Sans_TC } from 'next/font/google';
 import './globals.css';
 import {sitePath} from './site-path';
+import {profile} from './site-data';
 import GoogleAnalytics from './google-analytics';
 
 const geistSans = Geist({
@@ -22,8 +23,8 @@ const notoSansTC = Noto_Sans_TC({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://haocuobian88.github.io/kelly-design-portfolio/'),
-  title: 'Kelly Lei — Visual & Product Designer',
-  description: '專注於數位體驗與品牌視覺的設計作品集。',
+  title: `${profile.name} — ${profile.title}`,
+  description: 'UI / Product Designer 作品集：專注於內容平台、後台系統與跨裝置數位體驗。',
   icons: {
     icon: [
       {url: sitePath('/favicon.ico'), sizes: 'any'},
@@ -31,13 +32,13 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Kelly Lei — Visual & Product Designer',
+    title: `${profile.name} — ${profile.title}`,
     description: '把想法，設計成有感的體驗。',
     images: ['https://haocuobian88.github.io/kelly-design-portfolio/og.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kelly Lei — Visual & Product Designer',
+    title: `${profile.name} — ${profile.title}`,
     description: '把想法，設計成有感的體驗。',
     images: ['https://haocuobian88.github.io/kelly-design-portfolio/og.png'],
   },
