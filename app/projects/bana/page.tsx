@@ -4,7 +4,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 export default function BanaPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <section className="case-summary"><p>成人網站｜整體畫面及用戶功能重構、元件規劃</p></section>
+    <CaseStudyIntro index="05" category="CONTENT PLATFORM" title="BanaBana｜內容平台體驗重構" summary="針對內容探索、會員操作與高密度資訊呈現重新規劃介面，建立更一致的瀏覽節奏與元件系統。" role="UI / Product Designer" scope="內容架構、用戶功能、元件規劃" platform="Responsive Web"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>05</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
       <iframe src={figmaEmbed} title="BANA Web UI Figma design" allowFullScreen allow="fullscreen"/>
@@ -15,3 +15,4 @@ export default function BanaPage(){
 }
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
+import CaseStudyIntro from '../../components/CaseStudyIntro';

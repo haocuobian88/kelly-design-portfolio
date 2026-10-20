@@ -4,7 +4,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 export default function EasyHomeSportPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <section className="case-summary"><p>App Design｜運動在家 Easy Home Sport</p></section>
+    <CaseStudyIntro index="10" category="APP DESIGN" title="Easy Home Sport｜居家運動 App" summary="從課程探索、訓練播放到進度紀錄，打造能降低開始門檻並陪伴使用者建立運動節奏的行動體驗。" role="UI / Product Designer" scope="產品流程、Mobile UI、Design System" platform="Mobile App"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>10</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
       <iframe src={figmaEmbed} title="Easy Home Sport Figma design" allowFullScreen allow="fullscreen"/>
@@ -14,3 +14,4 @@ export default function EasyHomeSportPage(){
 }
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
+import CaseStudyIntro from '../../components/CaseStudyIntro';

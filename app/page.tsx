@@ -6,16 +6,16 @@ import {sitePath} from './site-path';
 type WorkCategory = '全部' | '網站設計' | '平台系統' | 'APP UI';
 const workCategories: WorkCategory[] = ['全部','網站設計','平台系統','APP UI'];
 const workProjects = [
-  {id:1,category:'網站設計' as WorkCategory,title:'品牌官網｜整體視覺設計、元件規劃',source:'/projects/luckmesh',kind:'internal',cover:'/luckmesh/cover.png'},
-  {id:2,category:'網站設計' as WorkCategory,title:'品牌官網｜整體視覺設計、元件規劃',source:'/projects/xincheng-en',kind:'internal',cover:'/xincheng-en/cover.png'},
-  {id:3,category:'平台系統' as WorkCategory,title:'論壇平台｜整體畫面及用戶功能重構、元件規劃',source:'/projects/luandou-frontend',kind:'internal',cover:'/luandou-frontend/cover.png'},
-  {id:4,category:'平台系統' as WorkCategory,title:'後台｜管理員功能重構、廣告系統、元件規劃',source:'/projects/luandou-backend',kind:'internal',cover:'/luandou-backend/cover.png'},
-  {id:5,category:'平台系統' as WorkCategory,title:'成人網站｜整體畫面及用戶功能重構、元件規劃',source:'/projects/bana',kind:'internal',cover:'/bana/cover.png'},
-  {id:6,category:'APP UI' as WorkCategory,title:'APP Design｜用戶端',source:'/projects/app-design',kind:'internal',cover:'/app-design/cover.avif'},
-  {id:7,category:'APP UI' as WorkCategory,title:'APP Design｜商家端',source:'/projects/app-design-backend',kind:'internal',cover:'/app-design-backend/cover.avif'},
-  {id:8,category:'網站設計' as WorkCategory,title:'網站重構',source:'/projects/website-redesign',preview:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-12&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A12&show-proto-sidebar=1',kind:'dual',cover:'/website-redesign/cover.avif'},
-  {id:9,category:'網站設計' as WorkCategory,title:'小尾巴寵物美容｜預約與領養資訊平台',source:'/projects/little-tail',preview:'https://www.figma.com/design/JdyYXjTJFHv4GA74byJ4hj?node-id=190-2',kind:'figma'},
-  {id:10,category:'APP UI' as WorkCategory,title:'App Design｜運動在家 Easy Home Sport',source:'/projects/easy-home-sport',kind:'internal',cover:'/easy-home-sport/cover.png'},
+  {id:1,category:'網站設計' as WorkCategory,title:'LuckMesh｜跨裝置遊戲品牌體驗',subtitle:'品牌官網、視覺系統與元件規劃',featured:true,source:'/projects/luckmesh',kind:'internal',cover:'/luckmesh/cover.png'},
+  {id:2,category:'網站設計' as WorkCategory,title:'星城 EN｜娛樂平台品牌官網',subtitle:'跨裝置介面與品牌視覺規劃',featured:false,source:'/projects/xincheng-en',kind:'internal',cover:'/xincheng-en/cover.png'},
+  {id:3,category:'平台系統' as WorkCategory,title:'遊戲大亂鬥｜內容論壇體驗重構',subtitle:'資訊架構、會員功能與元件系統',featured:true,source:'/projects/luandou-frontend',kind:'internal',cover:'/luandou-frontend/cover.png'},
+  {id:4,category:'平台系統' as WorkCategory,title:'亂鬥後台｜管理與廣告系統設計',subtitle:'複雜功能流程與後台元件規劃',featured:true,source:'/projects/luandou-backend',kind:'internal',cover:'/luandou-backend/cover.png'},
+  {id:5,category:'平台系統' as WorkCategory,title:'BanaBana｜內容平台體驗重構',subtitle:'內容探索、會員功能與介面系統',featured:false,source:'/projects/bana',kind:'internal',cover:'/bana/cover.png'},
+  {id:6,category:'APP UI' as WorkCategory,title:'美耶｜到府美業服務 App',subtitle:'預約流程、UI 介面與新功能規劃',featured:false,source:'/projects/app-design',kind:'internal',cover:'/app-design/cover.avif'},
+  {id:7,category:'APP UI' as WorkCategory,title:'美耶商家端｜服務管理 App',subtitle:'接單、訂單與服務狀態流程',featured:false,source:'/projects/app-design-backend',kind:'internal',cover:'/app-design-backend/cover.avif'},
+  {id:8,category:'網站設計' as WorkCategory,title:'BabyHome｜響應式網站重構',subtitle:'桌機與手機資訊層級重新規劃',featured:false,source:'/projects/website-redesign',preview:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-12&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A12&show-proto-sidebar=1',kind:'dual',cover:'/website-redesign/cover.avif'},
+  {id:9,category:'網站設計' as WorkCategory,title:'小尾巴｜寵物美容預約平台',subtitle:'預約與領養資訊的響應式體驗',featured:false,source:'/projects/little-tail',preview:'https://www.figma.com/design/JdyYXjTJFHv4GA74byJ4hj?node-id=190-2',kind:'figma'},
+  {id:10,category:'APP UI' as WorkCategory,title:'Easy Home Sport｜居家運動 App',subtitle:'課程探索、訓練與進度紀錄體驗',featured:true,source:'/projects/easy-home-sport',kind:'internal',cover:'/easy-home-sport/cover.png'},
 ];
 const workEmbed=(project:(typeof workProjects)[number])=>`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.preview||project.source)}`;
 export default function Home(){
@@ -81,8 +81,16 @@ export default function Home(){
       <a className="hero-cta" href={sitePath('/projects/')}>VIEW PROJECTS <span>→</span></a>
     </section>
 
+    <section className="positioning-statement motion-reveal" aria-label="專業定位">
+      <p>UI / PRODUCT DESIGNER · TAIPEI</p>
+      <div>
+        <h2>把複雜需求整理成<br/>清楚、可使用，也能落地的介面。</h2>
+        <p>專注於內容平台、後台系統與跨裝置數位體驗；從資訊架構、操作流程到視覺與元件規範，讓每個設計選擇都回應真正的問題。</p>
+      </div>
+    </section>
+
     <section className="portfolio" id="work">
-      <div className="work-heading motion-reveal"><p>FIGMA &amp; LIVE PROJECTS · 01—10</p></div>
+      <div className="work-heading motion-reveal"><p>SELECTED WORK · 4 FEATURED CASES + 6 MORE</p><div><h2>從品牌官網到複雜平台，<br/>把需求整理成可落地的體驗。</h2><p className="work-heading-note">精選案例標示了最能呈現產品思考、系統規劃與跨裝置設計能力的專案。</p></div></div>
       <div className="filters motion-reveal" role="group" aria-label="作品分類">{workCategories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
       <div className="masonry">
         {filteredProjects.map((project,index)=><article key={project.id} className="project work-project-card motion-reveal" style={{'--reveal-delay':`${Math.min(index,5)*70}ms`} as CSSProperties}>
@@ -91,7 +99,7 @@ export default function Home(){
               <div className="embed-toolbar"><span>{String(project.id).padStart(2,'0')}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'||project.kind==='dual'?'CASE STUDY':'LIVE WEBSITE'}</span></div>
               <div className="work-project-media">{project.kind==='internal'||project.kind==='dual'?<img src={sitePath(project.cover!)} alt={`${project.title} 作品封面`}/>:project.kind==='figma'?<iframe src={workEmbed(project)} title={project.title} loading="lazy" aria-hidden="true"/>:<div className="live-project-preview"><span>KELLY LEI · WEB DESIGN</span><strong>Little Tail</strong><small>LIVE WEBSITE</small></div>}</div>
             </div>
-            <div className="caption"><div><h3>{project.title}</h3></div></div>
+            <div className="caption"><div>{project.featured&&<span className="featured-label">FEATURED CASE</span>}<h3>{project.title}</h3><p>{project.subtitle}</p></div></div>
           </a>
         </article>)}
       </div>

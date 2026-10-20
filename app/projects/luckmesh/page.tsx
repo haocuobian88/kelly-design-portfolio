@@ -4,7 +4,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 export default function LuckMeshPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <section className="case-summary"><p>品牌官網｜整體視覺設計、元件規劃</p></section>
+    <CaseStudyIntro index="01" category="WEBSITE DESIGN" title="LuckMesh｜跨裝置遊戲品牌體驗" summary="以品牌識別一致性與跨裝置閱讀為核心，重新整理官網的視覺層級、內容區塊與可重複使用元件。" role="UI / Visual Designer" scope="品牌視覺、Web UI、元件規劃" platform="Desktop / Mobile"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>01</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
       <iframe src={figmaEmbed} title="LuckMesh Figma design" allowFullScreen allow="fullscreen"/>
@@ -14,3 +14,4 @@ export default function LuckMeshPage(){
 }
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
+import CaseStudyIntro from '../../components/CaseStudyIntro';

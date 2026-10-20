@@ -1,5 +1,6 @@
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
+import CaseStudyIntro from '../../components/CaseStudyIntro';
 
 const figmaUrl='https://www.figma.com/design/JdyYXjTJFHv4GA74byJ4hj?node-id=190-2';
 const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(figmaUrl)}`;
@@ -7,7 +8,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 export default function LittleTailPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <section className="case-summary"><p>小尾巴寵物美容｜預約與領養資訊平台</p></section>
+    <CaseStudyIntro index="09" category="WEBSITE DESIGN" title="小尾巴｜寵物美容預約平台" summary="整合美容服務預約與領養資訊，讓使用者能在不同裝置上快速理解服務內容並完成下一步。" role="UI / UX Designer" scope="預約體驗、資訊架構、RWD" platform="Desktop / Mobile"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>09</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
       <iframe src={figmaEmbed} title="小尾巴寵物美容 Figma design" allowFullScreen allow="fullscreen"/>

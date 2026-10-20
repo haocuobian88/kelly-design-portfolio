@@ -3,6 +3,7 @@
 import {useEffect, useState} from 'react';
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
+import CaseStudyIntro from '../../components/CaseStudyIntro';
 import {sitePath} from '../../site-path';
 
 const slides=['/app-design/slide-1.png','/app-design/slide-2.png','/app-design/slide-3.png'].map(sitePath);
@@ -13,6 +14,7 @@ export default function AppDesignPage(){
   useEffect(()=>{const timer=window.setInterval(()=>setSlide(value=>(value+1)%slides.length),3200);return()=>window.clearInterval(timer)},[]);
   return <main><ProfileSidebar/><div className="site-content case-page">
     <CaseNav/>
+    <CaseStudyIntro index="06" category="APP DESIGN" title="美耶｜到府美業服務 App" summary="將傳統實體美業服務轉化為可探索、可預約的行動流程，整合到府服務項目、預約操作與新功能規劃。" role="UI / Product Designer" scope="使用者流程、Mobile UI、新功能規劃" platform="iOS / Android"/>
     <section className="app-case-hero">
       <div className="app-case-copy">
         <h2>完善使用者流程體驗及 UI 介面和新功能規劃</h2>

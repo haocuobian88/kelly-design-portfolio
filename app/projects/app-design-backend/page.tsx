@@ -3,6 +3,7 @@
 import {useEffect, useState} from 'react';
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
+import CaseStudyIntro from '../../components/CaseStudyIntro';
 import {sitePath} from '../../site-path';
 
 const slides=['/app-design-backend/slide-1.png','/app-design-backend/slide-2.png','/app-design-backend/slide-3.png'].map(sitePath);
@@ -13,6 +14,7 @@ export default function AppDesignBackendPage(){
   useEffect(()=>{const timer=window.setInterval(()=>setSlide(value=>(value+1)%slides.length),3200);return()=>window.clearInterval(timer)},[]);
   return <main><ProfileSidebar/><div className="site-content case-page backend-case">
     <CaseNav/>
+    <CaseStudyIntro index="07" category="APP DESIGN" title="美耶商家端｜服務管理 App" summary="從商家與技術服務人員的日常工作出發，整理接單、訂單管理、預約通知與服務狀態的操作流程。" role="UI / Product Designer" scope="商家需求、功能流程、Mobile UI" platform="iOS / Android"/>
     <section className="app-case-hero">
       <div className="app-case-copy">
         <h2>蒐集商家需求，規劃功能及畫面</h2>

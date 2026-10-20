@@ -3,16 +3,16 @@ import {sitePath} from '../site-path';
 type ProjectCategory = '網站設計' | '平台系統' | 'APP UI';
 
 const projects = [
-  {id:1,category:'網站設計' as ProjectCategory,title:'品牌官網｜整體視覺設計、元件規劃',source:'/projects/luckmesh',kind:'internal',cover:'/luckmesh/cover.png'},
-  {id:2,category:'網站設計' as ProjectCategory,title:'品牌官網｜整體視覺設計、元件規劃',source:'/projects/xincheng-en',kind:'internal',cover:'/xincheng-en/cover.png'},
-  {id:3,category:'平台系統' as ProjectCategory,title:'論壇平台｜整體畫面及用戶功能重構、元件規劃',source:'/projects/luandou-frontend',kind:'internal',cover:'/luandou-frontend/cover.png'},
-  {id:4,category:'平台系統' as ProjectCategory,title:'後台｜管理員功能重構、廣告系統、元件規劃',source:'/projects/luandou-backend',kind:'internal',cover:'/luandou-backend/cover.png'},
-  {id:5,category:'平台系統' as ProjectCategory,title:'成人網站｜整體畫面及用戶功能重構、元件規劃',source:'/projects/bana',kind:'internal',cover:'/bana/cover.png'},
-  {id:6,category:'APP UI' as ProjectCategory,title:'APP Design',source:'/projects/app-design',kind:'internal',cover:'/app-design/cover.avif'},
-  {id:7,category:'APP UI' as ProjectCategory,title:'APP Design',source:'/projects/app-design-backend',kind:'internal',cover:'/app-design-backend/cover.avif'},
-  {id:8,category:'網站設計' as ProjectCategory,title:'網站重構',source:'/projects/website-redesign',preview:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-12&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A12&show-proto-sidebar=1',kind:'dual',cover:'/website-redesign/cover.avif'},
-  {id:9,category:'網站設計' as ProjectCategory,title:'小尾巴寵物美容｜預約與領養資訊平台',source:'/projects/little-tail',preview:'https://www.figma.com/design/JdyYXjTJFHv4GA74byJ4hj?node-id=190-2',external:'https://little-tail-booking.kellylei9.chatgpt.site/',kind:'figma'},
-  {id:10,category:'APP UI' as ProjectCategory,title:'App Design｜運動在家 Easy Home Sport',source:'/projects/easy-home-sport',kind:'internal',cover:'/easy-home-sport/cover.png'},
+  {id:1,category:'網站設計' as ProjectCategory,title:'LuckMesh｜跨裝置遊戲品牌體驗',source:'/projects/luckmesh',kind:'internal',cover:'/luckmesh/cover.png'},
+  {id:2,category:'網站設計' as ProjectCategory,title:'星城 EN｜娛樂平台品牌官網',source:'/projects/xincheng-en',kind:'internal',cover:'/xincheng-en/cover.png'},
+  {id:3,category:'平台系統' as ProjectCategory,title:'遊戲大亂鬥｜內容論壇體驗重構',source:'/projects/luandou-frontend',kind:'internal',cover:'/luandou-frontend/cover.png'},
+  {id:4,category:'平台系統' as ProjectCategory,title:'亂鬥後台｜管理與廣告系統設計',source:'/projects/luandou-backend',kind:'internal',cover:'/luandou-backend/cover.png'},
+  {id:5,category:'平台系統' as ProjectCategory,title:'BanaBana｜內容平台體驗重構',source:'/projects/bana',kind:'internal',cover:'/bana/cover.png'},
+  {id:6,category:'APP UI' as ProjectCategory,title:'美耶｜到府美業服務 App',source:'/projects/app-design',kind:'internal',cover:'/app-design/cover.avif'},
+  {id:7,category:'APP UI' as ProjectCategory,title:'美耶商家端｜服務管理 App',source:'/projects/app-design-backend',kind:'internal',cover:'/app-design-backend/cover.avif'},
+  {id:8,category:'網站設計' as ProjectCategory,title:'BabyHome｜響應式網站重構',source:'/projects/website-redesign',preview:'https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-12&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A12&show-proto-sidebar=1',kind:'dual',cover:'/website-redesign/cover.avif'},
+  {id:9,category:'網站設計' as ProjectCategory,title:'小尾巴｜寵物美容預約平台',source:'/projects/little-tail',preview:'https://www.figma.com/design/JdyYXjTJFHv4GA74byJ4hj?node-id=190-2',external:'https://little-tail-booking.kellylei9.chatgpt.site/',kind:'figma'},
+  {id:10,category:'APP UI' as ProjectCategory,title:'Easy Home Sport｜居家運動 App',source:'/projects/easy-home-sport',kind:'internal',cover:'/easy-home-sport/cover.png'},
 ];
 
 const embedUrl=(project:(typeof projects)[number])=>project.kind==='figma'||project.kind==='dual'?`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.preview||project.source)}`:project.source;

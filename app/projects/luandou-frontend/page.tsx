@@ -4,7 +4,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 export default function LuandouFrontendPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <section className="case-summary"><p>論壇平台｜整體畫面及用戶功能重構、元件規劃</p></section>
+    <CaseStudyIntro index="03" category="PLATFORM SYSTEM" title="遊戲大亂鬥｜內容論壇體驗重構" summary="面對大量文章、會員互動與活動入口，重新梳理資訊層級與操作路徑，讓內容探索與核心功能更容易被理解。" role="UI / Product Designer" scope="資訊架構、用戶功能、元件系統" platform="Responsive Web"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>03</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
       <iframe src={figmaEmbed} title="亂鬥前台 Figma design" allowFullScreen allow="fullscreen"/>
@@ -15,3 +15,4 @@ export default function LuandouFrontendPage(){
 }
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
+import CaseStudyIntro from '../../components/CaseStudyIntro';

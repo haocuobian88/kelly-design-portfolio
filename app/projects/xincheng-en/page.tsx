@@ -4,7 +4,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 export default function XinchengEnPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <section className="case-summary"><p>品牌官網｜整體視覺設計、元件規劃</p></section>
+    <CaseStudyIntro index="02" category="WEBSITE DESIGN" title="星城 EN｜娛樂平台品牌官網" summary="以高密度娛樂內容為基礎，建立清楚的品牌視覺、內容導覽與跨裝置介面規則。" role="UI / Visual Designer" scope="品牌官網、RWD、元件規劃" platform="Desktop / Mobile"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>02</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
       <iframe src={figmaEmbed} title="星城 EN Figma design" allowFullScreen allow="fullscreen"/>
@@ -14,3 +14,4 @@ export default function XinchengEnPage(){
 }
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
+import CaseStudyIntro from '../../components/CaseStudyIntro';

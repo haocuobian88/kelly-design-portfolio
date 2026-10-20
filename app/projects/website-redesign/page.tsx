@@ -5,7 +5,7 @@ const embed=(url:string)=>`https://www.figma.com/embed?embed_host=share&url=${en
 export default function WebsiteRedesignPage(){
   return <main><ProfileSidebar/><div className="site-content redesign-page">
     <CaseNav/>
-    <section className="case-summary"><p>網站重構｜桌機與手機響應式體驗規劃</p><span>同一套網站體驗，分別針對桌機與手機的閱讀情境重新規劃。兩個互動原型並排呈現，方便直接比較資訊層級、導覽與響應式行為。</span></section>
+    <CaseStudyIntro index="08" category="WEBSITE REDESIGN" title="BabyHome｜響應式網站重構" summary="針對桌機與手機的不同閱讀情境，重新規劃資訊層級、導覽與響應式行為，讓同一套內容在不同裝置維持清楚的使用體驗。" role="UI / UX Designer" scope="資訊架構、RWD、Prototype" platform="Desktop / Mobile"/>
     <section className="device-previews">
       <article className="device-preview web-preview"><div className="device-label"><span>01</span><strong>WEB PREVIEW</strong><a href={webPrototype} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div><div className="browser-frame"><iframe src={embed(webPrototype)} title="網站重構 Web prototype" allowFullScreen allow="fullscreen"/></div></article>
       <article className="device-preview mobile-preview"><div className="device-label"><span>02</span><strong>MOBILE PREVIEW</strong><a href={mobilePrototype} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div><div className="phone-frame"><iframe src={embed(mobilePrototype)} title="網站重構 Mobile prototype" allowFullScreen allow="fullscreen"/></div></article>
@@ -16,3 +16,4 @@ export default function WebsiteRedesignPage(){
 }
 import ProfileSidebar from '../../components/ProfileSidebar';
 import CaseNav from '../../components/CaseNav';
+import CaseStudyIntro from '../../components/CaseStudyIntro';
