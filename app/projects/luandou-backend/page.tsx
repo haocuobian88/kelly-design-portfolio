@@ -7,7 +7,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 export default function LuandouBackendPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <CaseStudyIntro slug="luandou-backend" category="ADMIN SYSTEM" title="亂鬥後台｜管理與廣告系統設計" summary="將管理員、內容與廣告操作拆解成一致的任務流程，改善複雜資訊的閱讀順序與日常管理效率。" role="UI / Product Designer" scope="功能重構、廣告系統、後台元件" platform="Desktop Web"/>
+    <CaseStudyIntro slug="luandou-backend" category="ADMIN SYSTEM" title="亂鬥後台｜管理與廣告系統設計" summary="舊後台已經不堪使用，同時又有一番賞、序號兌換、通知中心等新功能要上線。我以 UI 兼 PM 的角色，在很趕的時程內重構整個後台，讓營運、客服、站務與商家小編都能用同一套系統完成工作。" role="UI Designer / PM" scope="後台重構、新功能規劃、元件庫" platform="Desktop / Mobile Web"/>
     <CaseToc/>
     <section className="case-cover" aria-label="亂鬥後台專案封面">
       <img src={sitePath('/luandou-backend/cover.webp')} alt="亂鬥後台管理系統介面展示"/>
@@ -16,34 +16,42 @@ export default function LuandouBackendPage(){
       <article className="case-story-overview" id="overview">
         <p className="case-story-label">CONTEXT</p>
         <div>
-          <h2>把複雜的管理工作，<br/>整理成可預期的操作流程。</h2>
-          <p>後台同時包含內容、會員、廣告與系統設定等不同任務。設計重點在於建立一致的導覽、列表與操作模式，讓管理者面對大量資料時，仍能快速辨識狀態並完成工作。</p>
+          <h2>四種角色、背景各不相同，<br/>卻要共用同一套後台。</h2>
+          <p>亂鬥後台的使用者包含營運、客服、站務，以及外部合作的商家小編。每個人負責的工作不同，熟悉系統的程度也差很多。舊後台已經難以使用，加上一番賞的物流出貨與金流拆帳、序號兌換、通知中心等新功能都要上線，團隊決定直接重構整個後台。</p>
         </div>
       </article>
 
       <div className="case-story-divider"/>
 
       <section className="case-challenges" id="challenges" aria-labelledby="backend-challenge-title">
-        <div className="case-section-heading"><p className="case-story-label">01 · CHALLENGES</p><h2 id="backend-challenge-title">後台設計的核心挑戰</h2></div>
+        <div className="case-section-heading"><p className="case-story-label">01 · CHALLENGES</p><h2 id="backend-challenge-title">重構與新功能，要在很趕的時程內一起完成。</h2></div>
         <div className="case-card-grid">
-          <article><span>01</span><h3>功能分類</h3><p>管理項目多且彼此相關，需要讓導覽結構符合使用者執行任務的思考方式。</p></article>
-          <article><span>02</span><h3>資料判讀</h3><p>表格、狀態與操作資訊必須維持清楚層級，降低在大量資料中辨識與比對的負擔。</p></article>
-          <article><span>03</span><h3>流程一致性</h3><p>新增、編輯、搜尋、篩選與狀態變更需要共享一致的操作規則與回饋方式。</p></article>
+          <article><span>01</span><h3>使用者落差大</h3><p>內部營運與外部商家小編對系統的熟悉度不同，同一個畫面必須讓第一次使用的人也看得懂、不容易填錯。</p></article>
+          <article><span>02</span><h3>舊系統與新需求並行</h3><p>不只要把舊功能搬到新架構，還要同時規劃一番賞出貨、金流拆帳、商家設定等全新流程。</p></article>
+          <article><span>03</span><h3>時程很趕</h3><p>沒有時間每個畫面都從零設計，設計稿必須能快速交給工程師實作，並且能在後續功能直接沿用。</p></article>
         </div>
       </section>
 
       <section className="case-approach" id="approach" aria-labelledby="backend-approach-title">
-        <div className="case-section-heading"><p className="case-story-label">02 · APPROACH</p><h2 id="backend-approach-title">以管理任務建立系統規則。</h2></div>
+        <div className="case-section-heading"><p className="case-story-label">02 · APPROACH</p><h2 id="backend-approach-title">一個原則：不管哪個角色，都要好操作、好理解。</h2></div>
         <ol>
-          <li><span>01</span><div><h3>盤點管理情境</h3><p>依照管理者的主要任務重新整理功能群組，讓入口名稱與使用情境彼此對應。</p></div></li>
-          <li><span>02</span><div><h3>統一資料操作模式</h3><p>整理列表、篩選、狀態與批次操作的層級，讓不同模組保有一致的學習經驗。</p></div></li>
-          <li><span>03</span><div><h3>規劃可延伸元件</h3><p>建立導覽、表格、表單、標籤與回饋元件，支援後續功能與廣告模組擴充。</p></div></li>
+          <li><span>01</span><div><h3>平台端與商家端分開設計</h3><p>同一個功能依角色拆成不同畫面，例如「金流與拆帳」和「物流出貨」都分成平台版與商家版。商家小編只看到自己需要處理的資料，平台營運則保有完整的管理與設定權限，降低誤操作的風險。</p></div></li>
+          <li><span>02</span><div><h3>讓表單自己說明怎麼填</h3><p>必填欄位統一標示，輸入框直接寫出格式範例（例如平台抽成「請輸入 % 數，例如 30」），字數上限即時顯示，目的是讓不熟悉系統的使用者也能一次填對，不必再回頭詢問客服或站務。</p></div></li>
+          <li><span>03</span><div><h3>先建元件庫，再組合頁面</h3><p>先整理色彩、按鈕、表單、篩選、表格、分頁籤、彈窗、進度條與桌機／手機版型，所有頁面都用同一套元件組成。新功能可以直接拼裝，工程師也能重複使用同一份元件，壓縮設計與開發時間。</p></div></li>
         </ol>
       </section>
 
       <section className="case-contribution" id="contribution">
         <p className="case-story-label">MY CONTRIBUTION</p>
-        <div><h2>我負責將後台需求，轉化成一致的管理體驗。</h2><p>工作涵蓋管理功能重構、廣告系統介面、資訊層級、表格與表單狀態，以及共用元件規劃。下方 Figma 保留完整模組與畫面脈絡。</p></div>
+        <div>
+          <h2>UI 兼 PM：從收集需求到交付上線。</h2>
+          <p>我先向各角色收集需求，把功能與畫面規劃出來，再和後端工程師逐一討論資料欄位與流程的可行性，修正後交給前端切版與串接。設計與規格由同一個人負責，減少需求在轉手之間走樣，也省下來回溝通的時間。</p>
+          <ul className="case-results">
+            <li><strong>上線回饋良好</strong><span>新後台上線後，各角色使用的整體回饋不錯。</span></li>
+            <li><strong>元件被工程端沿用</strong><span>工程師直接重複使用同一套元件實作。</span></li>
+            <li><strong>後續畫面直接套用</strong><span>之後的新需求有些畫面可以直接沿用，不必重新設計。</span></li>
+          </ul>
+        </div>
       </section>
     </section>
     <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>完整後台介面與功能模組</h2></div>
