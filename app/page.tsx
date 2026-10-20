@@ -18,6 +18,19 @@ const workProjects = [
   {id:10,category:'APP UI' as WorkCategory,title:'Easy Home Sport｜居家運動 App',subtitle:'課程探索、訓練與進度紀錄體驗',featured:true,source:'/projects/easy-home-sport',kind:'internal',cover:'/easy-home-sport/cover.png'},
 ];
 const workEmbed=(project:(typeof workProjects)[number])=>`https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(project.preview||project.source)}`;
+
+function ProjectCard({project,index,compact=false}:{project:(typeof workProjects)[number],index:number,compact?:boolean}){
+  return <article className={`project work-project-card motion-reveal${compact?' compact-project-card':''}`} style={{'--reveal-delay':`${Math.min(index,5)*70}ms`} as CSSProperties}>
+    <a href={project.source.startsWith('/')?sitePath(`${project.source}/`):project.source} target={project.source.startsWith('/')?undefined:'_blank'} rel={project.source.startsWith('/')?undefined:'noreferrer'}>
+      <div className="visual work-project-visual">
+        <div className="embed-toolbar"><span>{String(project.id).padStart(2,'0')}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'||project.kind==='dual'?'CASE STUDY':'LIVE WEBSITE'}</span></div>
+        <div className="work-project-media">{project.kind==='internal'||project.kind==='dual'?<img src={sitePath(project.cover!)} alt={`${project.title} 作品封面`}/>:project.kind==='figma'?<iframe src={workEmbed(project)} title={project.title} loading="lazy" aria-hidden="true"/>:<div className="live-project-preview"><span>KELLY LEI · WEB DESIGN</span><strong>Little Tail</strong><small>LIVE WEBSITE</small></div>}</div>
+      </div>
+      <div className="caption"><div>{project.featured&&!compact&&<span className="featured-label">FEATURED CASE</span>}<h3>{project.title}</h3><p>{project.subtitle}</p></div></div>
+    </a>
+  </article>;
+}
+
 export default function Home(){
   const [active,setActive]=useState<WorkCategory>('全部');
   const [menu,setMenu]=useState(false);
@@ -36,6 +49,8 @@ export default function Home(){
     asset.style.setProperty('--escape-x','0px');asset.style.setProperty('--escape-y','0px');
   });
   const filteredProjects=active==='全部'?workProjects:workProjects.filter(project=>project.category===active);
+  const featuredProjects=workProjects.filter(project=>project.featured);
+  const otherProjects=workProjects.filter(project=>!project.featured);
   useEffect(()=>{
     const items=document.querySelectorAll<HTMLElement>('.motion-reveal');
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
@@ -92,17 +107,16 @@ export default function Home(){
     <section className="portfolio" id="work">
       <div className="work-heading motion-reveal"><p>SELECTED WORK · 4 FEATURED CASES + 6 MORE</p><div><h2>從品牌官網到複雜平台，<br/>把需求整理成可落地的體驗。</h2><p className="work-heading-note">精選案例標示了最能呈現產品思考、系統規劃與跨裝置設計能力的專案。</p></div></div>
       <div className="filters motion-reveal" role="group" aria-label="作品分類">{workCategories.map(c=><button key={c} onClick={()=>setActive(c)} className={active===c?'active':''}>{c}</button>)}</div>
-      <div className="masonry">
-        {filteredProjects.map((project,index)=><article key={project.id} className="project work-project-card motion-reveal" style={{'--reveal-delay':`${Math.min(index,5)*70}ms`} as CSSProperties}>
-          <a href={project.source.startsWith('/')?sitePath(`${project.source}/`):project.source} target={project.source.startsWith('/')?undefined:'_blank'} rel={project.source.startsWith('/')?undefined:'noreferrer'}>
-            <div className="visual work-project-visual">
-              <div className="embed-toolbar"><span>{String(project.id).padStart(2,'0')}</span><span>{project.kind==='figma'?'FIGMA EMBED':project.kind==='internal'||project.kind==='dual'?'CASE STUDY':'LIVE WEBSITE'}</span></div>
-              <div className="work-project-media">{project.kind==='internal'||project.kind==='dual'?<img src={sitePath(project.cover!)} alt={`${project.title} 作品封面`}/>:project.kind==='figma'?<iframe src={workEmbed(project)} title={project.title} loading="lazy" aria-hidden="true"/>:<div className="live-project-preview"><span>KELLY LEI · WEB DESIGN</span><strong>Little Tail</strong><small>LIVE WEBSITE</small></div>}</div>
-            </div>
-            <div className="caption"><div>{project.featured&&<span className="featured-label">FEATURED CASE</span>}<h3>{project.title}</h3><p>{project.subtitle}</p></div></div>
-          </a>
-        </article>)}
-      </div>
+      {active==='全部'?<>
+        <section className="portfolio-group" aria-labelledby="featured-work-heading">
+          <div className="portfolio-group-heading motion-reveal"><span>01</span><h3 id="featured-work-heading">Featured Cases</h3><p>最能呈現產品思考與系統規劃的四個案例</p></div>
+          <div className="masonry featured-projects">{featuredProjects.map((project,index)=><ProjectCard key={project.id} project={project} index={index}/>)}</div>
+        </section>
+        <section className="portfolio-group other-work" aria-labelledby="other-work-heading">
+          <div className="portfolio-group-heading motion-reveal"><span>02</span><h3 id="other-work-heading">Other Projects</h3><p>更多品牌、網站與行動產品設計</p></div>
+          <div className="other-projects">{otherProjects.map((project,index)=><ProjectCard key={project.id} project={project} index={index} compact/>)}</div>
+        </section>
+      </>:<div className="masonry filtered-projects">{filteredProjects.map((project,index)=><ProjectCard key={project.id} project={project} index={index}/>)}</div>}
     </section>
 
     <section className="about motion-reveal" id="about"><p className="label">ABOUT</p><div className="about-copy"><p>我喜歡把複雜的事情，整理成簡單而有感的體驗。從介面、活動網站到行銷視覺，我在意的不只是畫面好不好看，而是每個選擇是否真正回應了問題。保持好奇、反覆推敲，然後留下剛剛好的設計。</p></div></section>
