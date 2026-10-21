@@ -35,7 +35,7 @@ export const projectBriefs: Record<string, ProjectBrief> = {
   },
   'little-tail': {
     context: '整合寵物美容預約與毛孩領養資訊的響應式網站。',
-    role: '負責預約體驗、資訊架構與桌機／手機介面。',
+    role: '自主練習專案，獨立完成預約體驗、資訊架構與桌機／手機介面。',
     focus: '把服務介紹、時段選擇與預約流程放在清楚的動線上，讓使用者在任何裝置上都能快速完成下一步。',
   },
 };
