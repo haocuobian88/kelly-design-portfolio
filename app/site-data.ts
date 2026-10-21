@@ -37,7 +37,7 @@ export const projects: Project[] = [
   {slug: 'app-design', category: 'APP UI', title: '美耶｜到府美業服務 App', subtitle: '預約流程、UI 介面與新功能規劃', role: 'UI / Product Designer', featured: false, cover: '/app-design/cover.avif'},
   {slug: 'app-design-backend', category: 'APP UI', title: '美耶商家端｜服務管理 App', subtitle: '接單、訂單與服務狀態流程', role: 'UI / Product Designer', featured: false, cover: '/app-design-backend/cover.avif'},
   {slug: 'website-redesign', category: '網站設計', title: 'BabyHome｜響應式網站重構', subtitle: '桌機與手機資訊層級重新規劃', role: 'UI / UX Designer', featured: false, cover: '/website-redesign/cover.avif'},
-  {slug: 'little-tail', category: '網站設計', title: '小尾巴｜寵物美容預約平台', subtitle: '預約與領養資訊的響應式體驗', role: 'UI / UX Designer', featured: false, cover: '/little-tail/cover.jpg'},
+  {slug: 'little-tail', category: '網站設計', title: '小尾巴｜寵物美容預約平台', subtitle: '預約與領養資訊的響應式體驗', role: 'UI / UX Designer', featured: false, sideProject: true, cover: '/little-tail/cover.jpg'},
 ];
 
 export const projectNumber = (slug: string) => {

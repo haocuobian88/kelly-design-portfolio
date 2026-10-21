@@ -7,7 +7,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 export default function LuandouFrontendPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <CaseStudyIntro slug="luandou-frontend" category="PLATFORM SYSTEM" title="遊戲大亂鬥｜內容論壇體驗重構" summary="面對大量文章、會員互動與活動入口，重新梳理資訊層級與操作路徑，讓內容探索與核心功能更容易被理解。" role="UI / Product Designer" scope="資訊架構、用戶功能、元件系統" platform="Responsive Web"/>
+    <CaseStudyIntro slug="luandou-frontend" category="PLATFORM SYSTEM" title="遊戲大亂鬥｜內容論壇體驗重構" summary="面對大量文章、會員互動與活動入口，重新梳理資訊層級與操作路徑，讓內容探索與核心功能更容易被理解。" role="UI Designer / PM" scope="論壇功能、編輯器、Design System" platform="Responsive Web"/>
     <CaseToc/>
     <section className="case-cover" aria-label="遊戲大亂鬥專案封面">
       <img src={sitePath('/luandou-frontend/cover.webp')} alt="遊戲大亂鬥桌機與行動版介面展示"/>
@@ -43,7 +43,15 @@ export default function LuandouFrontendPage(){
 
       <section className="case-contribution" id="contribution">
         <p className="case-story-label">MY CONTRIBUTION</p>
-        <div><h2>我負責把功能需求，轉換成一致的產品介面。</h2><p>工作涵蓋主要頁面與使用者功能重構、資訊層級整理、桌機與響應式介面設計，以及共用元件規劃。完整畫面與操作脈絡保留於下方 Figma 檔案。</p></div>
+        <div>
+          <h2>UI 兼 PM：把功能需求，轉換成一致的產品介面。</h2>
+          <p>我負責論壇核心功能、文章編輯器、分類標籤、會員制度與搜尋篩選的 UI／UX 規劃。收到需求後，先把功能與畫面規劃出來，和後端工程師討論資料與流程的可行性，修正後再交給前端切版與串接。時程很趕，所以每個決定都以「不同使用者都好操作、好理解」為優先，並同步建立與維護 Design System。</p>
+          <ul className="case-results">
+            <li><strong>建立 Design System</strong><span>導覽、內容卡片、標籤與狀態整理成共用元件，持續維護。</span></li>
+            <li><strong>元件被工程端沿用</strong><span>工程師直接重複使用同一套元件實作。</span></li>
+            <li><strong>後續畫面直接套用</strong><span>新功能有些畫面可以直接沿用，不必重新設計。</span></li>
+          </ul>
+        </div>
       </section>
     </section>
     <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>完整介面與畫面流程</h2></div>
