@@ -17,10 +17,10 @@ function ProjectCard({project,index,compact=false}:{project:Project,index:number
         <div className="work-project-media"><img src={sitePath(project.cover)} alt={`${project.title} 作品封面`} loading="lazy"/></div>
       </div>
       <div className="caption"><div>
-        {project.featured&&!compact&&<span className="featured-label">FEATURED CASE</span>}
+        <div className="card-labels">{project.featured&&!compact&&<span className="featured-label">FEATURED CASE</span>}{project.sideProject&&<span className="featured-label side-label">SIDE PROJECT</span>}</div>
         <h3>{project.title}</h3>
         <p>{project.subtitle}</p>
-        <p className="caption-meta">{project.category} · {project.role}</p>
+        <p className="caption-meta">{project.category} · {project.sideProject?'自主練習 · ':''}{project.role}</p>
       </div></div>
     </a>
   </article>;
@@ -109,6 +109,7 @@ export default function Home(){
             <ul className="about-skills">{skills.map(skill=><li key={skill}>{skill}</li>)}</ul>
             <div className="about-links">
               <a href={sitePath('/resume/')}>完整履歷 <span aria-hidden="true">→</span></a>
+              <a href={sitePath('/kelly-lei-resume.pdf')} download="Kelly-Lei-Resume.pdf">下載 PDF <span aria-hidden="true">↓</span></a>
               <a href={`mailto:${profile.email}`}>Email <span aria-hidden="true">→</span></a>
             </div>
           </section>

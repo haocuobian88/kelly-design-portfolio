@@ -11,7 +11,7 @@ export default function ProjectsPage(){
       <TopBar current="projects"/>
       <section className="projects-page">
         <a className="projects-back" href={sitePath('/')}>← BACK HOME</a>
-        <div className="projects-page-head"><p>ALL PROJECTS · 01—{String(projects.length).padStart(2,'0')}</p><h1>Designed in Figma.<br/><i>Built for the real world.</i></h1></div>
+        <div className="projects-page-head"><p>ALL PROJECTS · 01—{String(projects.length).padStart(2,'0')}</p><h1>全部作品<br/><i>從需求到可落地的介面。</i></h1></div>
         <div className="embed-grid">
           {projects.map(project=><article key={project.slug} className="embed-project">
             <div className="embed-square">
