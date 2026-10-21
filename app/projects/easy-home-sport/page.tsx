@@ -7,7 +7,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 export default function EasyHomeSportPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <CaseStudyIntro slug="easy-home-sport" category="APP DESIGN" title="Easy Home Sport｜居家運動 App" summary="從課程探索、訓練播放到進度紀錄，打造能降低開始門檻並陪伴使用者建立運動節奏的行動體驗。" role="UI / Product Designer" scope="產品流程、Mobile UI、Design System" platform="Mobile App"/>
+    <CaseStudyIntro slug="easy-home-sport" category="APP DESIGN · SIDE PROJECT" title="Easy Home Sport｜居家運動 App" summary="自主練習專案。從課程探索、訓練播放到進度紀錄，打造能降低開始門檻並陪伴使用者建立運動節奏的行動體驗。" role="UI / Product Designer" scope="產品流程、Mobile UI、Design System" platform="Mobile App"/>
     <CaseToc/>
     <section className="case-cover" aria-label="Easy Home Sport 專案封面">
       <img src={sitePath('/easy-home-sport/cover.webp')} alt="Easy Home Sport 居家運動 App 畫面展示"/>
@@ -36,7 +36,7 @@ export default function EasyHomeSportPage(){
       </section>
       <section className="case-contribution" id="contribution">
         <p className="case-story-label">MY CONTRIBUTION</p>
-        <div><h2>我負責從產品流程到介面系統，建立完整的行動體驗。</h2><p>工作涵蓋功能與流程規劃、主要使用情境、Mobile UI、互動狀態與 Design System，並將課程、訓練與成就紀錄整合成一致的產品語言。</p></div>
+        <div><h2>獨立完成從產品流程到介面系統的完整行動體驗。</h2><p>工作涵蓋功能與流程規劃、主要使用情境、Mobile UI、互動狀態與 Design System，並將課程、訓練與成就紀錄整合成一致的產品語言。</p></div>
       </section>
     </section>
     <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>完整 App 介面與產品流程</h2></div>
