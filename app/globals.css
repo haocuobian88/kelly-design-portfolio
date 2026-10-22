@@ -541,3 +541,5 @@ footer.site-footer{display:block;padding:0;font-size:inherit;letter-spacing:norm
 .projects-page-head h1 i{font-style:normal;color:var(--muted)}
 .resume-education .edu-item+.edu-item{margin-top:18px;padding-top:18px;border-top:1px solid #d7d7d2}
 .resume-education .edu-item>span{display:block}
+.inline-link{border-bottom:1px solid currentColor;padding-bottom:1px;margin:0 2px}
+.inline-link:hover{opacity:.7}
