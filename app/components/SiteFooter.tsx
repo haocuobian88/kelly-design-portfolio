@@ -1,8 +1,10 @@
 import {sitePath} from '../site-path';
 import {profile} from '../site-data';
+import BackToTop from './BackToTop';
 
 export default function SiteFooter(){
   return <footer className="site-footer">
+    <BackToTop/>
     <section className="footer-contact" aria-labelledby="footer-contact-title">
       <p className="footer-label">CONTACT</p>
       <div>
