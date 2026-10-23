@@ -68,7 +68,7 @@ export default function Home(){
       <div className="intro-copy">
         <p className="hello">{profile.name.toUpperCase()} · {profile.title.toUpperCase()}</p>
         <h1><span>{profile.heroTitle[0]}</span> <span>{profile.heroTitle[1]}</span></h1>
-        <p className="intro-note">Designing thoughtful digital experiences{" "}<br/>and visual stories from Taipei.</p>
+        <p className="intro-note">在台北，設計用心的數位體驗<br/>與視覺故事。</p>
         <a className="hero-cta" href="#work">VIEW PROJECTS <span aria-hidden="true">→</span></a>
       </div>
     </section>

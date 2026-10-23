@@ -7,7 +7,7 @@ const figmaEmbed=`https://www.figma.com/embed?embed_host=share&url=${encodeURICo
 export default function EasyHomeSportPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
-    <CaseStudyIntro slug="easy-home-sport" category="APP DESIGN · SIDE PROJECT" title="Easy Home Sport｜居家運動 App" summary="自主練習專案。從課程探索、訓練播放到進度紀錄，打造能降低開始門檻並陪伴使用者建立運動節奏的行動體驗。" role="UI / Product Designer" scope="產品流程、Mobile UI、Design System" platform="Mobile App"/>
+    <CaseStudyIntro slug="easy-home-sport" category="APP DESIGN · SIDE PROJECT" title="Easy Home Sport｜居家運動 App" summary="自主練習專案，疫情期間的發想。從課程探索、訓練播放到進度紀錄，打造能降低開始門檻並陪伴使用者建立運動節奏的行動體驗。" role="UI / Product Designer" scope="產品流程、Mobile UI、Design System" platform="Mobile App"/>
     <CaseToc/>
     <section className="case-cover" aria-label="Easy Home Sport 專案封面">
       <img src={sitePath('/easy-home-sport/cover.webp')} alt="Easy Home Sport 居家運動 App 畫面展示"/>
@@ -15,7 +15,7 @@ export default function EasyHomeSportPage(){
     <section className="case-story">
       <article className="case-story-overview" id="overview">
         <p className="case-story-label">CONTEXT</p>
-        <div><h2>讓開始運動這件事，<br/>變得更輕鬆一點。</h2><p>Easy Home Sport 面向想在家建立運動習慣、卻容易被時間與複雜流程阻礙的使用者。產品從快速找到合適課程出發，串連訓練播放、進度紀錄與持續鼓勵，降低每一次開始的心理門檻。</p></div>
+        <div><h2>讓開始運動這件事，<br/>變得更輕鬆一點。</h2><p>這是疫情期間的發想：當大家沒辦法去健身房、也不方便上實體課，我想設計一個讓人在家就能透過 App 自主練習的運動工具。Easy Home Sport 面向想在家建立運動習慣、卻容易被時間與複雜流程阻礙的使用者。產品從快速找到合適課程出發，串連訓練播放、進度紀錄與持續鼓勵，降低每一次開始的心理門檻。</p></div>
       </article>
       <div className="case-story-divider"/>
       <section className="case-challenges" id="challenges" aria-labelledby="easyhome-challenge-title">

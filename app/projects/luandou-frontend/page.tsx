@@ -18,6 +18,12 @@ export default function LuandouFrontendPage(){
         <div>
           <h2>讓會員願意發文、<br/>也願意留下來。</h2>
           <p>遊戲大亂鬥是遊戲社群論壇，同時承載文章、熱門內容、會員互動、任務與活動入口。這次改版的目標很明確：提高會員的參與度與停留率。要做到這點，發文必須夠簡單，發文之後要能得到回饋，回饋還要有實際用處；同時，平台也需要廣告帶來曝光與點閱。</p>
+          <ul className="platform-stats" aria-label="平台規模">
+            <li><strong>120 萬+</strong><span>每月活躍使用者</span></li>
+            <li><strong>前 30 名</strong><span>台灣電玩遊戲類網站</span></li>
+            <li><strong>2012</strong><span>年創立的電競影音社群</span></li>
+          </ul>
+          <p className="platform-stats-source">平台數據來源：<a href="https://www.league-funny.com/about" target="_blank" rel="noreferrer">遊戲大亂鬥官網「關於我們」</a></p>
         </div>
       </article>
 
