@@ -81,7 +81,7 @@ export default function Home(){
           <p className="work-heading-note">專注於內容平台、後台系統與跨裝置數位體驗；從資訊架構、操作流程到視覺與元件規範，讓每個設計選擇都回應真正的問題。</p>
         </div>
       </div>
-      <div className="filters motion-reveal" role="group" aria-label="作品分類">{filters.map(c=><button key={c} type="button" onClick={()=>setActive(c)} className={active===c?'active':''} aria-pressed={active===c}>{c}</button>)}</div>
+      <div className="filters motion-reveal" role="group" aria-label="作品分類">{filters.map(c=><button key={c} type="button" onClick={()=>setActive(c)} className={active===c?'active':''} aria-pressed={active===c}>{c}<span className="filter-count">{c==='全部'?projects.length:projects.filter(project=>project.category===c).length}</span></button>)}</div>
       {active==='全部'?<>
         <section className="portfolio-group" aria-labelledby="featured-work-heading">
           <div className="portfolio-group-heading motion-reveal"><span>01</span><h3 id="featured-work-heading">精選案例</h3><p>最能呈現產品思考與系統規劃的四個案例</p></div>
