@@ -544,3 +544,16 @@ footer.site-footer{display:block;padding:0;font-size:inherit;letter-spacing:norm
 .inline-link{border-bottom:1px solid currentColor;padding-bottom:1px;margin:0 2px}
 .inline-link:hover{opacity:.7}
 .key-screen-media img{width:auto;max-width:100%;max-height:820px;margin-inline:auto}
+.app-part-heading{padding-top:96px;border-top:1px solid var(--line);margin-top:0}
+.app-part-heading#consumer{border-top:0;padding-top:24px}
+.app-part-heading[id]{scroll-margin-top:90px}
+
+/* Platform stats strip */
+.platform-stats{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:790px}
+.platform-stats li{padding:22px 20px 20px 0}
+.platform-stats li+li{padding-left:20px;border-left:1px solid var(--line)}
+.platform-stats strong{display:block;font:400 clamp(26px,2.6vw,38px)/1.1 Georgia,serif;color:var(--ink)}
+.platform-stats span{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+.case-story-overview .platform-stats-source{margin:12px 0 0;font-size:12px;line-height:1.6;color:var(--muted)}
+.platform-stats-source a{border-bottom:1px solid currentColor}
+@media(max-width:760px){.platform-stats li{padding:16px 10px 14px 0}.platform-stats li+li{padding-left:10px}.platform-stats span{font-size:12px}}

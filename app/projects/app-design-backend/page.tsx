@@ -1,45 +1,17 @@
-'use client';
-import ProjectBriefCard from '../../components/ProjectBriefCard';
-import SiteFooter from '../../components/SiteFooter';
-
-import {useEffect, useState} from 'react';
-import ProfileSidebar from '../../components/ProfileSidebar';
-import CaseNav from '../../components/CaseNav';
-import CaseStudyIntro from '../../components/CaseStudyIntro';
-import ProjectPager from '../../components/ProjectPager';
+import type {Metadata} from 'next';
 import {sitePath} from '../../site-path';
 
-const slides=['/app-design-backend/slide-1.webp','/app-design-backend/slide-2.webp','/app-design-backend/slide-3.webp'].map(sitePath);
-const gallery=['01','02','03','04','05','06'];
+// 商家端已合併進「美耶｜到府美業服務 App」，舊網址自動導向合併後案例的商家端段落。
+export const metadata: Metadata = {
+  title: '美耶商家端已合併｜Kelly Lei',
+  robots: {index: false},
+};
 
-export default function AppDesignBackendPage(){
-  const [slide,setSlide]=useState(0);
-  useEffect(()=>{const timer=window.setInterval(()=>setSlide(value=>(value+1)%slides.length),3200);return()=>window.clearInterval(timer)},[]);
-  return <main><ProfileSidebar/><div className="site-content case-page backend-case">
-    <CaseNav/>
-    <CaseStudyIntro slug="app-design-backend" category="APP DESIGN" title="美耶商家端｜服務管理 App" summary="從商家與技術服務人員的日常工作出發，整理接單、訂單管理、預約通知與服務狀態的操作流程。" role="UI / Product Designer" scope="商家需求、功能流程、Mobile UI" platform="iOS / Android"/>
-    <ProjectBriefCard slug="app-design-backend"/>
-    <section className="app-case-hero">
-      <div className="app-case-copy">
-        <h2>蒐集商家需求，規劃功能及畫面</h2>
-        <p className="case-description">功能對應美耶用戶端 APP，以及技術服務人員接單所需的實際情境。從預約通知、訂單管理到服務狀態，重新整理商家端的操作流程與介面資訊。</p>
-        <div className="store-links"><a href="https://apps.apple.com/tw/app/%E7%BE%8E%E8%80%B6%E5%95%86%E5%AE%B6%E7%AB%AF/id1622334158" target="_blank" rel="noreferrer"><img src={sitePath('/app-design-backend/app-store.png')} alt="Download on the App Store"/></a><a href="https://play.google.com/store/apps/details?id=com.xapp.n.meijiastore&hl=af&gl=US" target="_blank" rel="noreferrer"><img src={sitePath('/app-design-backend/google-play.png')} alt="Get it on Google Play"/></a></div>
-      </div>
-      <div className="phone-carousel" aria-label="商家端 APP 主要流程輪播">
-        {slides.map((src,index)=><img key={src} src={src} alt={`商家端 APP 畫面 ${index+1}`} className={slide===index?'active':''}/>) }
-        <button className="carousel-prev" onClick={()=>setSlide((slide+slides.length-1)%slides.length)} aria-label="上一張">←</button>
-        <button className="carousel-next" onClick={()=>setSlide((slide+1)%slides.length)} aria-label="下一張">→</button>
-        <div className="carousel-dots">{slides.map((_,index)=><button key={index} className={slide===index?'active':''} onClick={()=>setSlide(index)} aria-label={`顯示第 ${index+1} 張`}/>)}</div>
-      </div>
-    </section>
-    <section className="booking-flow backend-flow">
-      <div className="flow-heading"><p>SERVICE FLOW</p><h2>接收預約，<br/><i>管理服務</i></h2></div>
-      <div className="backend-flow-copy"><p>技術服務人員透過商家端 APP</p><strong>接受消費者<br/>預約服務訂單</strong><span>FROM REQUEST TO COMPLETION</span></div>
-    </section>
-    <section className="app-gallery" aria-label="商家端 APP Design 完整設計流程">
-      {gallery.map((name,index)=><figure key={name}><img src={sitePath(`/app-design-backend/${name}.jpg`)} alt={`商家端 APP Design 流程畫面 ${index+1}`} loading="lazy"/><figcaption>{String(index+1).padStart(2,'0')} / 06</figcaption></figure>)}
-    </section>
-    <ProjectPager current="app-design-backend"/>
-    <SiteFooter/>
-  </div></main>
+export default function AppDesignBackendRedirect(){
+  const target=sitePath('/projects/app-design/#merchant');
+  return <main style={{padding:'80px 24px',fontFamily:'var(--font-zh)'}}>
+    <meta httpEquiv="refresh" content={`0; url=${target}`}/>
+    <p>美耶商家端已合併到「美耶｜到府美業服務 App」案例中。</p>
+    <p><a href={target} style={{borderBottom:'1px solid currentColor'}}>前往美耶案例的商家端段落 →</a></p>
+  </main>;
 }

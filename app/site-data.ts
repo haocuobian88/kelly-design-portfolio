@@ -29,13 +29,12 @@ export const projects: Project[] = [
   // Featured Cases（亂鬥後台內容最完整，放第一個）
   {slug: 'luandou-backend', category: '平台系統', title: '亂鬥後台｜管理與廣告系統設計', subtitle: '複雜功能流程與後台元件規劃', role: 'UI / Product Designer', featured: true, cover: '/luandou-backend/cover.webp'},
   {slug: 'luandou-frontend', category: '平台系統', title: '遊戲大亂鬥｜內容論壇體驗重構', subtitle: '資訊架構、會員功能與元件系統', role: 'UI / Product Designer', featured: true, cover: '/luandou-frontend/cover.webp'},
-  {slug: 'luckmesh', category: '網站設計', title: 'LuckMesh｜跨裝置遊戲品牌體驗', subtitle: '品牌官網、視覺系統與元件規劃', role: 'UI / Visual Designer', featured: true, cover: '/luckmesh/cover.webp'},
+  {slug: 'luckmesh', category: '網站設計', title: 'LuckMesh｜海外招商品牌官網', subtitle: '品牌視覺、跨裝置介面與元件規劃', role: 'UI / Visual Designer', featured: true, cover: '/luckmesh/cover.webp'},
   {slug: 'easy-home-sport', category: 'APP UI', title: 'Easy Home Sport｜居家運動 App', subtitle: '課程探索、訓練與進度紀錄體驗', role: 'UI / Product Designer', featured: true, sideProject: true, cover: '/easy-home-sport/cover.webp'},
   // Other Projects
   {slug: 'xincheng-en', category: '網站設計', title: '星城 EN｜娛樂平台品牌官網', subtitle: '跨裝置介面與品牌視覺規劃', role: 'UI / Visual Designer', featured: false, cover: '/xincheng-en/cover.webp'},
   {slug: 'bana', category: '平台系統', title: 'BanaBana｜內容平台體驗重構', subtitle: '內容探索、會員功能與介面系統', role: 'UI / Product Designer', featured: false, cover: '/bana/cover.webp'},
-  {slug: 'app-design', category: 'APP UI', title: '美耶｜到府美業服務 App', subtitle: '預約流程、UI 介面與新功能規劃', role: 'UI / Product Designer', featured: false, cover: '/app-design/cover.avif'},
-  {slug: 'app-design-backend', category: 'APP UI', title: '美耶商家端｜服務管理 App', subtitle: '接單、訂單與服務狀態流程', role: 'UI / Product Designer', featured: false, cover: '/app-design-backend/cover.avif'},
+  {slug: 'app-design', category: 'APP UI', title: '美耶｜到府美業服務 App', subtitle: '用戶端預約與商家端接單的雙端服務體驗', role: 'UI / Product Designer', featured: false, cover: '/app-design/cover.avif'},
   {slug: 'website-redesign', category: '網站設計', title: 'BabyHome｜響應式網站重構', subtitle: '桌機與手機資訊層級重新規劃', role: 'UI / UX Designer', featured: false, cover: '/website-redesign/cover.avif'},
   {slug: 'little-tail', category: '網站設計', title: '小尾巴｜寵物美容預約平台', subtitle: '預約與領養資訊的響應式體驗', role: 'UI / UX Designer', featured: false, sideProject: true, cover: '/little-tail/cover.jpg'},
 ];
