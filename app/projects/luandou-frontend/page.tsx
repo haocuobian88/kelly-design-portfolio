@@ -55,7 +55,7 @@ export default function LuandouFrontendPage(){
         </div>
       </section>
     </section>
-    <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>完整介面與畫面流程</h2></div>
+    <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>關鍵畫面與完整設計稿</h2></div>
     <KeyScreens slug="luandou-frontend"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>{projectNumber('luandou-frontend')}</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>

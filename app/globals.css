@@ -543,3 +543,4 @@ footer.site-footer{display:block;padding:0;font-size:inherit;letter-spacing:norm
 .resume-education .edu-item>span{display:block}
 .inline-link{border-bottom:1px solid currentColor;padding-bottom:1px;margin:0 2px}
 .inline-link:hover{opacity:.7}
+.key-screen-media img{width:auto;max-width:100%;max-height:820px;margin-inline:auto}
