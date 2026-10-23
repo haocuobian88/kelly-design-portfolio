@@ -1,19 +1,9 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, Noto_Sans_TC } from 'next/font/google';
+import { Noto_Sans_TC } from 'next/font/google';
 import './globals.css';
 import {sitePath} from './site-path';
 import {profile} from './site-data';
 import GoogleAnalytics from './google-analytics';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 const notoSansTC = Noto_Sans_TC({
   variable: '--font-noto-sans-tc',
@@ -52,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="zh-Hant">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${notoSansTC.variable} antialiased`}
+        className={`${notoSansTC.variable} antialiased`}
       >
         <GoogleAnalytics />
         {children}
