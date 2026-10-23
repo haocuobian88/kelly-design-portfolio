@@ -40,9 +40,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-Hant">
+    <html lang="zh-Hant" className={notoSansTC.variable}>
       <body
-        className={`${notoSansTC.variable} antialiased`}
+        className="antialiased"
       >
         <GoogleAnalytics />
         {children}
