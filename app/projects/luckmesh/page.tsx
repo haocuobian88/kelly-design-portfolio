@@ -1,3 +1,4 @@
+import FigmaEmbed from '../../components/FigmaEmbed';
 import KeyScreens from '../../components/KeyScreens';
 import {projectNumber} from '../../site-data';
 import SiteFooter from '../../components/SiteFooter';
@@ -43,7 +44,7 @@ export default function LuckMeshPage(){
     <KeyScreens slug="luckmesh"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>{projectNumber('luckmesh')}</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
-      <iframe src={figmaEmbed} title="LuckMesh Figma design" allowFullScreen allow="fullscreen"/>
+      <FigmaEmbed src={figmaEmbed} title="LuckMesh Figma design" openUrl={figmaUrl}/>
     </section>
     <ProjectPager current="luckmesh"/>
     <SiteFooter/>

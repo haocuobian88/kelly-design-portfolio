@@ -1,3 +1,5 @@
+import {pageMetadata} from '../page-metadata';
+export const metadata=pageMetadata({title:'全部作品',description:'Kelly Lei 的 UI / Product Design 作品：內容平台、後台系統、品牌官網與 App 設計，共 9 個案例。',path:'/projects/'});
 import {sitePath} from '../site-path';
 import {projects, projectNumber} from '../site-data';
 import ProfileSidebar from '../components/ProfileSidebar';

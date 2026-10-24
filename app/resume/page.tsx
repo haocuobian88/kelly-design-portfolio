@@ -1,3 +1,5 @@
+import {pageMetadata} from '../page-metadata';
+export const metadata=pageMetadata({title:'履歷',description:'Kelly Lei，UI / Product Designer，9+ 年設計經驗。現任華義國際 UI 設計師，負責論壇與後台系統的 UI／UX 規劃與 Design System。',path:'/resume/'});
 import {experience, profile} from '../site-data';
 import {sitePath} from '../site-path';
 import ProfileSidebar from '../components/ProfileSidebar';

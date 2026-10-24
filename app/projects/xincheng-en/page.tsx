@@ -1,3 +1,4 @@
+import FigmaEmbed from '../../components/FigmaEmbed';
 import ProjectBriefCard from '../../components/ProjectBriefCard';
 import {projectNumber} from '../../site-data';
 import SiteFooter from '../../components/SiteFooter';
@@ -11,7 +12,7 @@ export default function XinchengEnPage(){
     <ProjectBriefCard slug="xincheng-en"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>{projectNumber('xincheng-en')}</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
-      <iframe src={figmaEmbed} title="星城 EN Figma design" allowFullScreen allow="fullscreen"/>
+      <FigmaEmbed src={figmaEmbed} title="星城 EN Figma design" openUrl={figmaUrl}/>
     </section>
     <ProjectPager current="xincheng-en"/>
     <SiteFooter/>
