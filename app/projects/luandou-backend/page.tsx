@@ -1,3 +1,4 @@
+import FigmaEmbed from '../../components/FigmaEmbed';
 import KeyScreens from '../../components/KeyScreens';
 import {projectNumber} from '../../site-data';
 import SiteFooter from '../../components/SiteFooter';
@@ -58,7 +59,7 @@ export default function LuandouBackendPage(){
     <KeyScreens slug="luandou-backend"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>{projectNumber('luandou-backend')}</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
-      <iframe src={figmaEmbed} title="亂鬥後台 Figma design" allowFullScreen allow="fullscreen"/>
+      <FigmaEmbed src={figmaEmbed} title="亂鬥後台 Figma design" openUrl={figmaUrl}/>
     </section>
     <ProjectPager current="luandou-backend"/>
     <SiteFooter/>

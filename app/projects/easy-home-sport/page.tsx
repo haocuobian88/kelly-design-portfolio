@@ -1,3 +1,4 @@
+import FigmaEmbed from '../../components/FigmaEmbed';
 import KeyScreens from '../../components/KeyScreens';
 import {projectNumber} from '../../site-data';
 import SiteFooter from '../../components/SiteFooter';
@@ -43,7 +44,7 @@ export default function EasyHomeSportPage(){
     <KeyScreens slug="easy-home-sport"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>{projectNumber('easy-home-sport')}</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
-      <iframe src={figmaEmbed} title="Easy Home Sport Figma design" allowFullScreen allow="fullscreen"/>
+      <FigmaEmbed src={figmaEmbed} title="Easy Home Sport Figma design" openUrl={figmaUrl}/>
     </section>
     <ProjectPager current="easy-home-sport"/>
     <SiteFooter/>

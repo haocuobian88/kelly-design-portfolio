@@ -1,3 +1,4 @@
+import FigmaEmbed from '../../components/FigmaEmbed';
 import ProjectBriefCard from '../../components/ProjectBriefCard';
 import {projectNumber} from '../../site-data';
 import SiteFooter from '../../components/SiteFooter';
@@ -11,7 +12,7 @@ export default function BanaPage(){
     <ProjectBriefCard slug="bana"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>{projectNumber('bana')}</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
-      <iframe src={figmaEmbed} title="BANA Web UI Figma design" allowFullScreen allow="fullscreen"/>
+      <FigmaEmbed src={figmaEmbed} title="BANA Web UI Figma design" openUrl={figmaUrl}/>
       <p className="figma-detail-note">想查看更多設計細節與完整畫面流程，歡迎<a href={figmaUrl} target="_blank" rel="noreferrer">進入 Figma 深入瀏覽 ↗</a></p>
     </section>
     <ProjectPager current="bana"/>

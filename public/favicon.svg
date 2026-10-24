@@ -10,5 +10,5 @@
   <rect width="64" height="64" rx="15" fill="#f3f0e9"/>
   <circle cx="32" cy="32" r="27" fill="url(#light)"/>
   <circle cx="22" cy="20" r="8" fill="#d7d1c6"/>
-  <text x="32" y="42" fill="#f8f5ef" font-family="Georgia, serif" font-size="25" text-anchor="middle" letter-spacing="-2">KL</text>
+  <g fill="#f8f5ef" transform="translate(10.35 45.00) scale(0.03547 -0.03547)"><path transform="translate(0 0)" d="M101 0H193V232L319 382L539 0H642L377 455L607 733H502L195 365H193V733H101Z"/><path transform="translate(606 0)" d="M101 0H514V79H193V733H101Z"/></g>
 </svg>

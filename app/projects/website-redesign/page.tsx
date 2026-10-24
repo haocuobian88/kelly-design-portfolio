@@ -1,3 +1,4 @@
+import FigmaEmbed from '../../components/FigmaEmbed';
 import ProjectBriefCard from '../../components/ProjectBriefCard';
 import SiteFooter from '../../components/SiteFooter';
 const webPrototype='https://www.figma.com/proto/jG1udIPMgzfBrN73lw9J1B/bbh%E9%A6%96%E9%A0%81?node-id=1-12&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A12&show-proto-sidebar=1';
@@ -10,8 +11,8 @@ export default function WebsiteRedesignPage(){
     <CaseStudyIntro slug="website-redesign" category="WEBSITE REDESIGN" title="BabyHome｜響應式網站重構" summary="針對桌機與手機的不同閱讀情境，重新規劃資訊層級、導覽與響應式行為，讓同一套內容在不同裝置維持清楚的使用體驗。" role="UI / UX Designer" scope="資訊架構、RWD、Prototype" platform="Desktop / Mobile"/>
     <ProjectBriefCard slug="website-redesign"/>
     <section className="device-previews">
-      <article className="device-preview web-preview"><div className="device-label"><span>01</span><strong>WEB PREVIEW</strong><a href={webPrototype} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div><div className="browser-frame"><iframe src={embed(webPrototype)} title="網站重構 Web prototype" allowFullScreen allow="fullscreen"/></div></article>
-      <article className="device-preview mobile-preview"><div className="device-label"><span>02</span><strong>MOBILE PREVIEW</strong><a href={mobilePrototype} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div><div className="phone-frame"><iframe src={embed(mobilePrototype)} title="網站重構 Mobile prototype" allowFullScreen allow="fullscreen"/></div></article>
+      <article className="device-preview web-preview"><div className="device-label"><span>01</span><strong>WEB PREVIEW</strong><a href={webPrototype} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div><div className="browser-frame"><FigmaEmbed src={embed(webPrototype)} title="網站重構 Web prototype" openUrl={webPrototype} label="Web 互動原型"/></div></article>
+      <article className="device-preview mobile-preview"><div className="device-label"><span>02</span><strong>MOBILE PREVIEW</strong><a href={mobilePrototype} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div><div className="phone-frame"><FigmaEmbed src={embed(mobilePrototype)} title="網站重構 Mobile prototype" openUrl={mobilePrototype} label="Mobile 互動原型"/></div></article>
     </section>
     <section className="redesign-links"><p>MORE CONTEXT</p><div><a href="https://babyhome.com.tw/" target="_blank" rel="noreferrer">ORIGINAL WEBSITE ↗</a><a href="https://kellylei9.wixsite.com/portfolio/bbh-vision2" target="_blank" rel="noreferrer">PREVIOUS CASE PAGE ↗</a></div></section>
     <ProjectPager current="website-redesign"/>
