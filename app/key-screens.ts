@@ -16,7 +16,12 @@ export type KeyScreen = {
 };
 
 export const keyScreens: Record<string, KeyScreen[]> = {
-  'luckmesh': [],
+  'luckmesh': [
+    {src: '/luckmesh/screens/home.webp', title: '首頁主視覺：一眼看出產品線', caption: '輪播橫幅依遊戲類型切換（牌桌遊戲、Crash Game、新上線的 Teen Patti），導覽只保留 Games、About、News、Contact Us 四項，第一次來的合作夥伴能很快知道該往哪裡看。'},
+    {src: '/luckmesh/screens/games.webp', title: '熱門遊戲：聚焦式卡片輪播', caption: '中間的卡片放大聚焦、兩側淡出，每張卡片固定「封面、名稱、簡介、Play Now」的結構；遊戲數量再增加，也能維持一致的閱讀節奏。'},
+    {src: '/luckmesh/screens/services.webp', title: '服務介紹：把合作價值視覺化', caption: '用四個圓形節點呈現 API 串接、後台系統、24 小時支援與多語系，讓潛在合作夥伴不必讀長篇文字，也能快速理解合作能得到什麼。'},
+    {src: '/luckmesh/screens/contact.webp', title: '聯絡表單：招商的最後一步', caption: '欄位除了姓名與聯絡方式，還有公司名稱，對應 B2B 洽談的需求；同意條款與送出按鈕放在一起，讓有興趣的合作夥伴能直接留下詢問。'},
+  ],
   'luandou-frontend': [
     {src: '/luandou-frontend/screens/new-post.webp', title: '新貼文：打開就能寫，一步送出', caption: '發文框固定在動態牆最上方，點開就是標題與內文；圖片、影片、清單與 # 標籤工具就在段落下方，分類放在送出前。進階需求收進「進階發文」，一般會員不用面對複雜選項，就能快速完成一篇文章。'},
     {src: '/luandou-frontend/screens/daily-rewards.webp', title: '每日獎勵：把參與拆成每天做得到的小任務', caption: '搶頭香留言、貼文成就、留言獎勵、成就全壘打，每項都標出完成進度與可得鬥幣；標題列同時顯示今日進度與鬥幣餘額。防洗文的規則直接寫在下方，獎勵清楚，也避免被濫用。'},
