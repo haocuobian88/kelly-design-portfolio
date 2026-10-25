@@ -662,3 +662,10 @@ h1 i,h2 i,h3 i{font-style:normal}
 .not-found-featured a span{font-size:11px;color:var(--muted)}
 .not-found-featured a i{margin-left:auto;font-style:normal;color:var(--muted)}
 @media(max-width:760px){.not-found{padding:64px 20px 80px}.not-found-featured a{font-size:15px;gap:12px}}
+
+/* Live site link under case intro */
+.live-site{width:calc(100% - 8vw);max-width:1400px;margin:-20px auto 40px;display:flex;align-items:center;gap:16px;font-size:14px}
+.live-site span{font-size:11px;letter-spacing:.14em;color:var(--muted)}
+.live-site a{border-bottom:1px solid currentColor;padding-bottom:2px}
+.live-site a:hover{opacity:.65}
+@media(max-width:760px){.live-site{width:auto;margin:-10px 20px 32px}}

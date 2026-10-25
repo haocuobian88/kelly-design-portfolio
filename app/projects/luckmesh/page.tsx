@@ -9,6 +9,7 @@ export default function LuckMeshPage(){
   return <main><ProfileSidebar/><div className="site-content luckmesh-page">
     <CaseNav/>
     <CaseStudyIntro slug="luckmesh" category="WEBSITE DESIGN · 海外招商" title="LuckMesh｜海外招商品牌官網" summary="公司為了在海外招募合作夥伴，需要一個能快速傳達品牌形象與遊戲內容的官網。我負責視覺方向、桌機與手機介面，以及可重複使用的版面元件。" role="UI / Visual Designer" scope="品牌視覺、Web UI、元件規劃" platform="Desktop / Mobile"/>
+    <p className="live-site"><span>LIVE SITE</span><a href="https://www.luckmesh.com/en-US" target="_blank" rel="noreferrer">www.luckmesh.com ↗</a></p>
     <CaseToc/>
     <section className="case-cover" aria-label="LuckMesh 專案封面">
       <img src={sitePath('/luckmesh/cover.webp')} alt="LuckMesh 跨裝置遊戲品牌網站展示"/>
@@ -40,7 +41,7 @@ export default function LuckMeshPage(){
         <div><h2>我負責將品牌概念，轉換成可延伸的跨裝置介面。</h2><p>工作涵蓋整體視覺方向、主要頁面 UI、響應式版面與共用元件規劃，並以 Figma 整理完整畫面與設計規則。</p></div>
       </section>
     </section>
-    <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>完整品牌介面與跨裝置畫面</h2></div>
+    <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>關鍵畫面與完整設計稿</h2></div>
     <KeyScreens slug="luckmesh"/>
     <section className="luckmesh-preview">
       <div className="device-label"><span>{projectNumber('luckmesh')}</span><strong>FIGMA DESIGN</strong><a href={figmaUrl} target="_blank" rel="noreferrer">OPEN IN FIGMA ↗</a></div>
