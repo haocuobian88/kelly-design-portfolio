@@ -20,6 +20,7 @@ export const metadata: Metadata = {
       {url: sitePath('/favicon.ico'), sizes: 'any'},
       {url: sitePath('/favicon.svg'), type: 'image/svg+xml'},
     ],
+    apple: [{url: sitePath('/apple-touch-icon.png'), sizes: '180x180', type: 'image/png'}],
   },
   openGraph: {
     title: `${profile.name} — ${profile.title}`,

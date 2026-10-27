@@ -1,14 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <radialGradient id="light" cx="30%" cy="24%" r="72%">
-      <stop offset="0" stop-color="#d7d1c6"/>
-      <stop offset="0.28" stop-color="#647062"/>
-      <stop offset="0.72" stop-color="#222622"/>
-      <stop offset="1" stop-color="#7d6b5f"/>
-    </radialGradient>
-  </defs>
-  <rect width="64" height="64" rx="15" fill="#f3f0e9"/>
-  <circle cx="32" cy="32" r="27" fill="url(#light)"/>
-  <circle cx="22" cy="20" r="8" fill="#d7d1c6"/>
-  <g fill="#f8f5ef" transform="translate(10.35 45.00) scale(0.03547 -0.03547)"><path transform="translate(0 0)" d="M101 0H193V232L319 382L539 0H642L377 455L607 733H502L195 365H193V733H101Z"/><path transform="translate(606 0)" d="M101 0H514V79H193V733H101Z"/></g>
+  <rect width="64" height="64" rx="14" fill="#f4f1eb"/>
+  <circle cx="32" cy="32" r="25" fill="#24231f"/>
+  <circle cx="21" cy="19" r="5" fill="#d7d1c6"/>
+  <text x="32" y="42" fill="#f8f5ef" font-family="'Noto Serif TC','Songti TC','PMingLiU',serif" font-size="29" font-weight="600" text-anchor="middle">雷</text>
 </svg>
