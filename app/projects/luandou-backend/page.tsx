@@ -1,3 +1,4 @@
+import CaseOutcome from '../../components/CaseOutcome';
 import FigmaEmbed from '../../components/FigmaEmbed';
 import KeyScreens from '../../components/KeyScreens';
 import {projectNumber} from '../../site-data';
@@ -47,13 +48,9 @@ export default function LuandouBackendPage(){
         <div>
           <h2>UI 兼 PM：從收集需求到交付上線。</h2>
           <p>我先向各角色收集需求，把功能與畫面規劃出來，再和後端工程師逐一討論資料欄位與流程的可行性，修正後交給前端切版與串接。設計與規格由同一個人負責，減少需求在轉手之間走樣，也省下來回溝通的時間。</p>
-          <ul className="case-results">
-            <li><strong>上線回饋良好</strong><span>新後台上線後，各角色使用的整體回饋不錯。</span></li>
-            <li><strong>元件被工程端沿用</strong><span>工程師直接重複使用同一套元件實作。</span></li>
-            <li><strong>後續畫面直接套用</strong><span>之後的新需求有些畫面可以直接沿用，不必重新設計。</span></li>
-          </ul>
         </div>
       </section>
+      <CaseOutcome slug="luandou-backend"/>
     </section>
     <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>關鍵畫面與完整設計稿</h2></div>
     <KeyScreens slug="luandou-backend"/>

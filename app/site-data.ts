@@ -26,11 +26,11 @@ export type Project = {
 // 陣列順序 = 首頁顯示順序 = 案例編號 = 上一個／下一個專案的順序。
 // 想依投遞產業調整精選順序，只要搬動這裡的項目即可。
 export const projects: Project[] = [
-  // Featured Cases（亂鬥後台內容最完整，放第一個）
-  {slug: 'luandou-backend', category: '平台系統', title: '亂鬥後台｜管理與廣告系統設計', subtitle: '複雜功能流程與後台元件規劃', role: 'UI / Product Designer', featured: true, cover: '/luandou-backend/cover.webp'},
+  // Featured Cases
   {slug: 'luandou-frontend', category: '平台系統', title: '遊戲大亂鬥｜內容論壇體驗重構', subtitle: '資訊架構、會員功能與元件系統', role: 'UI / Product Designer', featured: true, cover: '/luandou-frontend/cover.webp'},
-  {slug: 'luckmesh', category: '網站設計', title: 'LuckMesh｜海外招商品牌官網', subtitle: '品牌視覺、跨裝置介面與元件規劃', role: 'UI / Visual Designer', featured: true, cover: '/luckmesh/cover.webp'},
   {slug: 'easy-home-sport', category: 'APP UI', title: 'Easy Home Sport｜居家運動 App', subtitle: '課程探索、訓練與進度紀錄體驗', role: 'UI / Product Designer', featured: true, sideProject: true, cover: '/easy-home-sport/cover.webp'},
+  {slug: 'luandou-backend', category: '平台系統', title: '亂鬥後台｜管理與廣告系統設計', subtitle: '複雜功能流程與後台元件規劃', role: 'UI / Product Designer', featured: true, cover: '/luandou-backend/cover.webp'},
+  {slug: 'luckmesh', category: '網站設計', title: 'LuckMesh｜海外招商品牌官網', subtitle: '品牌視覺、跨裝置介面與元件規劃', role: 'UI / Visual Designer', featured: true, cover: '/luckmesh/cover.webp'},
   // Other Projects
   {slug: 'xincheng-en', category: '網站設計', title: '星城 EN｜娛樂平台品牌官網', subtitle: '跨裝置介面與品牌視覺規劃', role: 'UI / Visual Designer', featured: false, cover: '/xincheng-en/cover.webp'},
   {slug: 'bana', category: '平台系統', title: 'BanaBana｜內容平台體驗重構', subtitle: '內容探索、會員功能與介面系統', role: 'UI / Product Designer', featured: false, cover: '/bana/cover.webp'},
@@ -53,3 +53,11 @@ export const experience = [
 ];
 
 export const skills = ['Figma','Design System','資訊架構','User Flow','Wireframe','Prototype','Design Handoff','響應式網頁','品牌視覺','Photoshop','Illustrator','HTML / CSS'];
+
+// 履歷頁「工具與技能」分類；次要工具另外列在最下方。
+export const resumeSkillGroups = [
+  {label: 'PRODUCT DESIGN', items: ['Figma', 'Wireframe', 'User Flow', 'Prototype', 'Design System', '資訊架構']},
+  {label: 'VISUAL DESIGN', items: ['Photoshop', 'Illustrator', 'InDesign', '品牌視覺', '行銷素材']},
+  {label: 'COLLABORATION & DELIVERY', items: ['Design Handoff', 'HTML / CSS', 'Keynote', '跨部門協作']},
+];
+export const resumeSecondaryTools = ['Adobe XD', 'Balsamiq'];
