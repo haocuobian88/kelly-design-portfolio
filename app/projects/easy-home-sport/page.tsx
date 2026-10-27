@@ -1,3 +1,4 @@
+import CaseOutcome from '../../components/CaseOutcome';
 import FigmaEmbed from '../../components/FigmaEmbed';
 import KeyScreens from '../../components/KeyScreens';
 import {projectNumber} from '../../site-data';
@@ -39,6 +40,7 @@ export default function EasyHomeSportPage(){
         <p className="case-story-label">MY CONTRIBUTION</p>
         <div><h2>獨立完成從產品流程到介面系統的完整行動體驗。</h2><p>工作涵蓋功能與流程規劃、主要使用情境、Mobile UI、互動狀態與 Design System，並將課程、訓練與成就紀錄整合成一致的產品語言。</p></div>
       </section>
+      <CaseOutcome slug="easy-home-sport"/>
     </section>
     <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>完整 App 介面與產品流程</h2></div>
     <KeyScreens slug="easy-home-sport"/>

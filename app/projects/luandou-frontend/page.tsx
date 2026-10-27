@@ -1,3 +1,4 @@
+import CaseOutcome from '../../components/CaseOutcome';
 import FigmaEmbed from '../../components/FigmaEmbed';
 import CountUp from '../../components/CountUp';
 import KeyScreens from '../../components/KeyScreens';
@@ -55,13 +56,9 @@ export default function LuandouFrontendPage(){
         <div>
           <h2>UI 兼 PM：把功能需求，轉換成一致的產品介面。</h2>
           <p>我負責論壇核心功能、文章編輯器、分類標籤、會員制度與搜尋篩選的 UI／UX 規劃。收到需求後，先把功能與畫面規劃出來，和後端工程師討論資料與流程的可行性，修正後再交給前端切版與串接。時程很趕，所以每個決定都以「不同使用者都好操作、好理解」為優先，並同步建立與維護 Design System。前台的鬥幣獎勵與兌換，也對應到我規劃的<a className="inline-link" href={sitePath('/projects/luandou-backend/')}>亂鬥後台</a>中的鬥幣商品與兌換審核。</p>
-          <ul className="case-results">
-            <li><strong>建立 Design System</strong><span>導覽、內容卡片、標籤與狀態整理成共用元件，持續維護。</span></li>
-            <li><strong>元件被工程端沿用</strong><span>工程師直接重複使用同一套元件實作。</span></li>
-            <li><strong>後續畫面直接套用</strong><span>新功能有些畫面可以直接沿用，不必重新設計。</span></li>
-          </ul>
         </div>
       </section>
+      <CaseOutcome slug="luandou-frontend"/>
     </section>
     <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>關鍵畫面與完整設計稿</h2></div>
     <KeyScreens slug="luandou-frontend"/>

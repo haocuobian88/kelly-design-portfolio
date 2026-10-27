@@ -9,8 +9,8 @@ import {profile, projects, projectNumber, experience, skills, type Project, type
 type Filter = '全部' | WorkCategory;
 const filters: Filter[] = ['全部','網站設計','平台系統','APP UI'];
 
-function ProjectCard({project,index,compact=false}:{project:Project,index:number,compact?:boolean}){
-  return <article className={`project work-project-card motion-reveal${compact?' compact-project-card':''}`} style={{'--reveal-delay':`${Math.min(index,5)*70}ms`} as CSSProperties}>
+function ProjectCard({project,index,compact=false,collapsed=false}:{project:Project,index:number,compact?:boolean,collapsed?:boolean}){
+  return <article className={`project work-project-card motion-reveal${compact?' compact-project-card':''}${collapsed?' is-collapsed-mobile':''}`} style={{'--reveal-delay':`${Math.min(index,5)*70}ms`} as CSSProperties}>
     <a href={sitePath(`/projects/${project.slug}/`)}>
       <div className="visual work-project-visual">
         <div className="embed-toolbar"><span>{projectNumber(project.slug)}</span><span>CASE STUDY</span></div>
@@ -28,6 +28,13 @@ function ProjectCard({project,index,compact=false}:{project:Project,index:number
 
 export default function Home(){
   const [active,setActive]=useState<Filter>('全部');
+  const [showAllOther,setShowAllOther]=useState(false);
+  const MOBILE_OTHER_LIMIT=3;
+  const toggleOther=()=>{
+    const next=!showAllOther;
+    setShowAllOther(next);
+    if(!next) document.getElementById('other-work-heading')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  };
   const repelAssets=(event:ReactPointerEvent<HTMLDivElement>)=>{
     event.currentTarget.querySelectorAll<HTMLElement>('.floating-icon').forEach(asset=>{
       const box=asset.getBoundingClientRect();
@@ -89,7 +96,8 @@ export default function Home(){
         </section>
         <section className="portfolio-group other-work" aria-labelledby="other-work-heading">
           <div className="portfolio-group-heading motion-reveal"><span>02</span><h3 id="other-work-heading">其他作品</h3><p>更多品牌、網站與行動產品設計</p></div>
-          <div className="other-projects">{otherProjects.map((project,index)=><ProjectCard key={project.slug} project={project} index={index} compact/>)}</div>
+          <div className="other-projects" id="other-projects-list">{otherProjects.map((project,index)=><ProjectCard key={project.slug} project={project} index={index} compact collapsed={!showAllOther&&index>=MOBILE_OTHER_LIMIT}/>)}</div>
+          {otherProjects.length>MOBILE_OTHER_LIMIT&&<button type="button" className="other-toggle" onClick={toggleOther} aria-expanded={showAllOther} aria-controls="other-projects-list">{showAllOther?'收合其他作品 ↑':'展開更多作品 ↓'}</button>}
         </section>
       </>:<div className="masonry filtered-projects">{filteredProjects.map((project,index)=><ProjectCard key={project.slug} project={project} index={index}/>)}</div>}
     </section>

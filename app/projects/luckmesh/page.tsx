@@ -1,3 +1,4 @@
+import CaseOutcome from '../../components/CaseOutcome';
 import FigmaEmbed from '../../components/FigmaEmbed';
 import KeyScreens from '../../components/KeyScreens';
 import {projectNumber} from '../../site-data';
@@ -40,6 +41,7 @@ export default function LuckMeshPage(){
         <p className="case-story-label">MY CONTRIBUTION</p>
         <div><h2>我負責將品牌概念，轉換成可延伸的跨裝置介面。</h2><p>工作涵蓋整體視覺方向、主要頁面 UI、響應式版面與共用元件規劃，並以 Figma 整理完整畫面與設計規則。</p></div>
       </section>
+      <CaseOutcome slug="luckmesh"/>
     </section>
     <div className="figma-section-heading" id="final-design"><p>03 · FINAL DESIGN</p><h2>關鍵畫面與完整設計稿</h2></div>
     <KeyScreens slug="luckmesh"/>
