@@ -728,3 +728,38 @@ h1,h2,h3,.caption h3,.key-screen figcaption h3,.case-outcome-list h3{text-wrap:b
 .case-toc-more{z-index:3}
 .case-study-meta.has-details dd{word-break:keep-all;overflow-wrap:anywhere}
 .case-study-meta .meta-phrase{display:inline-block}
+
+/* ===== 2026-11-18 字級與行距調整：標題縮小、內文行距適中、過小字補大 ===== */
+/* 頁面主標（案例標題、全部作品） */
+.case-study-heading h1,.projects-page-head h1{font-size:clamp(30px,3.1vw,44px);line-height:1.25;letter-spacing:-.03em}
+/* 區段標題（中文長句） */
+.case-story-overview h2,.case-section-heading h2,.case-contribution h2,.figma-section-heading h2,
+.work-heading h2,.positioning-statement h2,.about-body>h2,.footer-contact h2{font-size:clamp(24px,2.45vw,36px);line-height:1.35;letter-spacing:-.02em}
+.resume-sheet-head h1{font-size:clamp(34px,3.3vw,48px);line-height:1.1}
+/* 次標題 */
+.platform-stats strong{font-size:clamp(24px,2.1vw,30px)}
+.project-pager-link strong{font-size:clamp(17px,1.45vw,21px);line-height:1.4}
+.caption h3,.embed-caption h3,.embed-caption h2{font-size:clamp(18px,1.4vw,21px);line-height:1.35}
+.key-screen figcaption h3{font-size:19px;line-height:1.4}
+.portfolio-group-heading h3{font-size:20px}
+.intro-note{font-size:clamp(15px,1.2vw,18px);line-height:1.65}
+/* 內文行距 */
+.case-story-overview div>p,.case-contribution div>p,.case-study-summary,.positioning-statement div>p,.about-lead,.case-description{line-height:1.8}
+/* 過小的標籤文字 */
+.projects-back,.project-cover span,.project-links a{font-size:11px}
+.device-label,.case-head p{font-size:10px}
+.case-study-heading h1 .title-phrase{display:inline-block}
+.caption h3,.embed-caption h2{word-break:keep-all;overflow-wrap:anywhere}
+.about-timeline strong{text-wrap:balance}
+.embed-caption h2 a{font-size:inherit;letter-spacing:0;border-bottom:0;padding-bottom:0;white-space:normal}
+.case-card-grid h3,.case-approach h3,.case-outcome-list h3{line-height:1.4}
+@media(max-width:760px){
+  .case-study-heading h1,.projects-page-head h1{font-size:28px;line-height:1.3}
+  .case-story-overview h2,.case-section-heading h2,.case-contribution h2,.figma-section-heading h2,
+  .work-heading h2,.positioning-statement h2,.about-body>h2,.footer-contact h2{font-size:23px;line-height:1.4}
+  .resume-sheet-head h1{font-size:34px}
+  .platform-stats strong{font-size:22px}
+  .project-pager-link strong{font-size:16px}
+  .caption h3{font-size:18px}
+  .case-story-overview div>p,.case-contribution div>p,.case-study-summary,.positioning-statement div>p,.about-lead{font-size:15px;line-height:1.8}
+}

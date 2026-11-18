@@ -24,7 +24,7 @@ export default function CaseStudyIntro({
   return <section className="case-study-intro">
     <div className="case-study-heading">
       <p>{projectNumber(slug)} · {category}</p>
-      <h1>{title}</h1>
+      <h1>{title.split('｜').map((part,index,all)=><span key={part} className="title-phrase">{part}{index<all.length-1?'｜':''}</span>)}</h1>
       <p className="case-study-summary">{summary}</p>
     </div>
     <dl className={`case-study-meta${detail?' has-details':''}`}>
