@@ -17,8 +17,8 @@ export const graphicWorks: GraphicWork[] = [
     slug: 'panasonic-expo',
     type: '展場佈置',
     client: 'Panasonic',
-    title: '家電展大型佈置物',
-    text: '家電展的大型佈置物設計與輸出，涵蓋吹風機、淨水器等產品的主視覺、產品說明牆與橫幅。',
+    title: '家電展大型佈置物輸出',
+    text: '家電展的大型佈置物印刷輸出，涵蓋吹風機、淨水器等產品的主視覺、產品說明牆與橫幅。',
     images: [
       {src: '/graphic/expo-0.webp', label: '吹風機主視覺'},
       {src: '/graphic/expo-1.webp', label: '奈米水離子功能橫幅'},
