@@ -61,3 +61,10 @@ export const resumeSkillGroups = [
   {label: 'COLLABORATION & DELIVERY', items: ['Design Handoff', 'HTML / CSS', 'Keynote', '跨部門協作']},
 ];
 export const resumeSecondaryTools = ['Adobe XD', 'Balsamiq'];
+
+// 封面的響應式圖片：手機與小卡片載入 800px 版本，大螢幕才載入原圖
+const responsiveCovers=new Set(['luandou-frontend','easy-home-sport','luandou-backend','luckmesh','xincheng-en','bana','little-tail']);
+export function coverSrcSet(project: Project, withBase: (path: string) => string){
+  if(!responsiveCovers.has(project.slug)) return undefined;
+  return `${withBase(`/${project.slug}/cover-800.webp`)} 800w, ${withBase(project.cover)} 1254w`;
+}

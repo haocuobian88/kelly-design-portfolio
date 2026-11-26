@@ -6,7 +6,8 @@ import SiteFooter from './components/SiteFooter';
 import GraphicWorks from './components/GraphicWorks';
 import {graphicWorks} from './graphic-works';
 import {sitePath} from './site-path';
-import {profile, projects, projectNumber, experience, skills, type Project, type WorkCategory} from './site-data';
+import {profile, projects, projectNumber, experience, skills, coverSrcSet, type Project, type WorkCategory} from './site-data';
+import {preload} from 'react-dom';
 
 type Filter = '全部' | WorkCategory | '平面設計';
 const filters: Filter[] = ['全部','網站設計','平台系統','APP UI','平面設計'];
@@ -16,19 +17,21 @@ function ProjectCard({project,index,compact=false,collapsed=false}:{project:Proj
     <a href={sitePath(`/projects/${project.slug}/`)}>
       <div className="visual work-project-visual">
         <div className="embed-toolbar"><span>{projectNumber(project.slug)}</span><span>CASE STUDY</span></div>
-        <div className="work-project-media"><img src={sitePath(project.cover)} alt={`${project.title} 作品封面`} loading="lazy"/></div>
+        <div className="work-project-media"><img src={sitePath(project.cover)} srcSet={coverSrcSet(project,sitePath)} sizes={compact?'(max-width: 760px) calc(100vw - 32px), (max-width: 1180px) 45vw, 26vw':'(max-width: 760px) calc(100vw - 32px), 40vw'} alt={`${project.title} 作品封面`} loading="lazy" decoding="async"/></div>
       </div>
       <div className="caption"><div>
         <div className="card-labels">{project.featured&&!compact&&<span className="featured-label">FEATURED CASE</span>}{project.sideProject&&<span className="featured-label side-label">SIDE PROJECT</span>}</div>
         <h3>{project.title}</h3>
         <p>{project.subtitle}</p>
-        <p className="caption-meta">{project.category} · {project.sideProject?'自主練習 · ':''}{project.role}</p>
+        <p className="caption-meta">{[project.category,project.sideProject?'自主練習':null,project.role].filter(Boolean).join(' · ')}</p>
       </div></div>
     </a>
   </article>;
 }
 
 export default function Home(){
+  // 首屏背景圖是最大內容元素，提早以高優先度載入
+  preload(sitePath('/visual/hero-bg.webp'),{as:'image',fetchPriority:'high'});
   const [active,setActive]=useState<Filter>('全部');
   const [showAllOther,setShowAllOther]=useState(false);
   const MOBILE_OTHER_LIMIT=3;
@@ -70,9 +73,9 @@ export default function Home(){
     <div className="site-content">
     <TopBar/>
 
-    <section className="intro" id="top" style={{backgroundImage:`url(${sitePath('/visual/hero-bg.jpg')})`}}>
+    <section className="intro" id="top" style={{backgroundImage:`url(${sitePath('/visual/hero-bg.webp')})`}}>
       <div className="work-scene" aria-hidden="true" onPointerMove={repelAssets} onPointerLeave={resetAssets}>
-        {[1,2,3,4,5,6,7,8].map(icon=><span key={icon} className={`floating-icon icon-${icon}`}><img src={sitePath(`/visual/icon-${icon}.webp`)} alt=""/></span>) }
+        {[1,2,3,4,5,6,7,8].map(icon=><span key={icon} className={`floating-icon icon-${icon}`} aria-hidden="true"><img src={sitePath(`/visual/icon-${icon}.webp`)} alt="" loading="lazy" decoding="async"/></span>) }
       </div>
       <div className="intro-copy">
         <p className="hello">{profile.name.toUpperCase()} · {profile.title.toUpperCase()}</p>
