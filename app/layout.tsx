@@ -5,10 +5,10 @@ import {profile} from './site-data';
 import GoogleAnalytics from './google-analytics';
 
 // Noto Sans TC 的字型 CSS 有上百組中文 unicode-range 宣告，若用一般 <link> 會阻擋首屏繪製。
-// 改由這段行內 script 在解析 HTML 時就插入 stylesheet（動態插入的樣式表不會阻擋繪製），
+// 改由這段行內 script 在頁面載入完成後才插入 stylesheet，字型檔不和首屏圖片、程式搶頻寬；
 // 字型載入前先用系統字（PingFang TC／微軟正黑體）顯示，載入後再替換。
 const FONT_CSS = 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@200..700&display=swap';
-const loadFontScript = `(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='${FONT_CSS}';document.head.appendChild(l);})();`;
+const loadFontScript = `(function(){function f(){var l=document.createElement('link');l.rel='stylesheet';l.href='${FONT_CSS}';document.head.appendChild(l);}if(document.readyState==='complete')f();else window.addEventListener('load',f,{once:true});})();`;
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://haocuobian88.github.io/kelly-design-portfolio/'),
