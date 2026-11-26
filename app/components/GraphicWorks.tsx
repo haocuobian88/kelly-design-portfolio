@@ -35,7 +35,7 @@ export default function GraphicWorks({headingNumber}:{headingNumber?:string}){
     <ul className="graphic-grid">
       {graphicWorks.map((work,index)=><li key={work.slug} className="graphic-card motion-reveal" style={{'--reveal-delay':`${Math.min(index,5)*60}ms`} as CSSProperties}>
         <button type="button" onClick={()=>show(index)} aria-label={`查看作品：${work.client} ${work.title}（${work.images.length} 張）`}>
-          <span className="graphic-thumb"><img src={sitePath(work.cover??work.images[0].src)} alt="" loading="lazy"/></span>
+          <span className="graphic-thumb"><img src={sitePath(work.cover??work.images[0].src)} alt={`${work.client}｜${work.title}`} loading="lazy" decoding="async"/></span>
           {work.images.length>1&&<span className="graphic-count" aria-hidden="true">{work.images.length} 張</span>}
         </button>
         <div className="graphic-caption">

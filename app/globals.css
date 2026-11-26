@@ -1,4 +1,3 @@
-@import 'tailwindcss';
 :root{--paper:#f3f0e9;--ink:#282621;--muted:#6a665e;--line:#d8d3c9;--font-en-sans:var(--font-noto-sans-tc),sans-serif;--font-en-serif:var(--font-zh);--font-zh:var(--font-noto-sans-tc),"PingFang TC","Microsoft JhengHei",sans-serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
