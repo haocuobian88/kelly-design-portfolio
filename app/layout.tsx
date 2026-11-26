@@ -1,15 +1,14 @@
 import type { Metadata } from 'next';
-import { Noto_Sans_TC } from 'next/font/google';
 import './globals.css';
 import {sitePath} from './site-path';
 import {profile} from './site-data';
 import GoogleAnalytics from './google-analytics';
 
-const notoSansTC = Noto_Sans_TC({
-  variable: '--font-noto-sans-tc',
-  subsets: ['latin'],
-  display: 'swap',
-});
+// Noto Sans TC 的字型 CSS 有上百組中文 unicode-range 宣告，若用一般 <link> 會阻擋首屏繪製。
+// 改由這段行內 script 在解析 HTML 時就插入 stylesheet（動態插入的樣式表不會阻擋繪製），
+// 字型載入前先用系統字（PingFang TC／微軟正黑體）顯示，載入後再替換。
+const FONT_CSS = 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@200..700&display=swap';
+const loadFontScript = `(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='${FONT_CSS}';document.head.appendChild(l);})();`;
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://haocuobian88.github.io/kelly-design-portfolio/'),
@@ -41,7 +40,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-Hant" className={notoSansTC.variable}>
+    <html lang="zh-Hant">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
+        <script dangerouslySetInnerHTML={{__html: loadFontScript}}/>
+        <noscript><link rel="stylesheet" href={FONT_CSS}/></noscript>
+      </head>
       <body
         className="antialiased"
       >
